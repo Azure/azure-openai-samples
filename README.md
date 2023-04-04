@@ -1,33 +1,41 @@
-# Project
+# GPT Fundamentals, Use Cases and Sample Solutions
+This repository contains resources to help you understand how to use GPT (Generative Pre-trained Transformer) offered by Azure OpenAI at the fundamental level, explore sample end-to-end solutions, and learn about various use cases. 
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+## What is GPT?
+GPT (Generative Pre-trained Transformer) is a Large Language Model (LLM) developed by OpenAI. It is a deep learning model based on the Transformer architecture. For more information, refer to [OpenAI](openai.com).
 
-As the maintainer of this project, please make a few updates:
+## Resources
+The following resources are available in this repository:
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+- [Quick Start](./quick_start/): A collection of notebooks where you can quickly start with using GPT. 
+
+- [Fundamentals](./fundamentals/): A collection of notebooks illustrating fundamental usage of GPT.
+
+- [Use Cases](./use_cases/): A collection of notebooks illustrating examples on how to use GPT in various applications, such as chatbots, customer service, and content generation etc.
+
+- [Sample Solutions](./solution_accelerators/): End-to-end solutions for various NLP tasks, such as question answering, text summarization, and sentiment analysis etc, in context of business applications specific to various industries, where GPT is part of the solution. *Require contributions!*
+
+## GPT Version
+As of now, the samples here are based on GPT 3.5. We will update accordingly when the GPT-4 is widely accessible.
+
+## Set Up
+To use sample codes in this repo, we suggest you setup .env file where you store key informations for Azure services. See [.env.sample](./.env.sample) file for example.
 
 ## Contributing
+We welcome contributions to this repository. If you have any ideas or suggestions, please feel free to open an issue or submit a pull request.
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+As technologies changes very fast, we endevour to keep this repository updated as quick as possible. However, this is heavily rely on keen community contributors to make this happen. 
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+## Relevant Repositories
+- **OpenAI Cookbook**
+   -  https://github.com/openai/openai-cookbook
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+- **Call center solutions:**
+   - https://github.com/jakeatmsft/AzureOpenAIExamples/blob/main/Examples/Speech/Conversation_SSML%20OpenAI.ipynb 
+   - https://github.com/amulchapla/AI-Powered-Call-Center-Intelligence 
 
-## Trademarks
+- **Income Statement Analysis:**
+   - https://github.com/jakeatmsft/AzureOpenAIExamples/blob/main/Examples/FormRecognizer/Balance_sheet_analysis.ipynb 
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos are subject to those third-party's policies.
+- **Business Process Automation:**
+   - https://github.com/Azure/business-process-automation

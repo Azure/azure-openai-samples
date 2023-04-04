@@ -1,0 +1,202 @@
+Title: Why SVB’s collapse is not a 2008 repeat
+The FT’s US financial commentator Robert Armstrong tells us why he’s not panicking
+
+Michela Tindera
+So, general question here, I mean, seeing bank runs . . . 
+
+Robert Armstrong
+Yes.
+
+Michela Tindera
+. . . just that term, I mean, like, yikes. Should we be freaking out?
+
+Robert Armstrong
+Mm-hmm. The problem, you know, you put me in a difficult situation, right? Because there’s a feedback loop here. Right? If everyone else is freaking out, you should freak out. But it would be much better if everyone didn’t freak out.
+
+Michela Tindera
+That’s the FT’s US financial commentator Rob Armstrong. And he’s been thinking about panic a lot recently. That’s because he, like a lot of financial journalists, has been watching a story over the last few days where panic has played a central role. And that story I’m talking about is the collapse of Silicon Valley Bank. And as this news broke last week, the headlines have been dire.
+
+News clip 1
+Tech lender Silicon Valley Bank collapsed on Friday . . . 
+
+News clip 2
+The biggest American bank to fail since the 2008 financial crisis . . . 
+
+News clip 3
+California regulators shut down Silicon Valley Bank . . . 
+
+News clip 4
+US authorities have seized control of Silicon Valley Bank . . . 
+
+Michela Tindera
+And it is serious. The federal government had to step in to ensure SVB’s customers, many of them tech start-ups, would still get their money back. Another bank had to be taken over by regulators in the fallout. More bank stocks have tumbled and there’ve been worries that maybe our banking system isn’t as secure as people thought. I mean, we all remember how quickly the 2008 financial crisis unfolded. Right? Rob does.
+
+Robert Armstrong
+The biggest similarity for me is the sudden realisation that you had a problem in the financial system that you just hadn’t bothered thinking about before. And then all of a sudden you’re like, “Whoa! There’s stuff under the covers that I didn’t know was there!” It just catches up with you so quickly. So the suddenness of it is like 2008 where you think, “Where was it? Why didn’t I know about this before?”
+
+Michela Tindera
+But Rob says what’s happening here isn’t the 2008 financial crisis. It’s different. And today, he’ll make the case as to why everything should be fine so long as we don’t panic.
+
+[MUSIC PLAYING]
+
+I’m Michela Tindera from the Financial Times. Today on Behind the Money, we’re going to be talking to the FT’s US financial commentator Rob Armstrong. He’s going to help us make sense of what’s happened to Silicon Valley Bank and what this means for the rest of the financial system.
+
+[MUSIC PLAYING]
+
+Hi, Rob. Welcome to the show.
+
+Robert Armstrong
+Nice to be here.
+
+Michela Tindera
+So Rob, last week Silicon Valley Bank collapsed. It was the country’s 16th-biggest bank and this was the biggest bank failure since the 2008 financial crisis. What set this off?
+
+Robert Armstrong
+Two things: bad decisions at the bank and a very rapid increase in interest rates. Those two factors combined in a kind of toxic mix.
+
+Michela Tindera
+OK, got it. So just as a refresher, let’s remind listeners how a bank operates. Banks take money in. Those are the deposits. Then in order for the bank to make money, it then lends out those deposits and earns money on the loan payments for those. Banks are profitable when they take in money at a lower price than they’re lending it out at.
+
+Robert Armstrong
+The interest rate story, we sort of all know. Inflation rises, the Fed responds by increasing rates, the market responds by increasing rates. That happens very, very quickly in historical terms. How did that affect SVB? Well, they were a bit of an outlier among banks in two senses.
+
+Michela Tindera
+How so?
+
+Robert Armstrong
+Two weird features of Silicon Valley Bank’s balance sheet. One: on the get-money side — on the deposit side — they were almost entirely funded by business depositors. And the reason this is very important is that you and I, we don’t care that much about how much our deposit at our local bank or Chase or Bank of America pays us. And if interest rates go up, we don’t stamp our foot and say, “I want more interest on my deposit.” Businesses do. So businesses demand that when interest rates go up, they get more interest on their deposits. And therefore its cost of funding, its cost of getting money was rising fast.
+
+Michela Tindera
+OK, yeah. So that’s one side. What about the lending side of the balance sheet?
+
+Robert Armstrong
+What happened to Silicon Valley Bank that’s so extraordinary is during the kind of post-pandemic tech boom, all of these small companies that are Silicon Valley Bank’s core customers got huge amounts of money in and they deposited it at Silicon Valley Bank. So their deposits, I think, quadrupled in a couple of years, or at least tripled in a couple of years. So they had all this money, so much money, in fact, they couldn’t even loan it out as fast as it was coming in. So what they did was buy Treasury bonds. Treasury bonds are wonderful things. They don’t default, they’re full faith and credit securities of the US government, or they are at least backed by the US government in the case of mortgage bonds. This is great stuff. The problem with them is once you buy them, the interest on those is fixed. So clever listeners will see the problem that’s happening. On the getting-money side of the balance sheet the price of the money is going up. On the giving-money side of the balance sheet, the assets, the price is not going up. So Silicon Valley is basically watching its profits disappear.
+
+Michela Tindera
+Yeah. So last Wednesday, SVB makes this announcement saying that they have to sell some of those bonds that they bought. And since the value of those had fallen so much, they were going to need to raise equity from investors to fill that hole.
+
+Robert Armstrong
+You know, banking is immensely tricky. Having short-term deposits fund long-term loans, or what they call maturity transformation in the jargon, is very powerful magic. And it is incredibly constructive for economies when it’s working well. But it has this dark side to it, and it will always have this dark side to it. And it really is like black magic in a way. You have to treat it very, very delicately and carefully, or it will turn against you in a flash.
+
+Michela Tindera
+And as we saw with SVB, that leads to people freaking out, depositors pulling their funds and yep, a run on the bank. So broadly speaking, what’s happening now?
+
+Robert Armstrong
+This week we got an announcement Sunday night that the FDIC, the Federal Reserve and the Treasury together were resolving the bank in such a way that the uninsured depositors, those business depositors who are worried about their money, would get 100 cents on the dollar. Exactly how that has worked is, at least as we’re talking now, not totally clear. Because, you know, how are they going to sell the assets, to whom, for what, et cetera. But basically the government has said you’re going to get your money back. And the government has also said, crucially, that any other bank that has trouble, it will provide liquidity to them in return for Treasuries, mortgage-backed securities, or definitely Treasuries, maybe more mortgage-backed securities.
+
+Michela Tindera
+Yeah, so that’s what went wrong with SVB, specifically. But is there a larger systemic reason for this?
+
+Robert Armstrong
+Let me make the point very broadly. In American banking, we have a two-tier regulatory system. So the very biggest banks, the so-called systemically important banks — Bank of America, Citibank, JPMorgan, all the household name banks — have to play by a more stringent set of rules in terms of how much capital they have to hold and how much liquidity they have to hold and how often they are examined and stress-tested by regulators than smaller banks, banks the size of Silicon Valley Bank.
+
+Michela Tindera
+So back in 2018, the Dodd-Frank Act was rolled back, which took away some of the regulations on banks that were put in place after the financial crisis. Do you think that had a role in how things have since played out with SVB?
+
+Robert Armstrong
+I’m not sure how big a role that actually had to play in this collapse. I think you have to be very cautious because it’s a political talking point. One of the most important things at a time like this is to have someone to blame and preferably for that person to be in the opposite political party than you. And so even if the tweaking of second-tier bank regulations under Trump was irrelevant, you’re going to be hearing an awful lot about it in the next couple of weeks. And I haven’t done quite enough work to know how relevant that is.
+
+Michela Tindera
+Yeah. And why do we have this two-tiered system?
+
+Robert Armstrong
+The rationale for the two-tier system had two justifications. One, if a very big bank fails, that is a real problem, as we found out in 2008. You know, one of these big boys starts to toddle and anything can happen. Justification number two is the very big banks have a kind of competitive advantage in scale. And for a smaller bank, meeting all those regulatory requirements that the big guys have to meet might be incredibly cumbersome. Right? It’s like you need like a huge staff of people to make sure that you’re playing by all these rules. And for a small bank, that might be prohibitively expensive. This is the argument in any case.
+
+Michela Tindera
+Yeah. So based on what’s happened with SVB, should people be concerned about the solvency of other banks?
+
+Robert Armstrong
+So I think it would be much better if everybody could recognise that the truth that the banking system as a whole is solvent. Government’s taking action to protect depositors. Most individual banks are in good position and we can all take a deep breath. Let me be the 4,000th person to refer to It’s a Wonderful Life and the famous scene of Jimmy Stewart trying to explain when all the people in town try to get their money out of the bank at once, that this is a really bad idea. And if we didn’t do that, we would all be fine. But panic is panic.
+
+Michela Tindera
+Yeah.
+
+Robert Armstrong
+And I should also say, and it’s something I can say categorically and that everybody should keep in mind, if you have less than $250,000 in your bank account, it’s covered by the US government. You have absolutely nothing to worry about.
+
+[MUSIC PLAYING]
+
+Michela Tindera
+So how is what’s happening now different from the financial crisis in 2008?
+
+Robert Armstrong
+OK, three points. First point: Silicon Valley Bank, as best as I can figure, was an extreme example of poor balance sheet management. It’s hard to find other banks that had the dangerous characteristics that it had, to the degree it had them. So first read, SVB looks like an outlier. Hopefully the serious problem ends there, or with a small handful of other banks that made similar mistake. That’s point number one. Point number two is 2008, in my assessment, was basically a credit event. Meaning, there was all these terrible loans out there on the back of housing with a tremendous, you know, undercapitalised bad credit. It melted down. There’s not a credit event per se here. The third point: this time around, the big banks are really very safe. And one thing we learned to our horror last time around that even the world’s largest financial institutions were inadequately capitalised. They are much better capitalised this time around. And so it really would boggle my imagination if we saw a major American bank get in deep trouble with this stuff. Again, bad enough panic, the ball goes up, anything can happen.
+
+Michela Tindera
+Mm-hmm.
+
+Robert Armstrong
+But, man, that’s hard for me to think that that’s going to happen.
+
+Michela Tindera
+Yeah. What do you think this moment tells us about the state of US banking regulation? Are things working as they should or not?
+
+Robert Armstrong
+Well, we talked a little bit before about the two-tier system, the heavier regulation for the very largest banks and the slightly less stringent regulation for the smaller banks. Clearly, for both the top-tier and the second-tier banks, they all have more capital than they did before 2008. And that really helps in a situation like this. It could be that regulators didn’t think hard enough about the threat posed by the large amount of securities building up on bank balance sheets. They might have to think harder about whether that’s a risk they need to do something about. They also may have to think about whether having a two-tier regulatory structure is a good idea.
+
+Michela Tindera
+And is that something that’s been in effect since 2008?
+
+Robert Armstrong
+Since the crisis. It came together after the crisis. But what I would say is this: I described this business of taking short-term money in and putting long-term money out as black magic. And it really is. No one should imagine a regulatory system in which bank failures are vanished. It just cannot happen. You want to minimise them, you want to minimise the damage from them. You want to make sure that banks are sensibly capitalised and use sensible balance sheet management. But maturity transformation will always be fundamentally magical and there will always be scary moments. And the goal of regulation is not to bring the risk for everyone down to zero.
+
+Michela Tindera
+Do you think a lot of people would agree with you on that?
+
+Robert Armstrong
+There’s definitely people who disagree with me. But in a system where you have debt, there is risk and there is a whack-a-mole character to risk where if you depress it in one place, it pops up in another. So I think there is a big difference between a well-regulated and a poorly regulated banking system. I think anyone who tells you we can have a world where we have leverage, where we have maturity transformation, where we have entrepreneurial activity, and there’s not going to be, financial institutions are not going to fail ever is probably deluded and maybe a system which was designed to prevent all failures wouldn’t be dynamic enough to serve the economy properly. Now I’m really speculating, but there you have it, those are your speculations from Rob Armstrong.
+
+Michela Tindera
+Yeah, yeah. What should entrepreneurs and other investors be asking of their banks in the future?
+
+Robert Armstrong
+I think that is one of the lessons of this. If I am going to put my company’s operating budget and its investment capital and everything else into a bank, I’d probably want that to be a diversified bank. And I’d want to know a little bit about that bank’s capital structure. And I know that’s a lot to ask of businesspeople. You know, you can’t wave a wand and make businesspeople an expert into bank finances. But does the bank have plenty of capital? Does it have a variety of deposit clients? Does it have a variety of different kinds of loans on the asset side of its balance sheet? These are sensible questions to ask. You know the reason why banks always have such impressive buildings? You know how the classic bank has kind of big stone columns out front is they’re trying to say to potential depositors, we are solid. And, you know, you put money in here, it is like money in the bank. So you have to be a little tiny bit careful as the owner of a business about not being fooled by just the columns and not just depositing money in a bank because your rich friend did the same thing.
+
+Michela Tindera
+Yeah. Broadly speaking, this is a very tough question to ask or answer right now, but where do you see this going? (chuckles)
+
+Robert Armstrong
+I think certain, you know, banking regulation is going to get revisited. You know, last time we had a credit quality crisis. This time we have a rate risk crisis and an asset liability matching crisis. And I’m sure regulation will be revisited there and banks will revisit their policies there. We’ve already spoken about the two-tier regulatory system. It will be interesting to see, this is kind of a perennial question, whether this will inspire the banking system to consolidate a little bit. We have a lot of banks in America, a lot of small to midsize banks. And you know, this showed some vulnerability of some of them. And maybe they will get together and try to get bigger. And that is always a vexed issue in many ways. Who’s going to buy who? Will regulators let it happen? So there’s a whole interesting question about how the structure of the industry changes in the months to come.
+
+Michela Tindera
+Yeah.
+
+Robert Armstrong
+I should say years to come, really.
+
+Michela Tindera
+Mm-hmm.
+
+Robert Armstrong
+I think two, you crank up rates a lot. Somebody’s going to have been swimming naked and they’re going to find out and bad things happen to them and freaks everybody out. So there will be a slowing effect on the economy because this unsettles people. And I think it’s going to be hard for banks, you know, following the troubles of 15 years ago. This is another shot where investors are going to think twice before putting equity capital into banks again. So bank equity capital is going to be more expensive. The valuation multiples of stocks are going to be lower. I think that probably has a bad effect upon or a slowing effect on the economy, too.
+
+Michela Tindera
+Yeah. Do you think what we’re seeing, how this is being handled by the government so far, do you feel like it shows that we learned some important lessons during the 2008 financial crisis?
+
+Robert Armstrong
+Yes. I mean, the fact is the banks are better capitalised now. Some of them, SVB being the extreme case, made mistakes about buying bonds at a market high. And now they have bonds on their balance sheet that are, don’t yield very much. And if mark to market, they create a loss. That’s a mistake. But because banks have more capital now, because of the regulations that were put in place after 2008, that is a much less scary event. Right? What it means for a bank to have more capital is that it can do more stupid things without blowing up. And some banks have done some stupid things and hopefully not very many of them will blow up because they would have been forced to hold more capital.
+
+Michela Tindera
+Yeah.
+
+Robert Armstrong
+So that’s better. (laughter)
+
+Michela Tindera
+Yeah, yeah. (laughter) No, it is. That sounds reassuring. I’m feeling reassured.
+
+Robert Armstrong
+I’m trying to be reassuring. I mean, you know, I can’t . . . you can’t at the beginning of a moment like this, in the first days of a moment like this, you can’t be sure how bad things are going to get. But I think there are reasons to think right now that it won’t be that bad.
+
+Michela Tindera
+Well on that . . ., thanks for being here.
+
+Robert Armstrong
+Don’t panic, everyone. That’s the message. Thank you for having me, Michela.
+
+Michela Tindera
+If you want to hear more from Rob on this topic, the FT is hosting a webinar this Thursday, March 16th, all about the collapse of SVB. Look for more details on this in the show notes.
+
+[MUSIC PLAYING]
+
+Behind the Money is hosted by me, Michela Tindera. Saffeya Ahmed is our producer. Topher Forhecz is our executive producer. Sound design and mixing by Sam Giovinco. Cheryl Brumley is the global head of audio. Thanks for listening. See you next week.
