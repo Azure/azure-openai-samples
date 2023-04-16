@@ -39,3 +39,13 @@ As technologies changes very fast, we endevour to keep this repository updated a
 
 - **Business Process Automation:**
    - https://github.com/Azure/business-process-automation
+   
+## Solution Accelerators
+- **Azure Cognitive Search + OpenAI **
+   - https://github.com/Azure-Samples/azure-search-openai-demo
+   
+- **Azure SQL Datbase + OpenAI **
+   - https://github.com/louis-li/SqlGPT
+   
+- **Redis + OpenAI **
+   - https://github.com/louis-li/pdfGPT
