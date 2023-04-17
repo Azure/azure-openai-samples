@@ -15,6 +15,8 @@ The following resources are available in this repository:
 
 - [Sample Solutions](./solution_accelerators/): End-to-end solutions for various NLP tasks, such as question answering, text summarization, and sentiment analysis etc, in context of business applications specific to various industries, where GPT is part of the solution. *Require contributions!*
 
+- [Serverless SQL GPT](https://github.com/balakreshnan/Samples2023/blob/main/AzureML/serverlesssqlgpt.md) - Natural language processing (NLP) with GPT in Azure Synapse Analytics Serverless SQL using Azure Machine Learning.
+
 ## GPT Version
 As of now, the samples here are based on GPT 3.5. We will update accordingly when the GPT-4 is widely accessible.
 
