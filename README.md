@@ -48,8 +48,8 @@ As technologies changes very fast, we endevour to keep this repository updated a
    - https://github.com/louis-li/SqlGPT
 
 - **ChatGPT + Enterprise data with Azure OpenAI**
-   - https://github.com/louis-li/pdfGPT
-   
+   - https://github.com/lordlinus/Enterprise-ChatGPT
+
 - **Azure OpenAI Semantic Search Demo | Document Upload**
    - https://github.com/MaheshSQL/openai-vector-search-demo
 
