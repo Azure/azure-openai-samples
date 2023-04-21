@@ -46,6 +46,14 @@ As technologies changes very fast, we endevour to keep this repository updated a
    
 - **Azure SQL Datbase + OpenAI**
    - https://github.com/louis-li/SqlGPT
+
+- **ChatGPT + Enterprise data with Azure OpenAI**
+   - https://github.com/louis-li/pdfGPT
    
+- **Azure OpenAI Semantic Search Demo | Document Upload**
+   - https://github.com/MaheshSQL/openai-vector-search-demo
+
 - **Redis + OpenAI**
    - https://github.com/louis-li/pdfGPT
+
+
