@@ -24,23 +24,12 @@ To use sample codes in this repo, we suggest you setup .env file where you store
 ## Contributing
 We welcome contributions to this repository. If you have any ideas or suggestions, please feel free to open an issue or submit a pull request.
 
-As technologies changes very fast, we endevour to keep this repository updated as quick as possible. However, this is heavily rely on keen community contributors to make this happen. 
+As technologies changes very fast, we endevour to keep this repository updated as quick as possible. However, this is heavily rely on keen community contributors to make this happen.
 
-## Relevant Repositories
-- **OpenAI Cookbook**
-   -  https://github.com/openai/openai-cookbook
-
-- **Call center solutions:**
-   - https://github.com/jakeatmsft/AzureOpenAIExamples/blob/main/Examples/Speech/Conversation_SSML%20OpenAI.ipynb 
-   - https://github.com/amulchapla/AI-Powered-Call-Center-Intelligence 
-
-- **Income Statement Analysis:**
-   - https://github.com/jakeatmsft/AzureOpenAIExamples/blob/main/Examples/FormRecognizer/Balance_sheet_analysis.ipynb 
-
+## Solution Accelerators
 - **Business Process Automation:**
    - https://github.com/Azure/business-process-automation
    
-## Solution Accelerators
 - **Azure Cognitive Search + OpenAI**
    - https://github.com/Azure-Samples/azure-search-openai-demo
    
@@ -56,4 +45,13 @@ As technologies changes very fast, we endevour to keep this repository updated a
 - **Redis + OpenAI**
    - https://github.com/louis-li/pdfGPT
 
+## Relevant Repositories
+- **OpenAI Cookbook**
+   -  https://github.com/openai/openai-cookbook
 
+- **Call center solutions:**
+   - https://github.com/jakeatmsft/AzureOpenAIExamples/blob/main/Examples/Speech/Conversation_SSML%20OpenAI.ipynb 
+   - https://github.com/amulchapla/AI-Powered-Call-Center-Intelligence 
+
+- **Income Statement Analysis:**
+   - https://github.com/jakeatmsft/AzureOpenAIExamples/blob/main/Examples/FormRecognizer/Balance_sheet_analysis.ipynb 
