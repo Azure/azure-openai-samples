@@ -56,3 +56,7 @@ Update http url and key in powerautomate
 ![image](https://github.com/msavita-cloud/OpenAIPowerApp/assets/65045244/82c54481-4eaa-4698-b7e3-498fe962e674)
 Update http url and key in powerautomate
 ![image](https://github.com/msavita-cloud/OpenAIPowerApp/assets/65045244/65514fb4-926e-442e-8847-40acd029da78)
+  
+  4. OpenAI - Openaigeneral
+
+![image](https://github.com/msavita-cloud/azure-openai-samples/assets/65045244/c4def313-c60b-4a57-884e-367102e2c930)
