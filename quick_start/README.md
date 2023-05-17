@@ -8,4 +8,8 @@ After creating Azure OPENAI service, setup 2 environmental variables for
 - AZURE_OPENAI_ENDPOINT
 - AZURE_OPENAI_API_KEY
 - DEPLOYMENT_NAME = 'text-davinci-003'
+
+Optional - Used for "OpenAI Large Language Model Chain of Thoughts Demo"
+- AZURE_COGNITIVE_SEARCH_ENDPOINT
+- AZURE_COGNITIVE_SEARCH_KEY
 ## Run Demo Code
