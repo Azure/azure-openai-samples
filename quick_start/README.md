@@ -7,5 +7,5 @@ Use requirements.txt to install necessary packages
 After creating Azure OPENAI service, setup 2 environmental variables for 
 - AZURE_OPENAI_ENDPOINT
 - AZURE_OPENAI_API_KEY
-
+- DEPLOYMENT_NAME = 'text-davinci-003'
 ## Run Demo Code
