@@ -10,12 +10,19 @@ This example uses the [transcription](https://www.ft.com/content/935ee7eb-e11d-4
 
 # Notebooks
 - [podcast-to-synopsis-taglines-keywords.ipynb](./notebooks/podcast-to-synopsis-taglines-keywords.ipynb) This notebook explores how to split a long podcast transcript into chuncks, generate synopsis, taglines, and search engine optimised (SEO) keywords. 
+- [podcast-to-synopsis-various-genres.ipynb](./notebooks/podcast-to-synopsis-various-genres.ipynb) This notebook explores how prompt design can influence the output of GPT in the context of podcast synopsis generation.
 
 # Future Work
 - Transcribe from audio to text.
 - Cater for large data corpus. 
 
-# Related Repos
+# Related Publications
+Related repos that applied this concept:
+- [https://github.com/Azure-Samples/podcast-synopsis-generation-openai](https://github.com/Azure-Samples/podcast-synopsis-generation-openai)
+
+Related blog post that applied this concept:
+- [Automating Podcast Synopsis Generation with Azure OpenAI GPT](https://techcommunity.microsoft.com/t5/ai-cognitive-services-blog/automating-podcast-synopsis-generation-with-azure-openai-gpt/ba-p/3810308)
+
 Related repos from the author:
 - https://github.com/ryubidragonfire/document-analysis-using-gpt-3
 - https://github.com/ryubidragonfire/code-explaination-openai

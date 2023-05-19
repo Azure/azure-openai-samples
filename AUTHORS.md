@@ -8,8 +8,14 @@ They have admin access to the repo and provide support reviewing issues and pull
 
 In alphabetical order by last name:
 - **[Chew-Yean Yam](https://github.com/ryubidragonfire)**
-   - use_cases | generate_podcast_synopsis, movie_reviews
-   - fundamentals | document_analysis
+   - use_cases:
+      - [generate_podcast_synopsis](./use_cases/generate_podcast_synopsis/)
+      - [movie_reviews](./use_cases/movie_reviews/)
+      - [document-to-structured-data](./use_cases/document_to_structured_data/)
+
+
+   - fundamentals:
+      - [document_analysis](./fundamentals/document_analysis/)
 
 
 # Contributors
