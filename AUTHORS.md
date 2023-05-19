@@ -8,7 +8,7 @@ They have admin access to the repo and provide support reviewing issues and pull
 
 In alphabetical order by last name:
 - **[Chew-Yean Yam](https://github.com/ryubidragonfire)**
-   - use_cases | generate_podcast_synopsis, movie_reviews
+   - use_cases | generate_podcast_synopsis, movie_reviews, neural_speech_generation_for_play
    - fundamentals | document_analysis
 
 
