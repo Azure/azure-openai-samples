@@ -1,0 +1,197 @@
+
+ACT I
+SCENE I. On a ship at sea: a tempestuous noise
+of thunder and lightning heard.
+Enter a Master and a Boatswain
+
+MASTER
+Boatswain!
+
+BOATSWAIN
+Here, master: what cheer?
+
+MASTER
+Good, speak to the mariners: fall to't, yarely,
+or we run ourselves aground: bestir, bestir.
+
+Exit
+
+Enter Mariners
+
+BOATSWAIN
+Heigh, my hearts! 
+
+Enter ALONSO, SEBASTIAN, ANTONIO, FERDINAND, GONZALO, and others
+
+ALONSO
+Good boatswain, have care. Where's the master?
+
+BOATSWAIN
+I pray now, keep below.
+
+ANTONIO
+Where is the master, boatswain?
+
+Exit
+
+
+ACT II
+
+SCENE I. Another part of the island.
+Enter ALONSO, SEBASTIAN, ANTONIO, GONZALO, ADRIAN, FRANCISCO, and others
+
+GONZALO
+Beseech you, sir, be merry; 
+
+ALONSO
+Prithee, peace.
+
+SEBASTIAN
+He receives comfort like cold porridge.
+
+Exit
+
+SCENE II. Another part of the island.
+Enter CALIBAN with a burden of wood. A noise of thunder heard
+CALIBAN
+All the infections that the sun sucks up
+From bogs, fens, flats, on Prosper fall and make him
+By inch-meal a disease! 
+
+Enter TRINCULO
+
+Lo, now, lo!
+
+Exuent
+
+###
+
+Extract the entities and values from the Shakespeare's script play above. Then, convert the entities and values into json format. 
+
+{
+  "Act I": {
+    "Scene I": {
+      "Location": "On a ship at sea",
+      "Setting": "A tempestuous noise of thunder and lightning heard",
+      "Characters": [
+        "Master",
+        "Boatswain",
+        "Mariners",
+        "Alonso",
+        "Sebastian",
+        "Antonio",
+        "Ferdinand",
+        "Gonzalo"
+      ],
+      "Enter": [
+        "Master",
+        "Boatswain"
+      ],
+      "Dialogues": [
+        {
+          "Speaker": "Master",
+          "Text": "Boatswain!"
+        },
+        {
+          "Speaker": "Boatswain",
+          "Text": "Here, master: what cheer?"
+        },
+        {
+          "Speaker": "Master",
+          "Text": "Good, speak to the mariners: fall to't, yarely, or we run ourselves aground: bestir, bestir."
+        },
+        {
+          "Speaker": "Boatswain",
+          "Text": "Heigh, my hearts!"
+        },
+        {
+          "Speaker": "Alonso",
+          "Text": "Good boatswain, have care. Where's the master?"
+        },
+        {
+          "Speaker": "Boatswain",
+          "Text": "I pray now, keep below."
+        },
+        {
+          "Speaker": "Antonio",
+          "Text": "Where is the master, boatswain?"
+        }
+      ],
+      "Exit": [
+        "Master",
+        "Boatswain"
+      ]
+    }
+  },
+  "Act II": {
+    "Scene I": {
+      "Location": "Another part of the island",
+      "Characters": [
+        "Alonso",
+        "Sebastian",
+        "Antonio",
+        "Gonzalo",
+        "Adrian",
+        "Francisco"
+      ],
+      "Enter": [
+        "ALONSO",
+        "SEBASTIAN",
+        "ANTONIO",
+        "GONZALO",
+        "ADRIAN",
+        "FRANCISCO",
+        "others"
+      ],
+      "Dialogues": [
+        {
+          "Speaker": "Gonzalo",
+          "Text": "Beseech you, sir, be merry;"
+        },
+        {
+          "Speaker": "Alonso",
+          "Text": "Prithee, peace."
+        },
+        {
+          "Speaker": "Sebastian",
+          "Text": "He receives comfort like cold porridge."
+        }
+      ],
+      "Exit": [
+        "ALONSO",
+        "SEBASTIAN",
+        "ANTONIO",
+        "GONZALO",
+        "ADRIAN",
+        "FRANCISCO",
+        "others"
+      ]
+    },
+    "Scene II": {
+      "Location": "Another part of the island",
+      "Setting": "A noise of thunder heard",
+      "Characters": [
+        "Caliban",
+        "Trinculo"
+      ],
+      "Enter": [
+        "Caliban with a burden of wood",
+        "Trinculo"
+      ],
+      "Dialogues": [
+        {
+          "Speaker": "Caliban",
+          "Text": "All the infections that the sun sucks up From bogs, fens, flats, on Prosper fall and make him By inch-meal a disease!"
+        },
+        {
+          "Speaker": "Caliban",
+          "Text": "Lo, now, lo!"
+        }
+      ],
+      "Exit": [
+        "Caliban",
+        "Trinculo"
+      ]
+    }
+  }
+}
