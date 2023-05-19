@@ -1,4 +1,4 @@
-# Neural Speech and OpenAI GPT-4 : 'Act' The Shakespeare's Play of *The Comedy of Horrors*
+# Neural Speech and OpenAI GPT-4 : 'Cast' The Shakespeare's Play of *The Comedy of Horrors*
 
 ## Industry: Media and Entertainment
 ---
