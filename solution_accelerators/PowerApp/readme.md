@@ -1,6 +1,8 @@
 # OpenAI PowerApp
 This demo explains how Azure AI Cognitive services can be used to extract the data from various file formats and how the workflow can be created to leverage OpenAI for various common scenarios. 
 
+![image](https://github.com/Azure/azure-openai-samples/assets/65045244/90099f80-ea2d-46cd-9d48-c8c45ab64f4a)
+
 Let's build a Power App to use Azure Open AI to Improve Productivity
 
 <b>What's needed</b>
