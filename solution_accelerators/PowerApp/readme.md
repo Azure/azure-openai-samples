@@ -1,6 +1,7 @@
 # OpenAI PowerApp
 
-This application showcases the incredible capabilities of Azure AI Cognitive services in extracting data from diverse unstructured file formats. It also highlights the seamless integration of OpenAI's cutting-edge machine learning and natural language processing technologies, enabling users to unlock powerful insights and drive meaningful outcomes. By leveraging interactive demos and a wide range of features, you can experience firsthand the transformative potential of OpenAI. Rapidly derive valuable insights from unstructured data, including audio files, PDF documents, and videos. Additionally, streamline your operations by creating automated workflows using Azure cognitive services and Power Platform, empowering you to efficiently handle inquiries, feedback, and conversations.
+This application showcases the remarkable capabilities of Azure AI Cognitive Services in extracting data from diverse unstructured file formats. Also learn how OpenAI can be seamlessly integrated into workflows to create useful applications. Through interactive demos and features, you can experience the impressive capabilities of OpenAI's machine learning and natural language processing. Use OpenAI's large llanguage model (LLM) to quickly understand and analyze unstructured data like audio files, PDFs, and videos. With Azure Cognitive Services and the Power Platform, you can automate processes to handle inquiries, feedback, and conversations more efficiently, empowering your organization.
+
 
 ![image](https://github.com/msavita-cloud/azure-openai-samples/assets/65045244/2ca0f7c8-f900-4785-ada7-77b7345f3748)
 
