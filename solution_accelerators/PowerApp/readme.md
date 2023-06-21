@@ -1,17 +1,19 @@
 # OpenAI PowerApp
 
-This application showcases the remarkable capabilities of Azure AI Cognitive Services in extracting data from diverse unstructured file formats. Also learn how OpenAI can be seamlessly integrated into workflows to create useful applications. 
+This application demonstrates the exceptional capabilities of Azure AI Cognitive Services in extracting data from various unstructured file formats. Additionally, it provides insights on how OpenAI can be seamlessly integrated into workflows to develop valuable applications. By utilizing interactive demos and features, users can explore the impressive capabilities of OpenAI's machine learning and natural language processing. The OpenAI large language model (LLM) enables quick comprehension and analysis of unstructured data such as audio files, PDFs, and videos. Leveraging Azure Cognitive Services and the Power Platform, organizations can automate processes for improved handling of inquiries, feedback, and conversations, thus empowering their operations.
 
-Through interactive demos and features, you can experience the impressive capabilities of OpenAI's machine learning and natural language processing. Use OpenAI's large llanguage model (LLM) to quickly understand and analyze unstructured data like audio files, PDFs, and videos. With Azure Cognitive Services and the Power Platform, you can automate processes to handle inquiries, feedback, and conversations more efficiently, empowering your organization.
+<b>This application is built on PowerPlatform and used Azure AI & Open AI http endpoints via PowerAutomate to connect to Azure Services.
 
-This application is built on PowerPlatform and used all http endpoints to connect to Azure Services.
+App Landing Page: ![image](https://github.com/msavita-cloud/azure-openai-samples/assets/65045244/2ca0f7c8-f900-4785-ada7-77b7345f3748)</b><BR>
 
-![image](https://github.com/msavita-cloud/azure-openai-samples/assets/65045244/2ca0f7c8-f900-4785-ada7-77b7345f3748)
+<b>PDF Extraction and Ask Questions from extracted text:</b><BR><BR>
+![image](https://github.com/msavita-cloud/OpenAIPowerApp/assets/65045244/04b03163-b18c-47b7-9b3c-1e4e55ca1db8)<BR><BR>
+<b>Video Insights Extraction and Ask Questions from extracted text:</b><BR><BR>
+![image](https://github.com/msavita-cloud/OpenAIPowerApp/assets/65045244/85526861-59c6-4bc8-9509-a28487af71c6)
 
 Let's build a Power App to use Azure AI & Open AI to Improve Productivity
 
-<b>What's needed</b>
-<BR><b>_________________</b><BR>
+<b>What's needed</b><BR>
 <b>Azure Open AI</b>
 
 1. Register for Azure Open AI - https://learn.microsoft.com/en-us/azure/cognitive-services/openai/overview
