@@ -1,0 +1,7 @@
+openai==0.27.8
+azure-cognitiveservices-speech==1.29.0
+num2words==0.5.12
+pandas==2.0.2
+matplotlib==3.7.1
+plotly==5.15.0
+scipy==1.10.1
