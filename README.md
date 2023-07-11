@@ -34,6 +34,9 @@ As technologies changes very fast, we endevour to keep this repository updated a
    
 - **Azure Cognitive Search + OpenAI**
    - https://github.com/Azure-Samples/azure-search-openai-demo
+
+- **PowerApp + OpenAI**
+   - https://github.com/Azure/azure-openai-samples/tree/main/solution_accelerators/PowerApp
    
 - **Azure SQL Datbase + OpenAI**
    - https://github.com/louis-li/SqlGPT
