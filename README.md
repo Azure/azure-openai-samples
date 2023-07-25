@@ -10,19 +10,21 @@ GPT(Generative Pre-trained Transformer)는 OpenAI에서 개발한 LLM(Large Lang
 ## 리소스
 다음의 순서로 GPT를 학습할 수 있습니다.
 
-- [Prompt Engineering - 기초](https://azure.studydev.site/openai/aoai_2023_pe_01.pdf)
+- [(누구나) Prompt Engineering - 기초](https://azure.studydev.site/openai/aoai_2023_pe_01.pdf)
 
-- [Prompt Engineering - (누구나)Playground에서 놀기](https://azure.studydev.site/openai/aoai_2023_pe_02.pdf)
+- [(누구나) Prompt Engineering - Playground에서 놀기](https://azure.studydev.site/openai/aoai_2023_pe_02.pdf)
 
-- [Prompt Engineering - (개발자)Playground에서 놀기](https://azure.studydev.site/openai/aoai_2023_pe_02.pdf)
+- [(개발자) Prompt Engineering - IDE에서 개발](https://azure.studydev.site/openai/aoai_2023_pe_03.pdf)
 
-- [Prompt Engineering - (개발자)Quick Start](./quick_start/): GPT 사용을 빠르게 시작할 수 있는 노트북 모음입니다.
+- [(개발자) Prompt Engineering - Quick Start](./quick_start/): GPT 사용을 빠르게 시작할 수 있는 노트북 모음입니다.
+
+- [Use Cases | Kakao Navi 길찾기 API 통합](./use_cases/kakao_navi/notebooks/kakao_navi.ipynb): GPT의 Function Calling 기능에 실시간 카카오 Navi API를 연동하는 방법을 학습합니다.
+
+----
 
 - [Fundamentals](./fundamentals/): GPT의 기본 사용법을 설명하는 노트북 모음입니다.
 
 - [Use Cases](./use_cases/): 챗봇, 고객 서비스, 콘텐츠 생성 등과 같은 다양한 애플리케이션에서 GPT를 사용하는 방법에 대한 예제를 보여주는 노트북 모음입니다.
-
-- [Use Cases|Kakao Navi 길찾기 API 통합](./use_cases/kakao_navi/notebooks/kakao_navi.ipynb): GPT의 Function Calling 기능에 실시간 카카오 Navi API를 연동하는 방법을 학습합니다.
 
 - [Sample Solutions](./solution_accelerators/): GPT가 솔루션의 일부인 다양한 산업에 특화된 비즈니스 애플리케이션 맥락에서 질문 답변, 텍스트 요약 및 감정 분석 등과 같은 다양한 NLP 작업을 위한 종단 간 솔루션입니다. *기여가 필요합니다!*
 
