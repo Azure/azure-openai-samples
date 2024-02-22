@@ -1,0 +1,420 @@
+{
+  "flow_runs": [
+    {
+      "run_id": "82b300e8-f012-415a-9e80-023e5c4ae776_0",
+      "status": "Completed",
+      "error": null,
+      "inputs": {
+        "question": "What feeds all the fixtures in low voltage tracks instead of each light having a line-to-low voltage transformer?",
+        "ground_truth": "The main transformer is the object that feeds all the fixtures in low voltage tracks.",
+        "answer": "Master transformer."
+      },
+      "output": {
+        "gpt_similarity": 2.0
+      },
+      "metrics": {
+        "gpt_similarity": 2.0,
+        "gpt_similarity_pass_rate(%)": 0.0
+      },
+      "request": null,
+      "parent_run_id": "82b300e8-f012-415a-9e80-023e5c4ae776",
+      "root_run_id": "82b300e8-f012-415a-9e80-023e5c4ae776",
+      "source_run_id": null,
+      "flow_id": "QnA_gpt_similarity_eval",
+      "start_time": "2024-02-22T16:28:24.400183Z",
+      "end_time": "2024-02-22T16:28:25.619452Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "flow",
+          "node_name": "flow",
+          "type": "Flow",
+          "start_time": 1708637304.400183,
+          "end_time": 1708637305.619452,
+          "children": [
+            {
+              "name": "AzureOpenAI.chat",
+              "type": "Tool",
+              "inputs": {
+                "prompt": "System:\nYou are an AI assistant. You will be given the definition of an evaluation metric for assessing the quality of an answer in a question-answering task. Your job is to compute an accurate evaluation score using the provided evaluation metric.\n\nUser:\nEquivalence, as a metric, measures the similarity between the predicted answer and the correct answer. If the information and content in the predicted answer is similar or equivalent to the correct answer, then the value of the Equivalence metric should be high, else it should be low. Given the question, correct answer, and predicted answer, determine the value of Equivalence metric using the following rating scale:\nOne star: the predicted answer is not at all similar to the correct answer\nTwo stars: the predicted answer is mostly not similar to the correct answer\nThree stars: the predicted answer is somewhat similar to the correct answer\nFour stars: the predicted answer is mostly similar to the correct answer\nFive stars: the predicted answer is completely similar to the correct answer\n\nThis rating value should always be an integer between 1 and 5. So the rating produced should be 1 or 2 or 3 or 4 or 5.\n\nThe examples below show the Equivalence score for a question, a correct answer, and a predicted answer.\n\nquestion: What is the role of ribosomes?\ncorrect answer: Ribosomes are cellular structures responsible for protein synthesis. They interpret the genetic information carried by messenger RNA (mRNA) and use it to assemble amino acids into proteins.\npredicted answer: Ribosomes participate in carbohydrate breakdown by removing nutrients from complex sugar molecules.\nstars: 1\n\nquestion: Why did the Titanic sink?\ncorrect answer: The Titanic sank after it struck an iceberg during its maiden voyage in 1912. The impact caused the ship's hull to breach, allowing water to flood into the vessel. The ship's design, lifeboat shortage, and lack of timely rescue efforts contributed to the tragic loss of life.\npredicted answer: The sinking of the Titanic was a result of a large iceberg collision. This caused the ship to take on water and eventually sink, leading to the death of many passengers due to a shortage of lifeboats and insufficient rescue attempts.\nstars: 2\n\nquestion: What causes seasons on Earth?\ncorrect answer: Seasons on Earth are caused by the tilt of the Earth's axis and its revolution around the Sun. As the Earth orbits the Sun, the tilt causes different parts of the planet to receive varying amounts of sunlight, resulting in changes in temperature and weather patterns.\npredicted answer: Seasons occur because of the Earth's rotation and its elliptical orbit around the Sun. The tilt of the Earth's axis causes regions to be subjected to different sunlight intensities, which leads to temperature fluctuations and alternating weather conditions.\nstars: 3\n\nquestion: How does photosynthesis work?\ncorrect answer: Photosynthesis is a process by which green plants and some other organisms convert light energy into chemical energy. This occurs as light is absorbed by chlorophyll molecules, and then carbon dioxide and water are converted into glucose and oxygen through a series of reactions.\npredicted answer: In photosynthesis, sunlight is transformed into nutrients by plants and certain microorganisms. Light is captured by chlorophyll molecules, followed by the conversion of carbon dioxide and water into sugar and oxygen through multiple reactions.\nstars: 4\n\nquestion: What are the health benefits of regular exercise?\ncorrect answer: Regular exercise can help maintain a healthy weight, increase muscle and bone strength, and reduce the risk of chronic diseases. It also promotes mental well-being by reducing stress and improving overall mood.\npredicted answer: Routine physical activity can contribute to maintaining ideal body weight, enhancing muscle and bone strength, and preventing chronic illnesses. In addition, it supports mental health by alleviating stress and augmenting general mood.\nstars: 5\n\nquestion: {{question}}\ncorrect answer: {{ground_truth}}\npredicted answer: {{answer}}\nstars:",
+                "question": "What feeds all the fixtures in low voltage tracks instead of each light having a line-to-low voltage transformer?",
+                "ground_truth": "The main transformer is the object that feeds all the fixtures in low voltage tracks.",
+                "answer": "Master transformer.",
+                "max_tokens": 256,
+                "deployment_name": "gpt-35-turbo",
+                "temperature": 0.0
+              },
+              "output": "To compute the Equivalence score for the given question, correct answer, and predicted answer, we need to assess the similarity between the predicted answer and the correct answer. Based on the provided rating scale, the Equivalence score can be determined as follows:\n\nquestion: What feeds all the fixtures in low voltage tracks instead of each light having a line-to-low voltage transformer?\ncorrect answer: The main transformer is the object that feeds all the fixtures in low voltage tracks.\npredicted answer: Master transformer.\nstars: 2\n\nTherefore, the Equivalence score for this question, correct answer, and predicted answer is 2 stars.",
+              "start_time": 1708637304.403156,
+              "end_time": 1708637305.615448,
+              "error": null,
+              "children": [
+                {
+                  "name": "openai.resources.chat.completions.Completions.create",
+                  "type": "LLM",
+                  "inputs": {
+                    "model": "gpt-35-turbo",
+                    "messages": [
+                      {
+                        "role": "system",
+                        "content": "You are an AI assistant. You will be given the definition of an evaluation metric for assessing the quality of an answer in a question-answering task. Your job is to compute an accurate evaluation score using the provided evaluation metric."
+                      },
+                      {
+                        "role": "user",
+                        "content": "Equivalence, as a metric, measures the similarity between the predicted answer and the correct answer. If the information and content in the predicted answer is similar or equivalent to the correct answer, then the value of the Equivalence metric should be high, else it should be low. Given the question, correct answer, and predicted answer, determine the value of Equivalence metric using the following rating scale:\nOne star: the predicted answer is not at all similar to the correct answer\nTwo stars: the predicted answer is mostly not similar to the correct answer\nThree stars: the predicted answer is somewhat similar to the correct answer\nFour stars: the predicted answer is mostly similar to the correct answer\nFive stars: the predicted answer is completely similar to the correct answer\n\nThis rating value should always be an integer between 1 and 5. So the rating produced should be 1 or 2 or 3 or 4 or 5.\n\nThe examples below show the Equivalence score for a question, a correct answer, and a predicted answer.\n\nquestion: What is the role of ribosomes?\ncorrect answer: Ribosomes are cellular structures responsible for protein synthesis. They interpret the genetic information carried by messenger RNA (mRNA) and use it to assemble amino acids into proteins.\npredicted answer: Ribosomes participate in carbohydrate breakdown by removing nutrients from complex sugar molecules.\nstars: 1\n\nquestion: Why did the Titanic sink?\ncorrect answer: The Titanic sank after it struck an iceberg during its maiden voyage in 1912. The impact caused the ship's hull to breach, allowing water to flood into the vessel. The ship's design, lifeboat shortage, and lack of timely rescue efforts contributed to the tragic loss of life.\npredicted answer: The sinking of the Titanic was a result of a large iceberg collision. This caused the ship to take on water and eventually sink, leading to the death of many passengers due to a shortage of lifeboats and insufficient rescue attempts.\nstars: 2\n\nquestion: What causes seasons on Earth?\ncorrect answer: Seasons on Earth are caused by the tilt of the Earth's axis and its revolution around the Sun. As the Earth orbits the Sun, the tilt causes different parts of the planet to receive varying amounts of sunlight, resulting in changes in temperature and weather patterns.\npredicted answer: Seasons occur because of the Earth's rotation and its elliptical orbit around the Sun. The tilt of the Earth's axis causes regions to be subjected to different sunlight intensities, which leads to temperature fluctuations and alternating weather conditions.\nstars: 3\n\nquestion: How does photosynthesis work?\ncorrect answer: Photosynthesis is a process by which green plants and some other organisms convert light energy into chemical energy. This occurs as light is absorbed by chlorophyll molecules, and then carbon dioxide and water are converted into glucose and oxygen through a series of reactions.\npredicted answer: In photosynthesis, sunlight is transformed into nutrients by plants and certain microorganisms. Light is captured by chlorophyll molecules, followed by the conversion of carbon dioxide and water into sugar and oxygen through multiple reactions.\nstars: 4\n\nquestion: What are the health benefits of regular exercise?\ncorrect answer: Regular exercise can help maintain a healthy weight, increase muscle and bone strength, and reduce the risk of chronic diseases. It also promotes mental well-being by reducing stress and improving overall mood.\npredicted answer: Routine physical activity can contribute to maintaining ideal body weight, enhancing muscle and bone strength, and preventing chronic illnesses. In addition, it supports mental health by alleviating stress and augmenting general mood.\nstars: 5\n\nquestion: What feeds all the fixtures in low voltage tracks instead of each light having a line-to-low voltage transformer?\ncorrect answer: The main transformer is the object that feeds all the fixtures in low voltage tracks.\npredicted answer: Master transformer.\nstars:"
+                      }
+                    ],
+                    "temperature": 0.0,
+                    "top_p": 1.0,
+                    "n": 1,
+                    "stream": false,
+                    "stop": null,
+                    "max_tokens": 256,
+                    "presence_penalty": 0.0,
+                    "frequency_penalty": 0.0,
+                    "logit_bias": {},
+                    "user": "",
+                    "response_format": null
+                  },
+                  "output": {
+                    "id": "chatcmpl-8v6Dp5cYa0XrfYijlWsLMhCOgEz4g",
+                    "choices": [
+                      {
+                        "finish_reason": "stop",
+                        "index": 0,
+                        "logprobs": null,
+                        "message": {
+                          "content": "To compute the Equivalence score for the given question, correct answer, and predicted answer, we need to assess the similarity between the predicted answer and the correct answer. Based on the provided rating scale, the Equivalence score can be determined as follows:\n\nquestion: What feeds all the fixtures in low voltage tracks instead of each light having a line-to-low voltage transformer?\ncorrect answer: The main transformer is the object that feeds all the fixtures in low voltage tracks.\npredicted answer: Master transformer.\nstars: 2\n\nTherefore, the Equivalence score for this question, correct answer, and predicted answer is 2 stars.",
+                          "role": "assistant",
+                          "function_call": null,
+                          "tool_calls": null
+                        }
+                      }
+                    ],
+                    "created": 1708619305,
+                    "model": "gpt-35-turbo",
+                    "object": "chat.completion",
+                    "system_fingerprint": "fp_68a7d165bf",
+                    "usage": {
+                      "completion_tokens": 124,
+                      "prompt_tokens": 831,
+                      "total_tokens": 955
+                    }
+                  },
+                  "start_time": 1708637304.407156,
+                  "end_time": 1708637305.615448,
+                  "error": null,
+                  "children": [],
+                  "node_name": null,
+                  "parent_id": "c5a73b78-f0c2-4754-a95b-38fb9af4e0eb",
+                  "id": "fc4a1ced-acda-4cea-b2c7-1d0e40d3edb9",
+                  "system_metrics": {
+                    "completion_tokens": 124,
+                    "prompt_tokens": 831,
+                    "total_tokens": 955
+                  }
+                }
+              ],
+              "node_name": "similarity_score",
+              "parent_id": "",
+              "id": "c5a73b78-f0c2-4754-a95b-38fb9af4e0eb",
+              "system_metrics": {
+                "completion_tokens": 124,
+                "prompt_tokens": 831,
+                "total_tokens": 955
+              }
+            },
+            {
+              "name": "concat_results",
+              "type": "Tool",
+              "inputs": {
+                "similarity_score": "To compute the Equivalence score for the given question, correct answer, and predicted answer, we need to assess the similarity between the predicted answer and the correct answer. Based on the provided rating scale, the Equivalence score can be determined as follows:\n\nquestion: What feeds all the fixtures in low voltage tracks instead of each light having a line-to-low voltage transformer?\ncorrect answer: The main transformer is the object that feeds all the fixtures in low voltage tracks.\npredicted answer: Master transformer.\nstars: 2\n\nTherefore, the Equivalence score for this question, correct answer, and predicted answer is 2 stars."
+              },
+              "output": {
+                "gpt_similarity": 2.0,
+                "gpt_similarity_pass_rate": 0
+              },
+              "start_time": 1708637305.61845,
+              "end_time": 1708637305.61845,
+              "error": null,
+              "children": [],
+              "node_name": "concat_scores",
+              "parent_id": "",
+              "id": "c2922803-d3ae-4017-a8f2-9f0565744b49",
+              "system_metrics": {}
+            }
+          ],
+          "system_metrics": {
+            "duration": 1.219269,
+            "prompt_tokens": 831,
+            "completion_tokens": 124,
+            "total_tokens": 955
+          }
+        }
+      ],
+      "variant_id": "",
+      "name": "",
+      "description": "",
+      "tags": null,
+      "system_metrics": {
+        "duration": 1.219269,
+        "prompt_tokens": 831,
+        "completion_tokens": 124,
+        "total_tokens": 955
+      },
+      "result": {
+        "gpt_similarity": 2.0
+      },
+      "upload_metrics": false
+    }
+  ],
+  "node_runs": [
+    {
+      "node": "similarity_score",
+      "flow_run_id": "82b300e8-f012-415a-9e80-023e5c4ae776",
+      "run_id": "82b300e8-f012-415a-9e80-023e5c4ae776_similarity_score_0",
+      "status": "Completed",
+      "inputs": {
+        "question": "What feeds all the fixtures in low voltage tracks instead of each light having a line-to-low voltage transformer?",
+        "ground_truth": "The main transformer is the object that feeds all the fixtures in low voltage tracks.",
+        "answer": "Master transformer.",
+        "max_tokens": 256,
+        "deployment_name": "gpt-35-turbo",
+        "temperature": 0.0
+      },
+      "output": "To compute the Equivalence score for the given question, correct answer, and predicted answer, we need to assess the similarity between the predicted answer and the correct answer. Based on the provided rating scale, the Equivalence score can be determined as follows:\n\nquestion: What feeds all the fixtures in low voltage tracks instead of each light having a line-to-low voltage transformer?\ncorrect answer: The main transformer is the object that feeds all the fixtures in low voltage tracks.\npredicted answer: Master transformer.\nstars: 2\n\nTherefore, the Equivalence score for this question, correct answer, and predicted answer is 2 stars.",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "82b300e8-f012-415a-9e80-023e5c4ae776_0",
+      "start_time": "2024-02-22T16:28:24.403156Z",
+      "end_time": "2024-02-22T16:28:25.615448Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "AzureOpenAI.chat",
+          "type": "Tool",
+          "inputs": {
+            "prompt": "System:\nYou are an AI assistant. You will be given the definition of an evaluation metric for assessing the quality of an answer in a question-answering task. Your job is to compute an accurate evaluation score using the provided evaluation metric.\n\nUser:\nEquivalence, as a metric, measures the similarity between the predicted answer and the correct answer. If the information and content in the predicted answer is similar or equivalent to the correct answer, then the value of the Equivalence metric should be high, else it should be low. Given the question, correct answer, and predicted answer, determine the value of Equivalence metric using the following rating scale:\nOne star: the predicted answer is not at all similar to the correct answer\nTwo stars: the predicted answer is mostly not similar to the correct answer\nThree stars: the predicted answer is somewhat similar to the correct answer\nFour stars: the predicted answer is mostly similar to the correct answer\nFive stars: the predicted answer is completely similar to the correct answer\n\nThis rating value should always be an integer between 1 and 5. So the rating produced should be 1 or 2 or 3 or 4 or 5.\n\nThe examples below show the Equivalence score for a question, a correct answer, and a predicted answer.\n\nquestion: What is the role of ribosomes?\ncorrect answer: Ribosomes are cellular structures responsible for protein synthesis. They interpret the genetic information carried by messenger RNA (mRNA) and use it to assemble amino acids into proteins.\npredicted answer: Ribosomes participate in carbohydrate breakdown by removing nutrients from complex sugar molecules.\nstars: 1\n\nquestion: Why did the Titanic sink?\ncorrect answer: The Titanic sank after it struck an iceberg during its maiden voyage in 1912. The impact caused the ship's hull to breach, allowing water to flood into the vessel. The ship's design, lifeboat shortage, and lack of timely rescue efforts contributed to the tragic loss of life.\npredicted answer: The sinking of the Titanic was a result of a large iceberg collision. This caused the ship to take on water and eventually sink, leading to the death of many passengers due to a shortage of lifeboats and insufficient rescue attempts.\nstars: 2\n\nquestion: What causes seasons on Earth?\ncorrect answer: Seasons on Earth are caused by the tilt of the Earth's axis and its revolution around the Sun. As the Earth orbits the Sun, the tilt causes different parts of the planet to receive varying amounts of sunlight, resulting in changes in temperature and weather patterns.\npredicted answer: Seasons occur because of the Earth's rotation and its elliptical orbit around the Sun. The tilt of the Earth's axis causes regions to be subjected to different sunlight intensities, which leads to temperature fluctuations and alternating weather conditions.\nstars: 3\n\nquestion: How does photosynthesis work?\ncorrect answer: Photosynthesis is a process by which green plants and some other organisms convert light energy into chemical energy. This occurs as light is absorbed by chlorophyll molecules, and then carbon dioxide and water are converted into glucose and oxygen through a series of reactions.\npredicted answer: In photosynthesis, sunlight is transformed into nutrients by plants and certain microorganisms. Light is captured by chlorophyll molecules, followed by the conversion of carbon dioxide and water into sugar and oxygen through multiple reactions.\nstars: 4\n\nquestion: What are the health benefits of regular exercise?\ncorrect answer: Regular exercise can help maintain a healthy weight, increase muscle and bone strength, and reduce the risk of chronic diseases. It also promotes mental well-being by reducing stress and improving overall mood.\npredicted answer: Routine physical activity can contribute to maintaining ideal body weight, enhancing muscle and bone strength, and preventing chronic illnesses. In addition, it supports mental health by alleviating stress and augmenting general mood.\nstars: 5\n\nquestion: {{question}}\ncorrect answer: {{ground_truth}}\npredicted answer: {{answer}}\nstars:",
+            "question": "What feeds all the fixtures in low voltage tracks instead of each light having a line-to-low voltage transformer?",
+            "ground_truth": "The main transformer is the object that feeds all the fixtures in low voltage tracks.",
+            "answer": "Master transformer.",
+            "max_tokens": 256,
+            "deployment_name": "gpt-35-turbo",
+            "temperature": 0.0
+          },
+          "output": "To compute the Equivalence score for the given question, correct answer, and predicted answer, we need to assess the similarity between the predicted answer and the correct answer. Based on the provided rating scale, the Equivalence score can be determined as follows:\n\nquestion: What feeds all the fixtures in low voltage tracks instead of each light having a line-to-low voltage transformer?\ncorrect answer: The main transformer is the object that feeds all the fixtures in low voltage tracks.\npredicted answer: Master transformer.\nstars: 2\n\nTherefore, the Equivalence score for this question, correct answer, and predicted answer is 2 stars.",
+          "start_time": 1708637304.403156,
+          "end_time": 1708637305.615448,
+          "error": null,
+          "children": [
+            {
+              "name": "openai.resources.chat.completions.Completions.create",
+              "type": "LLM",
+              "inputs": {
+                "model": "gpt-35-turbo",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are an AI assistant. You will be given the definition of an evaluation metric for assessing the quality of an answer in a question-answering task. Your job is to compute an accurate evaluation score using the provided evaluation metric."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Equivalence, as a metric, measures the similarity between the predicted answer and the correct answer. If the information and content in the predicted answer is similar or equivalent to the correct answer, then the value of the Equivalence metric should be high, else it should be low. Given the question, correct answer, and predicted answer, determine the value of Equivalence metric using the following rating scale:\nOne star: the predicted answer is not at all similar to the correct answer\nTwo stars: the predicted answer is mostly not similar to the correct answer\nThree stars: the predicted answer is somewhat similar to the correct answer\nFour stars: the predicted answer is mostly similar to the correct answer\nFive stars: the predicted answer is completely similar to the correct answer\n\nThis rating value should always be an integer between 1 and 5. So the rating produced should be 1 or 2 or 3 or 4 or 5.\n\nThe examples below show the Equivalence score for a question, a correct answer, and a predicted answer.\n\nquestion: What is the role of ribosomes?\ncorrect answer: Ribosomes are cellular structures responsible for protein synthesis. They interpret the genetic information carried by messenger RNA (mRNA) and use it to assemble amino acids into proteins.\npredicted answer: Ribosomes participate in carbohydrate breakdown by removing nutrients from complex sugar molecules.\nstars: 1\n\nquestion: Why did the Titanic sink?\ncorrect answer: The Titanic sank after it struck an iceberg during its maiden voyage in 1912. The impact caused the ship's hull to breach, allowing water to flood into the vessel. The ship's design, lifeboat shortage, and lack of timely rescue efforts contributed to the tragic loss of life.\npredicted answer: The sinking of the Titanic was a result of a large iceberg collision. This caused the ship to take on water and eventually sink, leading to the death of many passengers due to a shortage of lifeboats and insufficient rescue attempts.\nstars: 2\n\nquestion: What causes seasons on Earth?\ncorrect answer: Seasons on Earth are caused by the tilt of the Earth's axis and its revolution around the Sun. As the Earth orbits the Sun, the tilt causes different parts of the planet to receive varying amounts of sunlight, resulting in changes in temperature and weather patterns.\npredicted answer: Seasons occur because of the Earth's rotation and its elliptical orbit around the Sun. The tilt of the Earth's axis causes regions to be subjected to different sunlight intensities, which leads to temperature fluctuations and alternating weather conditions.\nstars: 3\n\nquestion: How does photosynthesis work?\ncorrect answer: Photosynthesis is a process by which green plants and some other organisms convert light energy into chemical energy. This occurs as light is absorbed by chlorophyll molecules, and then carbon dioxide and water are converted into glucose and oxygen through a series of reactions.\npredicted answer: In photosynthesis, sunlight is transformed into nutrients by plants and certain microorganisms. Light is captured by chlorophyll molecules, followed by the conversion of carbon dioxide and water into sugar and oxygen through multiple reactions.\nstars: 4\n\nquestion: What are the health benefits of regular exercise?\ncorrect answer: Regular exercise can help maintain a healthy weight, increase muscle and bone strength, and reduce the risk of chronic diseases. It also promotes mental well-being by reducing stress and improving overall mood.\npredicted answer: Routine physical activity can contribute to maintaining ideal body weight, enhancing muscle and bone strength, and preventing chronic illnesses. In addition, it supports mental health by alleviating stress and augmenting general mood.\nstars: 5\n\nquestion: What feeds all the fixtures in low voltage tracks instead of each light having a line-to-low voltage transformer?\ncorrect answer: The main transformer is the object that feeds all the fixtures in low voltage tracks.\npredicted answer: Master transformer.\nstars:"
+                  }
+                ],
+                "temperature": 0.0,
+                "top_p": 1.0,
+                "n": 1,
+                "stream": false,
+                "stop": null,
+                "max_tokens": 256,
+                "presence_penalty": 0.0,
+                "frequency_penalty": 0.0,
+                "logit_bias": {},
+                "user": "",
+                "response_format": null
+              },
+              "output": {
+                "id": "chatcmpl-8v6Dp5cYa0XrfYijlWsLMhCOgEz4g",
+                "choices": [
+                  {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                      "content": "To compute the Equivalence score for the given question, correct answer, and predicted answer, we need to assess the similarity between the predicted answer and the correct answer. Based on the provided rating scale, the Equivalence score can be determined as follows:\n\nquestion: What feeds all the fixtures in low voltage tracks instead of each light having a line-to-low voltage transformer?\ncorrect answer: The main transformer is the object that feeds all the fixtures in low voltage tracks.\npredicted answer: Master transformer.\nstars: 2\n\nTherefore, the Equivalence score for this question, correct answer, and predicted answer is 2 stars.",
+                      "role": "assistant",
+                      "function_call": null,
+                      "tool_calls": null
+                    }
+                  }
+                ],
+                "created": 1708619305,
+                "model": "gpt-35-turbo",
+                "object": "chat.completion",
+                "system_fingerprint": "fp_68a7d165bf",
+                "usage": {
+                  "completion_tokens": 124,
+                  "prompt_tokens": 831,
+                  "total_tokens": 955
+                }
+              },
+              "start_time": 1708637304.407156,
+              "end_time": 1708637305.615448,
+              "error": null,
+              "children": [],
+              "node_name": null,
+              "parent_id": "c5a73b78-f0c2-4754-a95b-38fb9af4e0eb",
+              "id": "fc4a1ced-acda-4cea-b2c7-1d0e40d3edb9",
+              "system_metrics": {
+                "completion_tokens": 124,
+                "prompt_tokens": 831,
+                "total_tokens": 955
+              }
+            }
+          ],
+          "node_name": "similarity_score",
+          "parent_id": "",
+          "id": "c5a73b78-f0c2-4754-a95b-38fb9af4e0eb",
+          "system_metrics": {
+            "completion_tokens": 124,
+            "prompt_tokens": 831,
+            "total_tokens": 955
+          }
+        }
+      ],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "completion_tokens": 124,
+        "prompt_tokens": 831,
+        "total_tokens": 955,
+        "duration": 1.212292
+      },
+      "result": "To compute the Equivalence score for the given question, correct answer, and predicted answer, we need to assess the similarity between the predicted answer and the correct answer. Based on the provided rating scale, the Equivalence score can be determined as follows:\n\nquestion: What feeds all the fixtures in low voltage tracks instead of each light having a line-to-low voltage transformer?\ncorrect answer: The main transformer is the object that feeds all the fixtures in low voltage tracks.\npredicted answer: Master transformer.\nstars: 2\n\nTherefore, the Equivalence score for this question, correct answer, and predicted answer is 2 stars."
+    },
+    {
+      "node": "concat_scores",
+      "flow_run_id": "82b300e8-f012-415a-9e80-023e5c4ae776",
+      "run_id": "82b300e8-f012-415a-9e80-023e5c4ae776_concat_scores_0",
+      "status": "Completed",
+      "inputs": {
+        "similarity_score": "To compute the Equivalence score for the given question, correct answer, and predicted answer, we need to assess the similarity between the predicted answer and the correct answer. Based on the provided rating scale, the Equivalence score can be determined as follows:\n\nquestion: What feeds all the fixtures in low voltage tracks instead of each light having a line-to-low voltage transformer?\ncorrect answer: The main transformer is the object that feeds all the fixtures in low voltage tracks.\npredicted answer: Master transformer.\nstars: 2\n\nTherefore, the Equivalence score for this question, correct answer, and predicted answer is 2 stars."
+      },
+      "output": {
+        "gpt_similarity": 2.0,
+        "gpt_similarity_pass_rate": 0
+      },
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "82b300e8-f012-415a-9e80-023e5c4ae776_0",
+      "start_time": "2024-02-22T16:28:25.617454Z",
+      "end_time": "2024-02-22T16:28:25.618450Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "concat_results",
+          "type": "Tool",
+          "inputs": {
+            "similarity_score": "To compute the Equivalence score for the given question, correct answer, and predicted answer, we need to assess the similarity between the predicted answer and the correct answer. Based on the provided rating scale, the Equivalence score can be determined as follows:\n\nquestion: What feeds all the fixtures in low voltage tracks instead of each light having a line-to-low voltage transformer?\ncorrect answer: The main transformer is the object that feeds all the fixtures in low voltage tracks.\npredicted answer: Master transformer.\nstars: 2\n\nTherefore, the Equivalence score for this question, correct answer, and predicted answer is 2 stars."
+          },
+          "output": {
+            "gpt_similarity": 2.0,
+            "gpt_similarity_pass_rate": 0
+          },
+          "start_time": 1708637305.61845,
+          "end_time": 1708637305.61845,
+          "error": null,
+          "children": [],
+          "node_name": "concat_scores",
+          "parent_id": "",
+          "id": "c2922803-d3ae-4017-a8f2-9f0565744b49",
+          "system_metrics": {}
+        }
+      ],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.000996
+      },
+      "result": {
+        "gpt_similarity": 2.0,
+        "gpt_similarity_pass_rate": 0
+      }
+    },
+    {
+      "node": "aggregate_variants_results",
+      "flow_run_id": "82b300e8-f012-415a-9e80-023e5c4ae776",
+      "run_id": "82b300e8-f012-415a-9e80-023e5c4ae776_aggregate_variants_results_reduce",
+      "status": "Completed",
+      "inputs": {
+        "results": [
+          {
+            "gpt_similarity": 2.0,
+            "gpt_similarity_pass_rate": 0
+          }
+        ]
+      },
+      "output": {
+        "gpt_similarity": 2.0,
+        "gpt_similarity_pass_rate": 0.0
+      },
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "82b300e8-f012-415a-9e80-023e5c4ae776",
+      "start_time": "2024-02-22T16:28:25.622465Z",
+      "end_time": "2024-02-22T16:28:25.624462Z",
+      "index": null,
+      "api_calls": [
+        {
+          "name": "aggregate_variants_results",
+          "type": "Tool",
+          "inputs": {
+            "results": [
+              {
+                "gpt_similarity": 2.0,
+                "gpt_similarity_pass_rate": 0
+              }
+            ]
+          },
+          "output": {
+            "gpt_similarity": 2.0,
+            "gpt_similarity_pass_rate": 0.0
+          },
+          "start_time": 1708637305.622465,
+          "end_time": 1708637305.623467,
+          "error": null,
+          "children": [],
+          "node_name": "aggregate_variants_results",
+          "parent_id": "",
+          "id": "570d5b66-ab79-44f9-8038-d4fa71dd3397",
+          "system_metrics": {}
+        }
+      ],
+      "variant_id": null,
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.001997
+      },
+      "result": {
+        "gpt_similarity": 2.0,
+        "gpt_similarity_pass_rate": 0.0
+      }
+    }
+  ]
+}

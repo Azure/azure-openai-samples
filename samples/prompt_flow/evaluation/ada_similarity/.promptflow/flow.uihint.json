@@ -1,0 +1,34 @@
+{
+  "nodes": {
+    "embedd_ground_truth": {
+      "variant_0": {
+        "inputs": {},
+        "inputsValue": {}
+      }
+    },
+    "embedd_answer": {
+      "variant_0": {
+        "inputs": {},
+        "inputsValue": {}
+      }
+    },
+    "ada_cosine_similarity_score": {
+      "variant_0": {
+        "inputs": {},
+        "inputsValue": {}
+      }
+    },
+    "concat_scores": {
+      "variant_0": {
+        "inputs": {},
+        "inputsValue": {}
+      }
+    },
+    "aggregate_variants_results": {
+      "variant_0": {
+        "inputs": {},
+        "inputsValue": {}
+      }
+    }
+  }
+}

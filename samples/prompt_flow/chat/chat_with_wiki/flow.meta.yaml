@@ -1,0 +1,11 @@
+$schema: https://azuremlschemas.azureedge.net/latest/flow.schema.json
+name: chat_with_wikipedia
+display_name: Chat with Wikipedia
+type: chat
+path: ./flow.dag.yaml
+description: Create a chatbot that leverages Wikipedia data to ground the responses.
+properties:
+  promptflow.stage: prod
+  promptflow.details.type: markdown
+  promptflow.details.source: README.md
+  promptflow.batch_inputs: samples.json

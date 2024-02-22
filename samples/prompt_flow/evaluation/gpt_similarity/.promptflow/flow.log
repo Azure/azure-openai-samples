@@ -1,0 +1,9 @@
+2024-02-22 11:28:24 -0500   37924 execution.flow     INFO     Start executing nodes in thread pool mode.
+2024-02-22 11:28:24 -0500   37924 execution.flow     INFO     Start to run 2 nodes with concurrency level 16.
+2024-02-22 11:28:24 -0500   37924 execution.flow     INFO     Executing node similarity_score. node run id: 82b300e8-f012-415a-9e80-023e5c4ae776_similarity_score_0
+2024-02-22 11:28:25 -0500   37924 execution.flow     INFO     Node similarity_score completes.
+2024-02-22 11:28:25 -0500   37924 execution.flow     INFO     Executing node concat_scores. node run id: 82b300e8-f012-415a-9e80-023e5c4ae776_concat_scores_0
+2024-02-22 11:28:25 -0500   37924 execution.flow     INFO     Node concat_scores completes.
+2024-02-22 11:28:25 -0500   37924 execution.flow     INFO     Start to run 1 nodes with concurrency level 16.
+2024-02-22 11:28:25 -0500   37924 execution.flow     INFO     Executing node aggregate_variants_results. node run id: 82b300e8-f012-415a-9e80-023e5c4ae776_aggregate_variants_results_reduce
+2024-02-22 11:28:25 -0500   37924 execution.flow     INFO     Node aggregate_variants_results completes.

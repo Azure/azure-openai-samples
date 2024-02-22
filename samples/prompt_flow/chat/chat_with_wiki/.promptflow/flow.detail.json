@@ -1,0 +1,857 @@
+{
+  "flow_runs": [
+    {
+      "run_id": "97617340-b45e-4ba9-accd-10251560bb8d_0",
+      "status": "Completed",
+      "error": null,
+      "inputs": {
+        "chat_history": [
+          {
+            "inputs": {
+              "question": "What is ChatGPT?"
+            },
+            "outputs": {
+              "answer": "ChatGPT is a chatbot product developed by OpenAI. It is powered by the Generative Pre-trained Transformer (GPT) series of language models, with GPT-4 being the latest version. ChatGPT uses natural language processing to generate responses to user inputs in a conversational manner. It was released as ChatGPT Plus, a premium version, which provides enhanced features and access to the GPT-4 based version of OpenAI's API. ChatGPT allows users to interact and have conversations with the language model, utilizing both text and image inputs. It is designed to be more reliable, creative, and capable of handling nuanced instructions compared to previous versions. However, it is important to note that while GPT-4 improves upon its predecessors, it still retains some of the same limitations and challenges."
+            }
+          }
+        ],
+        "question": "What is the difference between this model and previous neural network?"
+      },
+      "output": {
+        "answer": "I don't know the exact difference between ChatGPT and previous neural network models. If you want, I can provide you with a summary of the differences between GPT-2 and GPT-1, which might give you an idea of the improvements made across different versions of the GPT series.\n\nSOURCES:\nhttps://en.wikipedia.org/w/index.php?search=GPT-2\nhttps://en.wikipedia.org/w/index.php?search=GPT-1"
+      },
+      "metrics": null,
+      "request": null,
+      "parent_run_id": "97617340-b45e-4ba9-accd-10251560bb8d",
+      "root_run_id": "97617340-b45e-4ba9-accd-10251560bb8d",
+      "source_run_id": null,
+      "flow_id": "chat_with_wikipedia",
+      "start_time": "2024-02-22T17:06:13.976145Z",
+      "end_time": "2024-02-22T17:06:19.326488Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "flow",
+          "node_name": "flow",
+          "type": "Flow",
+          "start_time": 1708639573.976145,
+          "end_time": 1708639579.326488,
+          "children": [
+            {
+              "name": "AzureOpenAI.chat",
+              "type": "Tool",
+              "inputs": {
+                "prompt": "system:\nYou are an AI assistant reading the transcript of a conversation between an AI and a human. Given an input question and conversation history, infer user real intent.\n\nThe conversation history is provided just in case of a coreference (e.g. \"What is this?\" where \"this\" is defined in previous conversation).\n\nReturn the output as query used for next round user message.\n\nuser:\nEXAMPLE\nConversation history:\nHuman: I want to find the best restaurants nearby, could you recommend some?\nAI: Sure, I can help you with that. Here are some of the best restaurants nearby: Rock Bar.\nHuman: How do I get to Rock Bar?\n\nOutput: directions to Rock Bar\nEND OF EXAMPLE\n\nEXAMPLE\nConversation history:\nHuman: I want to find the best restaurants nearby, could you recommend some?\nAI: Sure, I can help you with that. Here are some of the best restaurants nearby: Rock Bar.\nHuman: How do I get to Rock Bar?\nAI: To get to Rock Bar, you need to go to the 52nd floor of the Park A. You can take the subway to Station A and walk for about 8 minutes from exit A53. Alternatively, you can take the train to S Station and walk for about 12 minutes from the south exit3.\nHuman: Show me more restaurants.\n\nOutput: best restaurants nearby\nEND OF EXAMPLE\n\nConversation history (for reference only):\n{% for item in chat_history %}\nHuman: {{item.inputs.question}}\nAI: {{item.outputs.answer}}\n{% endfor %}\nHuman: {{question}}\n\nOutput:",
+                "deployment_name": "gpt-4-turbo",
+                "temperature": 0.7,
+                "top_p": 1.0,
+                "max_tokens": 256,
+                "presence_penalty": 0.0,
+                "frequency_penalty": 0.0,
+                "question": "What is the difference between this model and previous neural network?",
+                "chat_history": [
+                  {
+                    "inputs": {
+                      "question": "What is ChatGPT?"
+                    },
+                    "outputs": {
+                      "answer": "ChatGPT is a chatbot product developed by OpenAI. It is powered by the Generative Pre-trained Transformer (GPT) series of language models, with GPT-4 being the latest version. ChatGPT uses natural language processing to generate responses to user inputs in a conversational manner. It was released as ChatGPT Plus, a premium version, which provides enhanced features and access to the GPT-4 based version of OpenAI's API. ChatGPT allows users to interact and have conversations with the language model, utilizing both text and image inputs. It is designed to be more reliable, creative, and capable of handling nuanced instructions compared to previous versions. However, it is important to note that while GPT-4 improves upon its predecessors, it still retains some of the same limitations and challenges."
+                    }
+                  }
+                ]
+              },
+              "output": "difference between GPT-4 and previous neural network models",
+              "start_time": 1708639573.979145,
+              "end_time": 1708639575.353632,
+              "error": null,
+              "children": [
+                {
+                  "name": "openai.resources.chat.completions.Completions.create",
+                  "type": "LLM",
+                  "inputs": {
+                    "model": "gpt-4-turbo",
+                    "messages": [
+                      {
+                        "role": "system",
+                        "content": "You are an AI assistant reading the transcript of a conversation between an AI and a human. Given an input question and conversation history, infer user real intent.\n\nThe conversation history is provided just in case of a coreference (e.g. \"What is this?\" where \"this\" is defined in previous conversation).\n\nReturn the output as query used for next round user message."
+                      },
+                      {
+                        "role": "user",
+                        "content": "EXAMPLE\nConversation history:\nHuman: I want to find the best restaurants nearby, could you recommend some?\nAI: Sure, I can help you with that. Here are some of the best restaurants nearby: Rock Bar.\nHuman: How do I get to Rock Bar?\n\nOutput: directions to Rock Bar\nEND OF EXAMPLE\n\nEXAMPLE\nConversation history:\nHuman: I want to find the best restaurants nearby, could you recommend some?\nAI: Sure, I can help you with that. Here are some of the best restaurants nearby: Rock Bar.\nHuman: How do I get to Rock Bar?\nAI: To get to Rock Bar, you need to go to the 52nd floor of the Park A. You can take the subway to Station A and walk for about 8 minutes from exit A53. Alternatively, you can take the train to S Station and walk for about 12 minutes from the south exit3.\nHuman: Show me more restaurants.\n\nOutput: best restaurants nearby\nEND OF EXAMPLE\n\nConversation history (for reference only):\nHuman: What is ChatGPT?\nAI: ChatGPT is a chatbot product developed by OpenAI. It is powered by the Generative Pre-trained Transformer (GPT) series of language models, with GPT-4 being the latest version. ChatGPT uses natural language processing to generate responses to user inputs in a conversational manner. It was released as ChatGPT Plus, a premium version, which provides enhanced features and access to the GPT-4 based version of OpenAI's API. ChatGPT allows users to interact and have conversations with the language model, utilizing both text and image inputs. It is designed to be more reliable, creative, and capable of handling nuanced instructions compared to previous versions. However, it is important to note that while GPT-4 improves upon its predecessors, it still retains some of the same limitations and challenges.\nHuman: What is the difference between this model and previous neural network?\n\nOutput:"
+                      }
+                    ],
+                    "temperature": 0.7,
+                    "top_p": 1.0,
+                    "n": 1,
+                    "stream": false,
+                    "stop": null,
+                    "max_tokens": 256,
+                    "presence_penalty": 0.0,
+                    "frequency_penalty": 0.0,
+                    "logit_bias": {},
+                    "user": "",
+                    "response_format": null
+                  },
+                  "output": {
+                    "id": "chatcmpl-8v6oR4Py3gz9zMiaPjtWLB8UpDcYb",
+                    "choices": [
+                      {
+                        "finish_reason": "stop",
+                        "index": 0,
+                        "logprobs": null,
+                        "message": {
+                          "content": "difference between GPT-4 and previous neural network models",
+                          "role": "assistant",
+                          "function_call": null,
+                          "tool_calls": null
+                        }
+                      }
+                    ],
+                    "created": 1708621575,
+                    "model": "gpt-4",
+                    "object": "chat.completion",
+                    "system_fingerprint": "fp_8abb16fa4e",
+                    "usage": {
+                      "completion_tokens": 11,
+                      "prompt_tokens": 486,
+                      "total_tokens": 497
+                    }
+                  },
+                  "start_time": 1708639573.983174,
+                  "end_time": 1708639575.353632,
+                  "error": null,
+                  "children": [],
+                  "node_name": null,
+                  "parent_id": "989d22f1-51ba-4fc8-8c76-36ac8be2a31b",
+                  "id": "1cfda07d-000f-4c30-96a9-57933f0a2297",
+                  "system_metrics": {
+                    "completion_tokens": 11,
+                    "prompt_tokens": 486,
+                    "total_tokens": 497
+                  }
+                }
+              ],
+              "node_name": "extract_query_from_question",
+              "parent_id": "",
+              "id": "989d22f1-51ba-4fc8-8c76-36ac8be2a31b",
+              "system_metrics": {
+                "completion_tokens": 11,
+                "prompt_tokens": 486,
+                "total_tokens": 497
+              }
+            },
+            {
+              "name": "get_wiki_url",
+              "type": "Tool",
+              "inputs": {
+                "entity": "difference between GPT-4 and previous neural network models",
+                "count": 2
+              },
+              "output": [
+                "https://en.wikipedia.org/w/index.php?search=GPT-2",
+                "https://en.wikipedia.org/w/index.php?search=GPT-1"
+              ],
+              "start_time": 1708639575.35863,
+              "end_time": 1708639576.843867,
+              "error": null,
+              "children": [],
+              "node_name": "get_wiki_url",
+              "parent_id": "",
+              "id": "5682a551-ac9e-4409-9219-35d5bed4ab78",
+              "system_metrics": {}
+            },
+            {
+              "name": "search_result_from_url",
+              "type": "Tool",
+              "inputs": {
+                "url_list": [
+                  "https://en.wikipedia.org/w/index.php?search=GPT-2",
+                  "https://en.wikipedia.org/w/index.php?search=GPT-1"
+                ],
+                "count": 10
+              },
+              "output": [
+                [
+                  "https://en.wikipedia.org/w/index.php?search=GPT-2",
+                  "Generative Pre-trained Transformer 2 (GPT-2) is a large language model by OpenAI and the second in their foundational series of GPT models. GPT-2 was pre-trained on BookCorpus,[2] a dataset of over 7,000 self-published fiction books from various genres, and trained on a dataset of 8 million web pages.[3] It was partially released in February 2019, followed by full release of the 1.5-billion-parameter model on November 5, 2019.[4][5][6][7][8]. GPT-2 was created as a \"direct scale-up\" of GPT-1[9] with a ten-fold increase in both its parameter count and the size of its training dataset.[8] It is a general-purpose learner and its ability to perform the various tasks was a consequence of its general ability to accurately predict the next item in a sequence,[3][10] which enabled it to translate texts, answer questions about a topic from a text, summarize passages from a larger text,[10] and generate text output on a level sometimes indistinguishable from that of humans,[11] however it could become repetitive or nonsensical when generating long passages.[12] It was superseded by GPT-3 and GPT-4 models, which are not open source anymore.. GPT-2 has, like its predecessor GPT-1 and its successors GPT-3 and GPT-4, a generative pre-trained transformer architecture, implementing a deep neural network, specifically a transformer model,[9] which uses attention instead of older recurrence- and convolution-based architectures.[13][14] Attention mechanisms allow the model to selectively focus on segments of input text it predicts to be the most relevant.[15][16] This model allows for greatly increased parallelization, and outperforms previous benchmarks for RNN/CNN/LSTM-based models.[9]. Since the transformer architecture enabled massive parallelization, GPT models could be trained on larger corpora than previous NLP (natural language processing) models. While the GPT-1 model demonstrated that the approach was viable, GPT-2 would further explore the emergent properties of networks trained on extremely large corpora. CommonCrawl, a large corpus produced by web crawling and previously used in training NLP systems,[17] was considered due to its large size, but was rejected after further review revealed large amounts of unintelligible content.[3][17] Instead, OpenAI developed a new corpus, known as WebText; rather than scraping content indiscriminately from the World Wide Web, WebText was generated by scraping only pages linked to by Reddit posts that had received at least three upvotes prior to December 2017. The corpus was subsequently cleaned; HTML documents were parsed into plain text, duplicate pages were eliminated, and Wikipedia pages were removed (since their presence in many other datasets could have induced overfitting).[3]. While the cost of training GPT-2 is known to have been $256 per hour,[18][19] the amount of hours it took to complete training is unknown; therefore, the overall training cost cannot be estimated accurately.[20] However, comparable large language models using transformer architectures have had their costs documented in more detail; the training processes for BERT and XLNet consumed, respectively, $6,912 and $245,000 of resources.[19]. GPT-2 was first announced on 14 February 2019."
+                ],
+                [
+                  "https://en.wikipedia.org/w/index.php?search=GPT-1",
+                  "Generative Pre-trained Transformer 1 (GPT-1) was the first of OpenAI's large language models following Google's invention of the transformer architecture in 2017.[2] In June 2018, OpenAI released a paper entitled \"Improving Language Understanding by Generative Pre-Training\",[3] in which they introduced that initial model along with the general concept of a generative pre-trained transformer.[4]. Up to that point, the best-performing neural NLP models primarily employed supervised learning from large amounts of manually labeled data. This reliance on supervised learning limited their use of datasets that were not well-annotated, in addition to making it prohibitively expensive and time-consuming to train extremely large models;[3][5] many languages (such as Swahili or Haitian Creole) are difficult to translate and interpret using such models due to a lack of available text for corpus-building.[5] In contrast, a GPT's \"semi-supervised\" approach involved two stages: an unsupervised generative \"pre-training\" stage in which a language modeling objective was used to set initial parameters, and a supervised discriminative \"fine-tuning\" stage in which these parameters were adapted to a target task.[3]. The use of a transformer architecture, as opposed to previous techniques involving attention-augmented RNNs, provided GPT models with a more structured memory than could be achieved through recurrent mechanisms; this resulted in \"robust transfer performance across diverse tasks\".[3]. BookCorpus was chosen as a training dataset partly because the long passages of continuous text helped the model learn to handle long-range information.[6] It contained over 7,000 unpublished fiction books from various genres. The rest of the datasets available at the time, while being larger, lacked this long-range structure (being \"shuffled\" at a sentence level).[3]. The BookCorpus text was cleaned by the ftfy library to standardized punctuation and whitespace and then tokenized by spaCy.[3]. The GPT-1 architecture was a twelve-layer decoder-only transformer, using twelve masked self-attention heads, with 64-dimensional states each (for a total of 768). Rather than simple stochastic gradient descent, the Adam optimization algorithm was used; the learning rate was increased linearly from zero over the first 2,000 updates to a maximum of 2.5×10−4, and annealed to 0 using a cosine schedule.[3] GPT-1 has 117 million parameters.[4]. While the fine-tuning was adapted to specific tasks, its pre-training was not; to perform the various tasks, minimal changes were performed to its underlying task-agnostic model architecture.[3] Despite this, GPT-1 still improved on previous benchmarks in several language processing tasks, outperforming discriminatively-trained models with task-oriented architectures on several diverse tasks.[3]."
+                ]
+              ],
+              "start_time": 1708639576.84746,
+              "end_time": 1708639578.334389,
+              "error": null,
+              "children": [],
+              "node_name": "search_result_from_url",
+              "parent_id": "",
+              "id": "35144b4a-c242-4268-97da-062d8d4d60f4",
+              "system_metrics": {}
+            },
+            {
+              "name": "process_search_result",
+              "type": "Tool",
+              "inputs": {
+                "search_result": [
+                  [
+                    "https://en.wikipedia.org/w/index.php?search=GPT-2",
+                    "Generative Pre-trained Transformer 2 (GPT-2) is a large language model by OpenAI and the second in their foundational series of GPT models. GPT-2 was pre-trained on BookCorpus,[2] a dataset of over 7,000 self-published fiction books from various genres, and trained on a dataset of 8 million web pages.[3] It was partially released in February 2019, followed by full release of the 1.5-billion-parameter model on November 5, 2019.[4][5][6][7][8]. GPT-2 was created as a \"direct scale-up\" of GPT-1[9] with a ten-fold increase in both its parameter count and the size of its training dataset.[8] It is a general-purpose learner and its ability to perform the various tasks was a consequence of its general ability to accurately predict the next item in a sequence,[3][10] which enabled it to translate texts, answer questions about a topic from a text, summarize passages from a larger text,[10] and generate text output on a level sometimes indistinguishable from that of humans,[11] however it could become repetitive or nonsensical when generating long passages.[12] It was superseded by GPT-3 and GPT-4 models, which are not open source anymore.. GPT-2 has, like its predecessor GPT-1 and its successors GPT-3 and GPT-4, a generative pre-trained transformer architecture, implementing a deep neural network, specifically a transformer model,[9] which uses attention instead of older recurrence- and convolution-based architectures.[13][14] Attention mechanisms allow the model to selectively focus on segments of input text it predicts to be the most relevant.[15][16] This model allows for greatly increased parallelization, and outperforms previous benchmarks for RNN/CNN/LSTM-based models.[9]. Since the transformer architecture enabled massive parallelization, GPT models could be trained on larger corpora than previous NLP (natural language processing) models. While the GPT-1 model demonstrated that the approach was viable, GPT-2 would further explore the emergent properties of networks trained on extremely large corpora. CommonCrawl, a large corpus produced by web crawling and previously used in training NLP systems,[17] was considered due to its large size, but was rejected after further review revealed large amounts of unintelligible content.[3][17] Instead, OpenAI developed a new corpus, known as WebText; rather than scraping content indiscriminately from the World Wide Web, WebText was generated by scraping only pages linked to by Reddit posts that had received at least three upvotes prior to December 2017. The corpus was subsequently cleaned; HTML documents were parsed into plain text, duplicate pages were eliminated, and Wikipedia pages were removed (since their presence in many other datasets could have induced overfitting).[3]. While the cost of training GPT-2 is known to have been $256 per hour,[18][19] the amount of hours it took to complete training is unknown; therefore, the overall training cost cannot be estimated accurately.[20] However, comparable large language models using transformer architectures have had their costs documented in more detail; the training processes for BERT and XLNet consumed, respectively, $6,912 and $245,000 of resources.[19]. GPT-2 was first announced on 14 February 2019."
+                  ],
+                  [
+                    "https://en.wikipedia.org/w/index.php?search=GPT-1",
+                    "Generative Pre-trained Transformer 1 (GPT-1) was the first of OpenAI's large language models following Google's invention of the transformer architecture in 2017.[2] In June 2018, OpenAI released a paper entitled \"Improving Language Understanding by Generative Pre-Training\",[3] in which they introduced that initial model along with the general concept of a generative pre-trained transformer.[4]. Up to that point, the best-performing neural NLP models primarily employed supervised learning from large amounts of manually labeled data. This reliance on supervised learning limited their use of datasets that were not well-annotated, in addition to making it prohibitively expensive and time-consuming to train extremely large models;[3][5] many languages (such as Swahili or Haitian Creole) are difficult to translate and interpret using such models due to a lack of available text for corpus-building.[5] In contrast, a GPT's \"semi-supervised\" approach involved two stages: an unsupervised generative \"pre-training\" stage in which a language modeling objective was used to set initial parameters, and a supervised discriminative \"fine-tuning\" stage in which these parameters were adapted to a target task.[3]. The use of a transformer architecture, as opposed to previous techniques involving attention-augmented RNNs, provided GPT models with a more structured memory than could be achieved through recurrent mechanisms; this resulted in \"robust transfer performance across diverse tasks\".[3]. BookCorpus was chosen as a training dataset partly because the long passages of continuous text helped the model learn to handle long-range information.[6] It contained over 7,000 unpublished fiction books from various genres. The rest of the datasets available at the time, while being larger, lacked this long-range structure (being \"shuffled\" at a sentence level).[3]. The BookCorpus text was cleaned by the ftfy library to standardized punctuation and whitespace and then tokenized by spaCy.[3]. The GPT-1 architecture was a twelve-layer decoder-only transformer, using twelve masked self-attention heads, with 64-dimensional states each (for a total of 768). Rather than simple stochastic gradient descent, the Adam optimization algorithm was used; the learning rate was increased linearly from zero over the first 2,000 updates to a maximum of 2.5×10−4, and annealed to 0 using a cosine schedule.[3] GPT-1 has 117 million parameters.[4]. While the fine-tuning was adapted to specific tasks, its pre-training was not; to perform the various tasks, minimal changes were performed to its underlying task-agnostic model architecture.[3] Despite this, GPT-1 still improved on previous benchmarks in several language processing tasks, outperforming discriminatively-trained models with task-oriented architectures on several diverse tasks.[3]."
+                  ]
+                ]
+              },
+              "output": "Content: Generative Pre-trained Transformer 2 (GPT-2) is a large language model by OpenAI and the second in their foundational series of GPT models. GPT-2 was pre-trained on BookCorpus,[2] a dataset of over 7,000 self-published fiction books from various genres, and trained on a dataset of 8 million web pages.[3] It was partially released in February 2019, followed by full release of the 1.5-billion-parameter model on November 5, 2019.[4][5][6][7][8]. GPT-2 was created as a \"direct scale-up\" of GPT-1[9] with a ten-fold increase in both its parameter count and the size of its training dataset.[8] It is a general-purpose learner and its ability to perform the various tasks was a consequence of its general ability to accurately predict the next item in a sequence,[3][10] which enabled it to translate texts, answer questions about a topic from a text, summarize passages from a larger text,[10] and generate text output on a level sometimes indistinguishable from that of humans,[11] however it could become repetitive or nonsensical when generating long passages.[12] It was superseded by GPT-3 and GPT-4 models, which are not open source anymore.. GPT-2 has, like its predecessor GPT-1 and its successors GPT-3 and GPT-4, a generative pre-trained transformer architecture, implementing a deep neural network, specifically a transformer model,[9] which uses attention instead of older recurrence- and convolution-based architectures.[13][14] Attention mechanisms allow the model to selectively focus on segments of input text it predicts to be the most relevant.[15][16] This model allows for greatly increased parallelization, and outperforms previous benchmarks for RNN/CNN/LSTM-based models.[9]. Since the transformer architecture enabled massive parallelization, GPT models could be trained on larger corpora than previous NLP (natural language processing) models. While the GPT-1 model demonstrated that the approach was viable, GPT-2 would further explore the emergent properties of networks trained on extremely large corpora. CommonCrawl, a large corpus produced by web crawling and previously used in training NLP systems,[17] was considered due to its large size, but was rejected after further review revealed large amounts of unintelligible content.[3][17] Instead, OpenAI developed a new corpus, known as WebText; rather than scraping content indiscriminately from the World Wide Web, WebText was generated by scraping only pages linked to by Reddit posts that had received at least three upvotes prior to December 2017. The corpus was subsequently cleaned; HTML documents were parsed into plain text, duplicate pages were eliminated, and Wikipedia pages were removed (since their presence in many other datasets could have induced overfitting).[3]. While the cost of training GPT-2 is known to have been $256 per hour,[18][19] the amount of hours it took to complete training is unknown; therefore, the overall training cost cannot be estimated accurately.[20] However, comparable large language models using transformer architectures have had their costs documented in more detail; the training processes for BERT and XLNet consumed, respectively, $6,912 and $245,000 of resources.[19]. GPT-2 was first announced on 14 February 2019.\nSource: https://en.wikipedia.org/w/index.php?search=GPT-2\n\nContent: Generative Pre-trained Transformer 1 (GPT-1) was the first of OpenAI's large language models following Google's invention of the transformer architecture in 2017.[2] In June 2018, OpenAI released a paper entitled \"Improving Language Understanding by Generative Pre-Training\",[3] in which they introduced that initial model along with the general concept of a generative pre-trained transformer.[4]. Up to that point, the best-performing neural NLP models primarily employed supervised learning from large amounts of manually labeled data. This reliance on supervised learning limited their use of datasets that were not well-annotated, in addition to making it prohibitively expensive and time-consuming to train extremely large models;[3][5] many languages (such as Swahili or Haitian Creole) are difficult to translate and interpret using such models due to a lack of available text for corpus-building.[5] In contrast, a GPT's \"semi-supervised\" approach involved two stages: an unsupervised generative \"pre-training\" stage in which a language modeling objective was used to set initial parameters, and a supervised discriminative \"fine-tuning\" stage in which these parameters were adapted to a target task.[3]. The use of a transformer architecture, as opposed to previous techniques involving attention-augmented RNNs, provided GPT models with a more structured memory than could be achieved through recurrent mechanisms; this resulted in \"robust transfer performance across diverse tasks\".[3]. BookCorpus was chosen as a training dataset partly because the long passages of continuous text helped the model learn to handle long-range information.[6] It contained over 7,000 unpublished fiction books from various genres. The rest of the datasets available at the time, while being larger, lacked this long-range structure (being \"shuffled\" at a sentence level).[3]. The BookCorpus text was cleaned by the ftfy library to standardized punctuation and whitespace and then tokenized by spaCy.[3]. The GPT-1 architecture was a twelve-layer decoder-only transformer, using twelve masked self-attention heads, with 64-dimensional states each (for a total of 768). Rather than simple stochastic gradient descent, the Adam optimization algorithm was used; the learning rate was increased linearly from zero over the first 2,000 updates to a maximum of 2.5×10−4, and annealed to 0 using a cosine schedule.[3] GPT-1 has 117 million parameters.[4]. While the fine-tuning was adapted to specific tasks, its pre-training was not; to perform the various tasks, minimal changes were performed to its underlying task-agnostic model architecture.[3] Despite this, GPT-1 still improved on previous benchmarks in several language processing tasks, outperforming discriminatively-trained models with task-oriented architectures on several diverse tasks.[3].\nSource: https://en.wikipedia.org/w/index.php?search=GPT-1",
+              "start_time": 1708639578.337367,
+              "end_time": 1708639578.338394,
+              "error": null,
+              "children": [],
+              "node_name": "process_search_result",
+              "parent_id": "",
+              "id": "107b69e1-8b01-457e-b83a-638b4217a8b6",
+              "system_metrics": {}
+            },
+            {
+              "name": "AzureOpenAI.chat",
+              "type": "Tool",
+              "inputs": {
+                "prompt": "system:\nYou are a chatbot having a conversation with a human.\nGiven the following extracted parts of a long document and a question, create a final answer with references (\"SOURCES\").\nIf you don't know the answer, just say that you don't know. Don't try to make up an answer.\nALWAYS return a \"SOURCES\" part in your answer.\n\n{{contexts}}\n\n{% for item in chat_history %}\nuser:\n{{item.inputs.question}}\nassistant:\n{{item.outputs.answer}}\n{% endfor %}\n\nuser:\n{{question}}\n",
+                "deployment_name": "gpt-35-turbo",
+                "temperature": 0.8,
+                "question": "What is the difference between this model and previous neural network?",
+                "chat_history": [
+                  {
+                    "inputs": {
+                      "question": "What is ChatGPT?"
+                    },
+                    "outputs": {
+                      "answer": "ChatGPT is a chatbot product developed by OpenAI. It is powered by the Generative Pre-trained Transformer (GPT) series of language models, with GPT-4 being the latest version. ChatGPT uses natural language processing to generate responses to user inputs in a conversational manner. It was released as ChatGPT Plus, a premium version, which provides enhanced features and access to the GPT-4 based version of OpenAI's API. ChatGPT allows users to interact and have conversations with the language model, utilizing both text and image inputs. It is designed to be more reliable, creative, and capable of handling nuanced instructions compared to previous versions. However, it is important to note that while GPT-4 improves upon its predecessors, it still retains some of the same limitations and challenges."
+                    }
+                  }
+                ],
+                "contexts": "Content: Generative Pre-trained Transformer 2 (GPT-2) is a large language model by OpenAI and the second in their foundational series of GPT models. GPT-2 was pre-trained on BookCorpus,[2] a dataset of over 7,000 self-published fiction books from various genres, and trained on a dataset of 8 million web pages.[3] It was partially released in February 2019, followed by full release of the 1.5-billion-parameter model on November 5, 2019.[4][5][6][7][8]. GPT-2 was created as a \"direct scale-up\" of GPT-1[9] with a ten-fold increase in both its parameter count and the size of its training dataset.[8] It is a general-purpose learner and its ability to perform the various tasks was a consequence of its general ability to accurately predict the next item in a sequence,[3][10] which enabled it to translate texts, answer questions about a topic from a text, summarize passages from a larger text,[10] and generate text output on a level sometimes indistinguishable from that of humans,[11] however it could become repetitive or nonsensical when generating long passages.[12] It was superseded by GPT-3 and GPT-4 models, which are not open source anymore.. GPT-2 has, like its predecessor GPT-1 and its successors GPT-3 and GPT-4, a generative pre-trained transformer architecture, implementing a deep neural network, specifically a transformer model,[9] which uses attention instead of older recurrence- and convolution-based architectures.[13][14] Attention mechanisms allow the model to selectively focus on segments of input text it predicts to be the most relevant.[15][16] This model allows for greatly increased parallelization, and outperforms previous benchmarks for RNN/CNN/LSTM-based models.[9]. Since the transformer architecture enabled massive parallelization, GPT models could be trained on larger corpora than previous NLP (natural language processing) models. While the GPT-1 model demonstrated that the approach was viable, GPT-2 would further explore the emergent properties of networks trained on extremely large corpora. CommonCrawl, a large corpus produced by web crawling and previously used in training NLP systems,[17] was considered due to its large size, but was rejected after further review revealed large amounts of unintelligible content.[3][17] Instead, OpenAI developed a new corpus, known as WebText; rather than scraping content indiscriminately from the World Wide Web, WebText was generated by scraping only pages linked to by Reddit posts that had received at least three upvotes prior to December 2017. The corpus was subsequently cleaned; HTML documents were parsed into plain text, duplicate pages were eliminated, and Wikipedia pages were removed (since their presence in many other datasets could have induced overfitting).[3]. While the cost of training GPT-2 is known to have been $256 per hour,[18][19] the amount of hours it took to complete training is unknown; therefore, the overall training cost cannot be estimated accurately.[20] However, comparable large language models using transformer architectures have had their costs documented in more detail; the training processes for BERT and XLNet consumed, respectively, $6,912 and $245,000 of resources.[19]. GPT-2 was first announced on 14 February 2019.\nSource: https://en.wikipedia.org/w/index.php?search=GPT-2\n\nContent: Generative Pre-trained Transformer 1 (GPT-1) was the first of OpenAI's large language models following Google's invention of the transformer architecture in 2017.[2] In June 2018, OpenAI released a paper entitled \"Improving Language Understanding by Generative Pre-Training\",[3] in which they introduced that initial model along with the general concept of a generative pre-trained transformer.[4]. Up to that point, the best-performing neural NLP models primarily employed supervised learning from large amounts of manually labeled data. This reliance on supervised learning limited their use of datasets that were not well-annotated, in addition to making it prohibitively expensive and time-consuming to train extremely large models;[3][5] many languages (such as Swahili or Haitian Creole) are difficult to translate and interpret using such models due to a lack of available text for corpus-building.[5] In contrast, a GPT's \"semi-supervised\" approach involved two stages: an unsupervised generative \"pre-training\" stage in which a language modeling objective was used to set initial parameters, and a supervised discriminative \"fine-tuning\" stage in which these parameters were adapted to a target task.[3]. The use of a transformer architecture, as opposed to previous techniques involving attention-augmented RNNs, provided GPT models with a more structured memory than could be achieved through recurrent mechanisms; this resulted in \"robust transfer performance across diverse tasks\".[3]. BookCorpus was chosen as a training dataset partly because the long passages of continuous text helped the model learn to handle long-range information.[6] It contained over 7,000 unpublished fiction books from various genres. The rest of the datasets available at the time, while being larger, lacked this long-range structure (being \"shuffled\" at a sentence level).[3]. The BookCorpus text was cleaned by the ftfy library to standardized punctuation and whitespace and then tokenized by spaCy.[3]. The GPT-1 architecture was a twelve-layer decoder-only transformer, using twelve masked self-attention heads, with 64-dimensional states each (for a total of 768). Rather than simple stochastic gradient descent, the Adam optimization algorithm was used; the learning rate was increased linearly from zero over the first 2,000 updates to a maximum of 2.5×10−4, and annealed to 0 using a cosine schedule.[3] GPT-1 has 117 million parameters.[4]. While the fine-tuning was adapted to specific tasks, its pre-training was not; to perform the various tasks, minimal changes were performed to its underlying task-agnostic model architecture.[3] Despite this, GPT-1 still improved on previous benchmarks in several language processing tasks, outperforming discriminatively-trained models with task-oriented architectures on several diverse tasks.[3].\nSource: https://en.wikipedia.org/w/index.php?search=GPT-1",
+                "stream": false
+              },
+              "output": "I don't know the exact difference between ChatGPT and previous neural network models. If you want, I can provide you with a summary of the differences between GPT-2 and GPT-1, which might give you an idea of the improvements made across different versions of the GPT series.\n\nSOURCES:\nhttps://en.wikipedia.org/w/index.php?search=GPT-2\nhttps://en.wikipedia.org/w/index.php?search=GPT-1",
+              "start_time": 1708639578.343665,
+              "end_time": 1708639579.323573,
+              "error": null,
+              "children": [
+                {
+                  "name": "openai.resources.chat.completions.Completions.create",
+                  "type": "LLM",
+                  "inputs": {
+                    "model": "gpt-35-turbo",
+                    "messages": [
+                      {
+                        "role": "system",
+                        "content": "You are a chatbot having a conversation with a human.\nGiven the following extracted parts of a long document and a question, create a final answer with references (\"SOURCES\").\nIf you don't know the answer, just say that you don't know. Don't try to make up an answer.\nALWAYS return a \"SOURCES\" part in your answer.\n\nContent: Generative Pre-trained Transformer 2 (GPT-2) is a large language model by OpenAI and the second in their foundational series of GPT models. GPT-2 was pre-trained on BookCorpus,[2] a dataset of over 7,000 self-published fiction books from various genres, and trained on a dataset of 8 million web pages.[3] It was partially released in February 2019, followed by full release of the 1.5-billion-parameter model on November 5, 2019.[4][5][6][7][8]. GPT-2 was created as a \"direct scale-up\" of GPT-1[9] with a ten-fold increase in both its parameter count and the size of its training dataset.[8] It is a general-purpose learner and its ability to perform the various tasks was a consequence of its general ability to accurately predict the next item in a sequence,[3][10] which enabled it to translate texts, answer questions about a topic from a text, summarize passages from a larger text,[10] and generate text output on a level sometimes indistinguishable from that of humans,[11] however it could become repetitive or nonsensical when generating long passages.[12] It was superseded by GPT-3 and GPT-4 models, which are not open source anymore.. GPT-2 has, like its predecessor GPT-1 and its successors GPT-3 and GPT-4, a generative pre-trained transformer architecture, implementing a deep neural network, specifically a transformer model,[9] which uses attention instead of older recurrence- and convolution-based architectures.[13][14] Attention mechanisms allow the model to selectively focus on segments of input text it predicts to be the most relevant.[15][16] This model allows for greatly increased parallelization, and outperforms previous benchmarks for RNN/CNN/LSTM-based models.[9]. Since the transformer architecture enabled massive parallelization, GPT models could be trained on larger corpora than previous NLP (natural language processing) models. While the GPT-1 model demonstrated that the approach was viable, GPT-2 would further explore the emergent properties of networks trained on extremely large corpora. CommonCrawl, a large corpus produced by web crawling and previously used in training NLP systems,[17] was considered due to its large size, but was rejected after further review revealed large amounts of unintelligible content.[3][17] Instead, OpenAI developed a new corpus, known as WebText; rather than scraping content indiscriminately from the World Wide Web, WebText was generated by scraping only pages linked to by Reddit posts that had received at least three upvotes prior to December 2017. The corpus was subsequently cleaned; HTML documents were parsed into plain text, duplicate pages were eliminated, and Wikipedia pages were removed (since their presence in many other datasets could have induced overfitting).[3]. While the cost of training GPT-2 is known to have been $256 per hour,[18][19] the amount of hours it took to complete training is unknown; therefore, the overall training cost cannot be estimated accurately.[20] However, comparable large language models using transformer architectures have had their costs documented in more detail; the training processes for BERT and XLNet consumed, respectively, $6,912 and $245,000 of resources.[19]. GPT-2 was first announced on 14 February 2019.\nSource: https://en.wikipedia.org/w/index.php?search=GPT-2\n\nContent: Generative Pre-trained Transformer 1 (GPT-1) was the first of OpenAI's large language models following Google's invention of the transformer architecture in 2017.[2] In June 2018, OpenAI released a paper entitled \"Improving Language Understanding by Generative Pre-Training\",[3] in which they introduced that initial model along with the general concept of a generative pre-trained transformer.[4]. Up to that point, the best-performing neural NLP models primarily employed supervised learning from large amounts of manually labeled data. This reliance on supervised learning limited their use of datasets that were not well-annotated, in addition to making it prohibitively expensive and time-consuming to train extremely large models;[3][5] many languages (such as Swahili or Haitian Creole) are difficult to translate and interpret using such models due to a lack of available text for corpus-building.[5] In contrast, a GPT's \"semi-supervised\" approach involved two stages: an unsupervised generative \"pre-training\" stage in which a language modeling objective was used to set initial parameters, and a supervised discriminative \"fine-tuning\" stage in which these parameters were adapted to a target task.[3]. The use of a transformer architecture, as opposed to previous techniques involving attention-augmented RNNs, provided GPT models with a more structured memory than could be achieved through recurrent mechanisms; this resulted in \"robust transfer performance across diverse tasks\".[3]. BookCorpus was chosen as a training dataset partly because the long passages of continuous text helped the model learn to handle long-range information.[6] It contained over 7,000 unpublished fiction books from various genres. The rest of the datasets available at the time, while being larger, lacked this long-range structure (being \"shuffled\" at a sentence level).[3]. The BookCorpus text was cleaned by the ftfy library to standardized punctuation and whitespace and then tokenized by spaCy.[3]. The GPT-1 architecture was a twelve-layer decoder-only transformer, using twelve masked self-attention heads, with 64-dimensional states each (for a total of 768). Rather than simple stochastic gradient descent, the Adam optimization algorithm was used; the learning rate was increased linearly from zero over the first 2,000 updates to a maximum of 2.5×10−4, and annealed to 0 using a cosine schedule.[3] GPT-1 has 117 million parameters.[4]. While the fine-tuning was adapted to specific tasks, its pre-training was not; to perform the various tasks, minimal changes were performed to its underlying task-agnostic model architecture.[3] Despite this, GPT-1 still improved on previous benchmarks in several language processing tasks, outperforming discriminatively-trained models with task-oriented architectures on several diverse tasks.[3].\nSource: https://en.wikipedia.org/w/index.php?search=GPT-1"
+                      },
+                      {
+                        "role": "user",
+                        "content": "What is ChatGPT?"
+                      },
+                      {
+                        "role": "assistant",
+                        "content": "ChatGPT is a chatbot product developed by OpenAI. It is powered by the Generative Pre-trained Transformer (GPT) series of language models, with GPT-4 being the latest version. ChatGPT uses natural language processing to generate responses to user inputs in a conversational manner. It was released as ChatGPT Plus, a premium version, which provides enhanced features and access to the GPT-4 based version of OpenAI's API. ChatGPT allows users to interact and have conversations with the language model, utilizing both text and image inputs. It is designed to be more reliable, creative, and capable of handling nuanced instructions compared to previous versions. However, it is important to note that while GPT-4 improves upon its predecessors, it still retains some of the same limitations and challenges."
+                      },
+                      {
+                        "role": "user",
+                        "content": "What is the difference between this model and previous neural network?"
+                      }
+                    ],
+                    "temperature": 0.8,
+                    "top_p": 1.0,
+                    "n": 1,
+                    "stream": false,
+                    "stop": null,
+                    "max_tokens": null,
+                    "presence_penalty": 0.0,
+                    "frequency_penalty": 0.0,
+                    "logit_bias": {},
+                    "user": "",
+                    "response_format": null
+                  },
+                  "output": {
+                    "id": "chatcmpl-8v6oV9N64wXMUkHP1hhUKhg3AHpkv",
+                    "choices": [
+                      {
+                        "finish_reason": "stop",
+                        "index": 0,
+                        "logprobs": null,
+                        "message": {
+                          "content": "I don't know the exact difference between ChatGPT and previous neural network models. If you want, I can provide you with a summary of the differences between GPT-2 and GPT-1, which might give you an idea of the improvements made across different versions of the GPT series.\n\nSOURCES:\nhttps://en.wikipedia.org/w/index.php?search=GPT-2\nhttps://en.wikipedia.org/w/index.php?search=GPT-1",
+                          "role": "assistant",
+                          "function_call": null,
+                          "tool_calls": null
+                        }
+                      }
+                    ],
+                    "created": 1708621579,
+                    "model": "gpt-35-turbo",
+                    "object": "chat.completion",
+                    "system_fingerprint": "fp_68a7d165bf",
+                    "usage": {
+                      "completion_tokens": 93,
+                      "prompt_tokens": 1611,
+                      "total_tokens": 1704
+                    }
+                  },
+                  "start_time": 1708639578.354686,
+                  "end_time": 1708639579.323573,
+                  "error": null,
+                  "children": [],
+                  "node_name": null,
+                  "parent_id": "ff44af00-1fc2-48f7-97c1-b10159609c86",
+                  "id": "c544e883-e864-4a01-8127-ea8f884e164e",
+                  "system_metrics": {
+                    "completion_tokens": 93,
+                    "prompt_tokens": 1611,
+                    "total_tokens": 1704
+                  }
+                }
+              ],
+              "node_name": "augmented_chat",
+              "parent_id": "",
+              "id": "ff44af00-1fc2-48f7-97c1-b10159609c86",
+              "system_metrics": {
+                "completion_tokens": 93,
+                "prompt_tokens": 1611,
+                "total_tokens": 1704
+              }
+            }
+          ],
+          "system_metrics": {
+            "duration": 5.350343,
+            "prompt_tokens": 2097,
+            "completion_tokens": 104,
+            "total_tokens": 2201
+          }
+        }
+      ],
+      "variant_id": "",
+      "name": "",
+      "description": "",
+      "tags": null,
+      "system_metrics": {
+        "duration": 5.350343,
+        "prompt_tokens": 2097,
+        "completion_tokens": 104,
+        "total_tokens": 2201
+      },
+      "result": {
+        "answer": "I don't know the exact difference between ChatGPT and previous neural network models. If you want, I can provide you with a summary of the differences between GPT-2 and GPT-1, which might give you an idea of the improvements made across different versions of the GPT series.\n\nSOURCES:\nhttps://en.wikipedia.org/w/index.php?search=GPT-2\nhttps://en.wikipedia.org/w/index.php?search=GPT-1"
+      },
+      "upload_metrics": false
+    }
+  ],
+  "node_runs": [
+    {
+      "node": "extract_query_from_question",
+      "flow_run_id": "97617340-b45e-4ba9-accd-10251560bb8d",
+      "run_id": "97617340-b45e-4ba9-accd-10251560bb8d_extract_query_from_question_0",
+      "status": "Completed",
+      "inputs": {
+        "deployment_name": "gpt-4-turbo",
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_tokens": 256,
+        "presence_penalty": 0.0,
+        "frequency_penalty": 0.0,
+        "question": "What is the difference between this model and previous neural network?",
+        "chat_history": [
+          {
+            "inputs": {
+              "question": "What is ChatGPT?"
+            },
+            "outputs": {
+              "answer": "ChatGPT is a chatbot product developed by OpenAI. It is powered by the Generative Pre-trained Transformer (GPT) series of language models, with GPT-4 being the latest version. ChatGPT uses natural language processing to generate responses to user inputs in a conversational manner. It was released as ChatGPT Plus, a premium version, which provides enhanced features and access to the GPT-4 based version of OpenAI's API. ChatGPT allows users to interact and have conversations with the language model, utilizing both text and image inputs. It is designed to be more reliable, creative, and capable of handling nuanced instructions compared to previous versions. However, it is important to note that while GPT-4 improves upon its predecessors, it still retains some of the same limitations and challenges."
+            }
+          }
+        ]
+      },
+      "output": "difference between GPT-4 and previous neural network models",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "97617340-b45e-4ba9-accd-10251560bb8d_0",
+      "start_time": "2024-02-22T17:06:13.979145Z",
+      "end_time": "2024-02-22T17:06:15.354642Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "AzureOpenAI.chat",
+          "type": "Tool",
+          "inputs": {
+            "prompt": "system:\nYou are an AI assistant reading the transcript of a conversation between an AI and a human. Given an input question and conversation history, infer user real intent.\n\nThe conversation history is provided just in case of a coreference (e.g. \"What is this?\" where \"this\" is defined in previous conversation).\n\nReturn the output as query used for next round user message.\n\nuser:\nEXAMPLE\nConversation history:\nHuman: I want to find the best restaurants nearby, could you recommend some?\nAI: Sure, I can help you with that. Here are some of the best restaurants nearby: Rock Bar.\nHuman: How do I get to Rock Bar?\n\nOutput: directions to Rock Bar\nEND OF EXAMPLE\n\nEXAMPLE\nConversation history:\nHuman: I want to find the best restaurants nearby, could you recommend some?\nAI: Sure, I can help you with that. Here are some of the best restaurants nearby: Rock Bar.\nHuman: How do I get to Rock Bar?\nAI: To get to Rock Bar, you need to go to the 52nd floor of the Park A. You can take the subway to Station A and walk for about 8 minutes from exit A53. Alternatively, you can take the train to S Station and walk for about 12 minutes from the south exit3.\nHuman: Show me more restaurants.\n\nOutput: best restaurants nearby\nEND OF EXAMPLE\n\nConversation history (for reference only):\n{% for item in chat_history %}\nHuman: {{item.inputs.question}}\nAI: {{item.outputs.answer}}\n{% endfor %}\nHuman: {{question}}\n\nOutput:",
+            "deployment_name": "gpt-4-turbo",
+            "temperature": 0.7,
+            "top_p": 1.0,
+            "max_tokens": 256,
+            "presence_penalty": 0.0,
+            "frequency_penalty": 0.0,
+            "question": "What is the difference between this model and previous neural network?",
+            "chat_history": [
+              {
+                "inputs": {
+                  "question": "What is ChatGPT?"
+                },
+                "outputs": {
+                  "answer": "ChatGPT is a chatbot product developed by OpenAI. It is powered by the Generative Pre-trained Transformer (GPT) series of language models, with GPT-4 being the latest version. ChatGPT uses natural language processing to generate responses to user inputs in a conversational manner. It was released as ChatGPT Plus, a premium version, which provides enhanced features and access to the GPT-4 based version of OpenAI's API. ChatGPT allows users to interact and have conversations with the language model, utilizing both text and image inputs. It is designed to be more reliable, creative, and capable of handling nuanced instructions compared to previous versions. However, it is important to note that while GPT-4 improves upon its predecessors, it still retains some of the same limitations and challenges."
+                }
+              }
+            ]
+          },
+          "output": "difference between GPT-4 and previous neural network models",
+          "start_time": 1708639573.979145,
+          "end_time": 1708639575.353632,
+          "error": null,
+          "children": [
+            {
+              "name": "openai.resources.chat.completions.Completions.create",
+              "type": "LLM",
+              "inputs": {
+                "model": "gpt-4-turbo",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are an AI assistant reading the transcript of a conversation between an AI and a human. Given an input question and conversation history, infer user real intent.\n\nThe conversation history is provided just in case of a coreference (e.g. \"What is this?\" where \"this\" is defined in previous conversation).\n\nReturn the output as query used for next round user message."
+                  },
+                  {
+                    "role": "user",
+                    "content": "EXAMPLE\nConversation history:\nHuman: I want to find the best restaurants nearby, could you recommend some?\nAI: Sure, I can help you with that. Here are some of the best restaurants nearby: Rock Bar.\nHuman: How do I get to Rock Bar?\n\nOutput: directions to Rock Bar\nEND OF EXAMPLE\n\nEXAMPLE\nConversation history:\nHuman: I want to find the best restaurants nearby, could you recommend some?\nAI: Sure, I can help you with that. Here are some of the best restaurants nearby: Rock Bar.\nHuman: How do I get to Rock Bar?\nAI: To get to Rock Bar, you need to go to the 52nd floor of the Park A. You can take the subway to Station A and walk for about 8 minutes from exit A53. Alternatively, you can take the train to S Station and walk for about 12 minutes from the south exit3.\nHuman: Show me more restaurants.\n\nOutput: best restaurants nearby\nEND OF EXAMPLE\n\nConversation history (for reference only):\nHuman: What is ChatGPT?\nAI: ChatGPT is a chatbot product developed by OpenAI. It is powered by the Generative Pre-trained Transformer (GPT) series of language models, with GPT-4 being the latest version. ChatGPT uses natural language processing to generate responses to user inputs in a conversational manner. It was released as ChatGPT Plus, a premium version, which provides enhanced features and access to the GPT-4 based version of OpenAI's API. ChatGPT allows users to interact and have conversations with the language model, utilizing both text and image inputs. It is designed to be more reliable, creative, and capable of handling nuanced instructions compared to previous versions. However, it is important to note that while GPT-4 improves upon its predecessors, it still retains some of the same limitations and challenges.\nHuman: What is the difference between this model and previous neural network?\n\nOutput:"
+                  }
+                ],
+                "temperature": 0.7,
+                "top_p": 1.0,
+                "n": 1,
+                "stream": false,
+                "stop": null,
+                "max_tokens": 256,
+                "presence_penalty": 0.0,
+                "frequency_penalty": 0.0,
+                "logit_bias": {},
+                "user": "",
+                "response_format": null
+              },
+              "output": {
+                "id": "chatcmpl-8v6oR4Py3gz9zMiaPjtWLB8UpDcYb",
+                "choices": [
+                  {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                      "content": "difference between GPT-4 and previous neural network models",
+                      "role": "assistant",
+                      "function_call": null,
+                      "tool_calls": null
+                    }
+                  }
+                ],
+                "created": 1708621575,
+                "model": "gpt-4",
+                "object": "chat.completion",
+                "system_fingerprint": "fp_8abb16fa4e",
+                "usage": {
+                  "completion_tokens": 11,
+                  "prompt_tokens": 486,
+                  "total_tokens": 497
+                }
+              },
+              "start_time": 1708639573.983174,
+              "end_time": 1708639575.353632,
+              "error": null,
+              "children": [],
+              "node_name": null,
+              "parent_id": "989d22f1-51ba-4fc8-8c76-36ac8be2a31b",
+              "id": "1cfda07d-000f-4c30-96a9-57933f0a2297",
+              "system_metrics": {
+                "completion_tokens": 11,
+                "prompt_tokens": 486,
+                "total_tokens": 497
+              }
+            }
+          ],
+          "node_name": "extract_query_from_question",
+          "parent_id": "",
+          "id": "989d22f1-51ba-4fc8-8c76-36ac8be2a31b",
+          "system_metrics": {
+            "completion_tokens": 11,
+            "prompt_tokens": 486,
+            "total_tokens": 497
+          }
+        }
+      ],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "completion_tokens": 11,
+        "prompt_tokens": 486,
+        "total_tokens": 497,
+        "duration": 1.375497
+      },
+      "result": "difference between GPT-4 and previous neural network models"
+    },
+    {
+      "node": "get_wiki_url",
+      "flow_run_id": "97617340-b45e-4ba9-accd-10251560bb8d",
+      "run_id": "97617340-b45e-4ba9-accd-10251560bb8d_get_wiki_url_0",
+      "status": "Completed",
+      "inputs": {
+        "entity": "difference between GPT-4 and previous neural network models",
+        "count": 2
+      },
+      "output": [
+        "https://en.wikipedia.org/w/index.php?search=GPT-2",
+        "https://en.wikipedia.org/w/index.php?search=GPT-1"
+      ],
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "97617340-b45e-4ba9-accd-10251560bb8d_0",
+      "start_time": "2024-02-22T17:06:15.357627Z",
+      "end_time": "2024-02-22T17:06:16.843867Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "get_wiki_url",
+          "type": "Tool",
+          "inputs": {
+            "entity": "difference between GPT-4 and previous neural network models",
+            "count": 2
+          },
+          "output": [
+            "https://en.wikipedia.org/w/index.php?search=GPT-2",
+            "https://en.wikipedia.org/w/index.php?search=GPT-1"
+          ],
+          "start_time": 1708639575.35863,
+          "end_time": 1708639576.843867,
+          "error": null,
+          "children": [],
+          "node_name": "get_wiki_url",
+          "parent_id": "",
+          "id": "5682a551-ac9e-4409-9219-35d5bed4ab78",
+          "system_metrics": {}
+        }
+      ],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "[2024-02-22T17:06:16+0000] Could not find difference between GPT-4 and previous neural network models. Similar ententity: ['GPT-2', 'GPT-1'].\n",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 1.48624
+      },
+      "result": [
+        "https://en.wikipedia.org/w/index.php?search=GPT-2",
+        "https://en.wikipedia.org/w/index.php?search=GPT-1"
+      ]
+    },
+    {
+      "node": "search_result_from_url",
+      "flow_run_id": "97617340-b45e-4ba9-accd-10251560bb8d",
+      "run_id": "97617340-b45e-4ba9-accd-10251560bb8d_search_result_from_url_0",
+      "status": "Completed",
+      "inputs": {
+        "url_list": [
+          "https://en.wikipedia.org/w/index.php?search=GPT-2",
+          "https://en.wikipedia.org/w/index.php?search=GPT-1"
+        ],
+        "count": 10
+      },
+      "output": [
+        [
+          "https://en.wikipedia.org/w/index.php?search=GPT-2",
+          "Generative Pre-trained Transformer 2 (GPT-2) is a large language model by OpenAI and the second in their foundational series of GPT models. GPT-2 was pre-trained on BookCorpus,[2] a dataset of over 7,000 self-published fiction books from various genres, and trained on a dataset of 8 million web pages.[3] It was partially released in February 2019, followed by full release of the 1.5-billion-parameter model on November 5, 2019.[4][5][6][7][8]. GPT-2 was created as a \"direct scale-up\" of GPT-1[9] with a ten-fold increase in both its parameter count and the size of its training dataset.[8] It is a general-purpose learner and its ability to perform the various tasks was a consequence of its general ability to accurately predict the next item in a sequence,[3][10] which enabled it to translate texts, answer questions about a topic from a text, summarize passages from a larger text,[10] and generate text output on a level sometimes indistinguishable from that of humans,[11] however it could become repetitive or nonsensical when generating long passages.[12] It was superseded by GPT-3 and GPT-4 models, which are not open source anymore.. GPT-2 has, like its predecessor GPT-1 and its successors GPT-3 and GPT-4, a generative pre-trained transformer architecture, implementing a deep neural network, specifically a transformer model,[9] which uses attention instead of older recurrence- and convolution-based architectures.[13][14] Attention mechanisms allow the model to selectively focus on segments of input text it predicts to be the most relevant.[15][16] This model allows for greatly increased parallelization, and outperforms previous benchmarks for RNN/CNN/LSTM-based models.[9]. Since the transformer architecture enabled massive parallelization, GPT models could be trained on larger corpora than previous NLP (natural language processing) models. While the GPT-1 model demonstrated that the approach was viable, GPT-2 would further explore the emergent properties of networks trained on extremely large corpora. CommonCrawl, a large corpus produced by web crawling and previously used in training NLP systems,[17] was considered due to its large size, but was rejected after further review revealed large amounts of unintelligible content.[3][17] Instead, OpenAI developed a new corpus, known as WebText; rather than scraping content indiscriminately from the World Wide Web, WebText was generated by scraping only pages linked to by Reddit posts that had received at least three upvotes prior to December 2017. The corpus was subsequently cleaned; HTML documents were parsed into plain text, duplicate pages were eliminated, and Wikipedia pages were removed (since their presence in many other datasets could have induced overfitting).[3]. While the cost of training GPT-2 is known to have been $256 per hour,[18][19] the amount of hours it took to complete training is unknown; therefore, the overall training cost cannot be estimated accurately.[20] However, comparable large language models using transformer architectures have had their costs documented in more detail; the training processes for BERT and XLNet consumed, respectively, $6,912 and $245,000 of resources.[19]. GPT-2 was first announced on 14 February 2019."
+        ],
+        [
+          "https://en.wikipedia.org/w/index.php?search=GPT-1",
+          "Generative Pre-trained Transformer 1 (GPT-1) was the first of OpenAI's large language models following Google's invention of the transformer architecture in 2017.[2] In June 2018, OpenAI released a paper entitled \"Improving Language Understanding by Generative Pre-Training\",[3] in which they introduced that initial model along with the general concept of a generative pre-trained transformer.[4]. Up to that point, the best-performing neural NLP models primarily employed supervised learning from large amounts of manually labeled data. This reliance on supervised learning limited their use of datasets that were not well-annotated, in addition to making it prohibitively expensive and time-consuming to train extremely large models;[3][5] many languages (such as Swahili or Haitian Creole) are difficult to translate and interpret using such models due to a lack of available text for corpus-building.[5] In contrast, a GPT's \"semi-supervised\" approach involved two stages: an unsupervised generative \"pre-training\" stage in which a language modeling objective was used to set initial parameters, and a supervised discriminative \"fine-tuning\" stage in which these parameters were adapted to a target task.[3]. The use of a transformer architecture, as opposed to previous techniques involving attention-augmented RNNs, provided GPT models with a more structured memory than could be achieved through recurrent mechanisms; this resulted in \"robust transfer performance across diverse tasks\".[3]. BookCorpus was chosen as a training dataset partly because the long passages of continuous text helped the model learn to handle long-range information.[6] It contained over 7,000 unpublished fiction books from various genres. The rest of the datasets available at the time, while being larger, lacked this long-range structure (being \"shuffled\" at a sentence level).[3]. The BookCorpus text was cleaned by the ftfy library to standardized punctuation and whitespace and then tokenized by spaCy.[3]. The GPT-1 architecture was a twelve-layer decoder-only transformer, using twelve masked self-attention heads, with 64-dimensional states each (for a total of 768). Rather than simple stochastic gradient descent, the Adam optimization algorithm was used; the learning rate was increased linearly from zero over the first 2,000 updates to a maximum of 2.5×10−4, and annealed to 0 using a cosine schedule.[3] GPT-1 has 117 million parameters.[4]. While the fine-tuning was adapted to specific tasks, its pre-training was not; to perform the various tasks, minimal changes were performed to its underlying task-agnostic model architecture.[3] Despite this, GPT-1 still improved on previous benchmarks in several language processing tasks, outperforming discriminatively-trained models with task-oriented architectures on several diverse tasks.[3]."
+        ]
+      ],
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "97617340-b45e-4ba9-accd-10251560bb8d_0",
+      "start_time": "2024-02-22T17:06:16.845823Z",
+      "end_time": "2024-02-22T17:06:18.335367Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "search_result_from_url",
+          "type": "Tool",
+          "inputs": {
+            "url_list": [
+              "https://en.wikipedia.org/w/index.php?search=GPT-2",
+              "https://en.wikipedia.org/w/index.php?search=GPT-1"
+            ],
+            "count": 10
+          },
+          "output": [
+            [
+              "https://en.wikipedia.org/w/index.php?search=GPT-2",
+              "Generative Pre-trained Transformer 2 (GPT-2) is a large language model by OpenAI and the second in their foundational series of GPT models. GPT-2 was pre-trained on BookCorpus,[2] a dataset of over 7,000 self-published fiction books from various genres, and trained on a dataset of 8 million web pages.[3] It was partially released in February 2019, followed by full release of the 1.5-billion-parameter model on November 5, 2019.[4][5][6][7][8]. GPT-2 was created as a \"direct scale-up\" of GPT-1[9] with a ten-fold increase in both its parameter count and the size of its training dataset.[8] It is a general-purpose learner and its ability to perform the various tasks was a consequence of its general ability to accurately predict the next item in a sequence,[3][10] which enabled it to translate texts, answer questions about a topic from a text, summarize passages from a larger text,[10] and generate text output on a level sometimes indistinguishable from that of humans,[11] however it could become repetitive or nonsensical when generating long passages.[12] It was superseded by GPT-3 and GPT-4 models, which are not open source anymore.. GPT-2 has, like its predecessor GPT-1 and its successors GPT-3 and GPT-4, a generative pre-trained transformer architecture, implementing a deep neural network, specifically a transformer model,[9] which uses attention instead of older recurrence- and convolution-based architectures.[13][14] Attention mechanisms allow the model to selectively focus on segments of input text it predicts to be the most relevant.[15][16] This model allows for greatly increased parallelization, and outperforms previous benchmarks for RNN/CNN/LSTM-based models.[9]. Since the transformer architecture enabled massive parallelization, GPT models could be trained on larger corpora than previous NLP (natural language processing) models. While the GPT-1 model demonstrated that the approach was viable, GPT-2 would further explore the emergent properties of networks trained on extremely large corpora. CommonCrawl, a large corpus produced by web crawling and previously used in training NLP systems,[17] was considered due to its large size, but was rejected after further review revealed large amounts of unintelligible content.[3][17] Instead, OpenAI developed a new corpus, known as WebText; rather than scraping content indiscriminately from the World Wide Web, WebText was generated by scraping only pages linked to by Reddit posts that had received at least three upvotes prior to December 2017. The corpus was subsequently cleaned; HTML documents were parsed into plain text, duplicate pages were eliminated, and Wikipedia pages were removed (since their presence in many other datasets could have induced overfitting).[3]. While the cost of training GPT-2 is known to have been $256 per hour,[18][19] the amount of hours it took to complete training is unknown; therefore, the overall training cost cannot be estimated accurately.[20] However, comparable large language models using transformer architectures have had their costs documented in more detail; the training processes for BERT and XLNet consumed, respectively, $6,912 and $245,000 of resources.[19]. GPT-2 was first announced on 14 February 2019."
+            ],
+            [
+              "https://en.wikipedia.org/w/index.php?search=GPT-1",
+              "Generative Pre-trained Transformer 1 (GPT-1) was the first of OpenAI's large language models following Google's invention of the transformer architecture in 2017.[2] In June 2018, OpenAI released a paper entitled \"Improving Language Understanding by Generative Pre-Training\",[3] in which they introduced that initial model along with the general concept of a generative pre-trained transformer.[4]. Up to that point, the best-performing neural NLP models primarily employed supervised learning from large amounts of manually labeled data. This reliance on supervised learning limited their use of datasets that were not well-annotated, in addition to making it prohibitively expensive and time-consuming to train extremely large models;[3][5] many languages (such as Swahili or Haitian Creole) are difficult to translate and interpret using such models due to a lack of available text for corpus-building.[5] In contrast, a GPT's \"semi-supervised\" approach involved two stages: an unsupervised generative \"pre-training\" stage in which a language modeling objective was used to set initial parameters, and a supervised discriminative \"fine-tuning\" stage in which these parameters were adapted to a target task.[3]. The use of a transformer architecture, as opposed to previous techniques involving attention-augmented RNNs, provided GPT models with a more structured memory than could be achieved through recurrent mechanisms; this resulted in \"robust transfer performance across diverse tasks\".[3]. BookCorpus was chosen as a training dataset partly because the long passages of continuous text helped the model learn to handle long-range information.[6] It contained over 7,000 unpublished fiction books from various genres. The rest of the datasets available at the time, while being larger, lacked this long-range structure (being \"shuffled\" at a sentence level).[3]. The BookCorpus text was cleaned by the ftfy library to standardized punctuation and whitespace and then tokenized by spaCy.[3]. The GPT-1 architecture was a twelve-layer decoder-only transformer, using twelve masked self-attention heads, with 64-dimensional states each (for a total of 768). Rather than simple stochastic gradient descent, the Adam optimization algorithm was used; the learning rate was increased linearly from zero over the first 2,000 updates to a maximum of 2.5×10−4, and annealed to 0 using a cosine schedule.[3] GPT-1 has 117 million parameters.[4]. While the fine-tuning was adapted to specific tasks, its pre-training was not; to perform the various tasks, minimal changes were performed to its underlying task-agnostic model architecture.[3] Despite this, GPT-1 still improved on previous benchmarks in several language processing tasks, outperforming discriminatively-trained models with task-oriented architectures on several diverse tasks.[3]."
+            ]
+          ],
+          "start_time": 1708639576.84746,
+          "end_time": 1708639578.334389,
+          "error": null,
+          "children": [],
+          "node_name": "search_result_from_url",
+          "parent_id": "",
+          "id": "35144b4a-c242-4268-97da-062d8d4d60f4",
+          "system_metrics": {}
+        }
+      ],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 1.489544
+      },
+      "result": [
+        [
+          "https://en.wikipedia.org/w/index.php?search=GPT-2",
+          "Generative Pre-trained Transformer 2 (GPT-2) is a large language model by OpenAI and the second in their foundational series of GPT models. GPT-2 was pre-trained on BookCorpus,[2] a dataset of over 7,000 self-published fiction books from various genres, and trained on a dataset of 8 million web pages.[3] It was partially released in February 2019, followed by full release of the 1.5-billion-parameter model on November 5, 2019.[4][5][6][7][8]. GPT-2 was created as a \"direct scale-up\" of GPT-1[9] with a ten-fold increase in both its parameter count and the size of its training dataset.[8] It is a general-purpose learner and its ability to perform the various tasks was a consequence of its general ability to accurately predict the next item in a sequence,[3][10] which enabled it to translate texts, answer questions about a topic from a text, summarize passages from a larger text,[10] and generate text output on a level sometimes indistinguishable from that of humans,[11] however it could become repetitive or nonsensical when generating long passages.[12] It was superseded by GPT-3 and GPT-4 models, which are not open source anymore.. GPT-2 has, like its predecessor GPT-1 and its successors GPT-3 and GPT-4, a generative pre-trained transformer architecture, implementing a deep neural network, specifically a transformer model,[9] which uses attention instead of older recurrence- and convolution-based architectures.[13][14] Attention mechanisms allow the model to selectively focus on segments of input text it predicts to be the most relevant.[15][16] This model allows for greatly increased parallelization, and outperforms previous benchmarks for RNN/CNN/LSTM-based models.[9]. Since the transformer architecture enabled massive parallelization, GPT models could be trained on larger corpora than previous NLP (natural language processing) models. While the GPT-1 model demonstrated that the approach was viable, GPT-2 would further explore the emergent properties of networks trained on extremely large corpora. CommonCrawl, a large corpus produced by web crawling and previously used in training NLP systems,[17] was considered due to its large size, but was rejected after further review revealed large amounts of unintelligible content.[3][17] Instead, OpenAI developed a new corpus, known as WebText; rather than scraping content indiscriminately from the World Wide Web, WebText was generated by scraping only pages linked to by Reddit posts that had received at least three upvotes prior to December 2017. The corpus was subsequently cleaned; HTML documents were parsed into plain text, duplicate pages were eliminated, and Wikipedia pages were removed (since their presence in many other datasets could have induced overfitting).[3]. While the cost of training GPT-2 is known to have been $256 per hour,[18][19] the amount of hours it took to complete training is unknown; therefore, the overall training cost cannot be estimated accurately.[20] However, comparable large language models using transformer architectures have had their costs documented in more detail; the training processes for BERT and XLNet consumed, respectively, $6,912 and $245,000 of resources.[19]. GPT-2 was first announced on 14 February 2019."
+        ],
+        [
+          "https://en.wikipedia.org/w/index.php?search=GPT-1",
+          "Generative Pre-trained Transformer 1 (GPT-1) was the first of OpenAI's large language models following Google's invention of the transformer architecture in 2017.[2] In June 2018, OpenAI released a paper entitled \"Improving Language Understanding by Generative Pre-Training\",[3] in which they introduced that initial model along with the general concept of a generative pre-trained transformer.[4]. Up to that point, the best-performing neural NLP models primarily employed supervised learning from large amounts of manually labeled data. This reliance on supervised learning limited their use of datasets that were not well-annotated, in addition to making it prohibitively expensive and time-consuming to train extremely large models;[3][5] many languages (such as Swahili or Haitian Creole) are difficult to translate and interpret using such models due to a lack of available text for corpus-building.[5] In contrast, a GPT's \"semi-supervised\" approach involved two stages: an unsupervised generative \"pre-training\" stage in which a language modeling objective was used to set initial parameters, and a supervised discriminative \"fine-tuning\" stage in which these parameters were adapted to a target task.[3]. The use of a transformer architecture, as opposed to previous techniques involving attention-augmented RNNs, provided GPT models with a more structured memory than could be achieved through recurrent mechanisms; this resulted in \"robust transfer performance across diverse tasks\".[3]. BookCorpus was chosen as a training dataset partly because the long passages of continuous text helped the model learn to handle long-range information.[6] It contained over 7,000 unpublished fiction books from various genres. The rest of the datasets available at the time, while being larger, lacked this long-range structure (being \"shuffled\" at a sentence level).[3]. The BookCorpus text was cleaned by the ftfy library to standardized punctuation and whitespace and then tokenized by spaCy.[3]. The GPT-1 architecture was a twelve-layer decoder-only transformer, using twelve masked self-attention heads, with 64-dimensional states each (for a total of 768). Rather than simple stochastic gradient descent, the Adam optimization algorithm was used; the learning rate was increased linearly from zero over the first 2,000 updates to a maximum of 2.5×10−4, and annealed to 0 using a cosine schedule.[3] GPT-1 has 117 million parameters.[4]. While the fine-tuning was adapted to specific tasks, its pre-training was not; to perform the various tasks, minimal changes were performed to its underlying task-agnostic model architecture.[3] Despite this, GPT-1 still improved on previous benchmarks in several language processing tasks, outperforming discriminatively-trained models with task-oriented architectures on several diverse tasks.[3]."
+        ]
+      ]
+    },
+    {
+      "node": "process_search_result",
+      "flow_run_id": "97617340-b45e-4ba9-accd-10251560bb8d",
+      "run_id": "97617340-b45e-4ba9-accd-10251560bb8d_process_search_result_0",
+      "status": "Completed",
+      "inputs": {
+        "search_result": [
+          [
+            "https://en.wikipedia.org/w/index.php?search=GPT-2",
+            "Generative Pre-trained Transformer 2 (GPT-2) is a large language model by OpenAI and the second in their foundational series of GPT models. GPT-2 was pre-trained on BookCorpus,[2] a dataset of over 7,000 self-published fiction books from various genres, and trained on a dataset of 8 million web pages.[3] It was partially released in February 2019, followed by full release of the 1.5-billion-parameter model on November 5, 2019.[4][5][6][7][8]. GPT-2 was created as a \"direct scale-up\" of GPT-1[9] with a ten-fold increase in both its parameter count and the size of its training dataset.[8] It is a general-purpose learner and its ability to perform the various tasks was a consequence of its general ability to accurately predict the next item in a sequence,[3][10] which enabled it to translate texts, answer questions about a topic from a text, summarize passages from a larger text,[10] and generate text output on a level sometimes indistinguishable from that of humans,[11] however it could become repetitive or nonsensical when generating long passages.[12] It was superseded by GPT-3 and GPT-4 models, which are not open source anymore.. GPT-2 has, like its predecessor GPT-1 and its successors GPT-3 and GPT-4, a generative pre-trained transformer architecture, implementing a deep neural network, specifically a transformer model,[9] which uses attention instead of older recurrence- and convolution-based architectures.[13][14] Attention mechanisms allow the model to selectively focus on segments of input text it predicts to be the most relevant.[15][16] This model allows for greatly increased parallelization, and outperforms previous benchmarks for RNN/CNN/LSTM-based models.[9]. Since the transformer architecture enabled massive parallelization, GPT models could be trained on larger corpora than previous NLP (natural language processing) models. While the GPT-1 model demonstrated that the approach was viable, GPT-2 would further explore the emergent properties of networks trained on extremely large corpora. CommonCrawl, a large corpus produced by web crawling and previously used in training NLP systems,[17] was considered due to its large size, but was rejected after further review revealed large amounts of unintelligible content.[3][17] Instead, OpenAI developed a new corpus, known as WebText; rather than scraping content indiscriminately from the World Wide Web, WebText was generated by scraping only pages linked to by Reddit posts that had received at least three upvotes prior to December 2017. The corpus was subsequently cleaned; HTML documents were parsed into plain text, duplicate pages were eliminated, and Wikipedia pages were removed (since their presence in many other datasets could have induced overfitting).[3]. While the cost of training GPT-2 is known to have been $256 per hour,[18][19] the amount of hours it took to complete training is unknown; therefore, the overall training cost cannot be estimated accurately.[20] However, comparable large language models using transformer architectures have had their costs documented in more detail; the training processes for BERT and XLNet consumed, respectively, $6,912 and $245,000 of resources.[19]. GPT-2 was first announced on 14 February 2019."
+          ],
+          [
+            "https://en.wikipedia.org/w/index.php?search=GPT-1",
+            "Generative Pre-trained Transformer 1 (GPT-1) was the first of OpenAI's large language models following Google's invention of the transformer architecture in 2017.[2] In June 2018, OpenAI released a paper entitled \"Improving Language Understanding by Generative Pre-Training\",[3] in which they introduced that initial model along with the general concept of a generative pre-trained transformer.[4]. Up to that point, the best-performing neural NLP models primarily employed supervised learning from large amounts of manually labeled data. This reliance on supervised learning limited their use of datasets that were not well-annotated, in addition to making it prohibitively expensive and time-consuming to train extremely large models;[3][5] many languages (such as Swahili or Haitian Creole) are difficult to translate and interpret using such models due to a lack of available text for corpus-building.[5] In contrast, a GPT's \"semi-supervised\" approach involved two stages: an unsupervised generative \"pre-training\" stage in which a language modeling objective was used to set initial parameters, and a supervised discriminative \"fine-tuning\" stage in which these parameters were adapted to a target task.[3]. The use of a transformer architecture, as opposed to previous techniques involving attention-augmented RNNs, provided GPT models with a more structured memory than could be achieved through recurrent mechanisms; this resulted in \"robust transfer performance across diverse tasks\".[3]. BookCorpus was chosen as a training dataset partly because the long passages of continuous text helped the model learn to handle long-range information.[6] It contained over 7,000 unpublished fiction books from various genres. The rest of the datasets available at the time, while being larger, lacked this long-range structure (being \"shuffled\" at a sentence level).[3]. The BookCorpus text was cleaned by the ftfy library to standardized punctuation and whitespace and then tokenized by spaCy.[3]. The GPT-1 architecture was a twelve-layer decoder-only transformer, using twelve masked self-attention heads, with 64-dimensional states each (for a total of 768). Rather than simple stochastic gradient descent, the Adam optimization algorithm was used; the learning rate was increased linearly from zero over the first 2,000 updates to a maximum of 2.5×10−4, and annealed to 0 using a cosine schedule.[3] GPT-1 has 117 million parameters.[4]. While the fine-tuning was adapted to specific tasks, its pre-training was not; to perform the various tasks, minimal changes were performed to its underlying task-agnostic model architecture.[3] Despite this, GPT-1 still improved on previous benchmarks in several language processing tasks, outperforming discriminatively-trained models with task-oriented architectures on several diverse tasks.[3]."
+          ]
+        ]
+      },
+      "output": "Content: Generative Pre-trained Transformer 2 (GPT-2) is a large language model by OpenAI and the second in their foundational series of GPT models. GPT-2 was pre-trained on BookCorpus,[2] a dataset of over 7,000 self-published fiction books from various genres, and trained on a dataset of 8 million web pages.[3] It was partially released in February 2019, followed by full release of the 1.5-billion-parameter model on November 5, 2019.[4][5][6][7][8]. GPT-2 was created as a \"direct scale-up\" of GPT-1[9] with a ten-fold increase in both its parameter count and the size of its training dataset.[8] It is a general-purpose learner and its ability to perform the various tasks was a consequence of its general ability to accurately predict the next item in a sequence,[3][10] which enabled it to translate texts, answer questions about a topic from a text, summarize passages from a larger text,[10] and generate text output on a level sometimes indistinguishable from that of humans,[11] however it could become repetitive or nonsensical when generating long passages.[12] It was superseded by GPT-3 and GPT-4 models, which are not open source anymore.. GPT-2 has, like its predecessor GPT-1 and its successors GPT-3 and GPT-4, a generative pre-trained transformer architecture, implementing a deep neural network, specifically a transformer model,[9] which uses attention instead of older recurrence- and convolution-based architectures.[13][14] Attention mechanisms allow the model to selectively focus on segments of input text it predicts to be the most relevant.[15][16] This model allows for greatly increased parallelization, and outperforms previous benchmarks for RNN/CNN/LSTM-based models.[9]. Since the transformer architecture enabled massive parallelization, GPT models could be trained on larger corpora than previous NLP (natural language processing) models. While the GPT-1 model demonstrated that the approach was viable, GPT-2 would further explore the emergent properties of networks trained on extremely large corpora. CommonCrawl, a large corpus produced by web crawling and previously used in training NLP systems,[17] was considered due to its large size, but was rejected after further review revealed large amounts of unintelligible content.[3][17] Instead, OpenAI developed a new corpus, known as WebText; rather than scraping content indiscriminately from the World Wide Web, WebText was generated by scraping only pages linked to by Reddit posts that had received at least three upvotes prior to December 2017. The corpus was subsequently cleaned; HTML documents were parsed into plain text, duplicate pages were eliminated, and Wikipedia pages were removed (since their presence in many other datasets could have induced overfitting).[3]. While the cost of training GPT-2 is known to have been $256 per hour,[18][19] the amount of hours it took to complete training is unknown; therefore, the overall training cost cannot be estimated accurately.[20] However, comparable large language models using transformer architectures have had their costs documented in more detail; the training processes for BERT and XLNet consumed, respectively, $6,912 and $245,000 of resources.[19]. GPT-2 was first announced on 14 February 2019.\nSource: https://en.wikipedia.org/w/index.php?search=GPT-2\n\nContent: Generative Pre-trained Transformer 1 (GPT-1) was the first of OpenAI's large language models following Google's invention of the transformer architecture in 2017.[2] In June 2018, OpenAI released a paper entitled \"Improving Language Understanding by Generative Pre-Training\",[3] in which they introduced that initial model along with the general concept of a generative pre-trained transformer.[4]. Up to that point, the best-performing neural NLP models primarily employed supervised learning from large amounts of manually labeled data. This reliance on supervised learning limited their use of datasets that were not well-annotated, in addition to making it prohibitively expensive and time-consuming to train extremely large models;[3][5] many languages (such as Swahili or Haitian Creole) are difficult to translate and interpret using such models due to a lack of available text for corpus-building.[5] In contrast, a GPT's \"semi-supervised\" approach involved two stages: an unsupervised generative \"pre-training\" stage in which a language modeling objective was used to set initial parameters, and a supervised discriminative \"fine-tuning\" stage in which these parameters were adapted to a target task.[3]. The use of a transformer architecture, as opposed to previous techniques involving attention-augmented RNNs, provided GPT models with a more structured memory than could be achieved through recurrent mechanisms; this resulted in \"robust transfer performance across diverse tasks\".[3]. BookCorpus was chosen as a training dataset partly because the long passages of continuous text helped the model learn to handle long-range information.[6] It contained over 7,000 unpublished fiction books from various genres. The rest of the datasets available at the time, while being larger, lacked this long-range structure (being \"shuffled\" at a sentence level).[3]. The BookCorpus text was cleaned by the ftfy library to standardized punctuation and whitespace and then tokenized by spaCy.[3]. The GPT-1 architecture was a twelve-layer decoder-only transformer, using twelve masked self-attention heads, with 64-dimensional states each (for a total of 768). Rather than simple stochastic gradient descent, the Adam optimization algorithm was used; the learning rate was increased linearly from zero over the first 2,000 updates to a maximum of 2.5×10−4, and annealed to 0 using a cosine schedule.[3] GPT-1 has 117 million parameters.[4]. While the fine-tuning was adapted to specific tasks, its pre-training was not; to perform the various tasks, minimal changes were performed to its underlying task-agnostic model architecture.[3] Despite this, GPT-1 still improved on previous benchmarks in several language processing tasks, outperforming discriminatively-trained models with task-oriented architectures on several diverse tasks.[3].\nSource: https://en.wikipedia.org/w/index.php?search=GPT-1",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "97617340-b45e-4ba9-accd-10251560bb8d_0",
+      "start_time": "2024-02-22T17:06:18.337367Z",
+      "end_time": "2024-02-22T17:06:18.339368Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "process_search_result",
+          "type": "Tool",
+          "inputs": {
+            "search_result": [
+              [
+                "https://en.wikipedia.org/w/index.php?search=GPT-2",
+                "Generative Pre-trained Transformer 2 (GPT-2) is a large language model by OpenAI and the second in their foundational series of GPT models. GPT-2 was pre-trained on BookCorpus,[2] a dataset of over 7,000 self-published fiction books from various genres, and trained on a dataset of 8 million web pages.[3] It was partially released in February 2019, followed by full release of the 1.5-billion-parameter model on November 5, 2019.[4][5][6][7][8]. GPT-2 was created as a \"direct scale-up\" of GPT-1[9] with a ten-fold increase in both its parameter count and the size of its training dataset.[8] It is a general-purpose learner and its ability to perform the various tasks was a consequence of its general ability to accurately predict the next item in a sequence,[3][10] which enabled it to translate texts, answer questions about a topic from a text, summarize passages from a larger text,[10] and generate text output on a level sometimes indistinguishable from that of humans,[11] however it could become repetitive or nonsensical when generating long passages.[12] It was superseded by GPT-3 and GPT-4 models, which are not open source anymore.. GPT-2 has, like its predecessor GPT-1 and its successors GPT-3 and GPT-4, a generative pre-trained transformer architecture, implementing a deep neural network, specifically a transformer model,[9] which uses attention instead of older recurrence- and convolution-based architectures.[13][14] Attention mechanisms allow the model to selectively focus on segments of input text it predicts to be the most relevant.[15][16] This model allows for greatly increased parallelization, and outperforms previous benchmarks for RNN/CNN/LSTM-based models.[9]. Since the transformer architecture enabled massive parallelization, GPT models could be trained on larger corpora than previous NLP (natural language processing) models. While the GPT-1 model demonstrated that the approach was viable, GPT-2 would further explore the emergent properties of networks trained on extremely large corpora. CommonCrawl, a large corpus produced by web crawling and previously used in training NLP systems,[17] was considered due to its large size, but was rejected after further review revealed large amounts of unintelligible content.[3][17] Instead, OpenAI developed a new corpus, known as WebText; rather than scraping content indiscriminately from the World Wide Web, WebText was generated by scraping only pages linked to by Reddit posts that had received at least three upvotes prior to December 2017. The corpus was subsequently cleaned; HTML documents were parsed into plain text, duplicate pages were eliminated, and Wikipedia pages were removed (since their presence in many other datasets could have induced overfitting).[3]. While the cost of training GPT-2 is known to have been $256 per hour,[18][19] the amount of hours it took to complete training is unknown; therefore, the overall training cost cannot be estimated accurately.[20] However, comparable large language models using transformer architectures have had their costs documented in more detail; the training processes for BERT and XLNet consumed, respectively, $6,912 and $245,000 of resources.[19]. GPT-2 was first announced on 14 February 2019."
+              ],
+              [
+                "https://en.wikipedia.org/w/index.php?search=GPT-1",
+                "Generative Pre-trained Transformer 1 (GPT-1) was the first of OpenAI's large language models following Google's invention of the transformer architecture in 2017.[2] In June 2018, OpenAI released a paper entitled \"Improving Language Understanding by Generative Pre-Training\",[3] in which they introduced that initial model along with the general concept of a generative pre-trained transformer.[4]. Up to that point, the best-performing neural NLP models primarily employed supervised learning from large amounts of manually labeled data. This reliance on supervised learning limited their use of datasets that were not well-annotated, in addition to making it prohibitively expensive and time-consuming to train extremely large models;[3][5] many languages (such as Swahili or Haitian Creole) are difficult to translate and interpret using such models due to a lack of available text for corpus-building.[5] In contrast, a GPT's \"semi-supervised\" approach involved two stages: an unsupervised generative \"pre-training\" stage in which a language modeling objective was used to set initial parameters, and a supervised discriminative \"fine-tuning\" stage in which these parameters were adapted to a target task.[3]. The use of a transformer architecture, as opposed to previous techniques involving attention-augmented RNNs, provided GPT models with a more structured memory than could be achieved through recurrent mechanisms; this resulted in \"robust transfer performance across diverse tasks\".[3]. BookCorpus was chosen as a training dataset partly because the long passages of continuous text helped the model learn to handle long-range information.[6] It contained over 7,000 unpublished fiction books from various genres. The rest of the datasets available at the time, while being larger, lacked this long-range structure (being \"shuffled\" at a sentence level).[3]. The BookCorpus text was cleaned by the ftfy library to standardized punctuation and whitespace and then tokenized by spaCy.[3]. The GPT-1 architecture was a twelve-layer decoder-only transformer, using twelve masked self-attention heads, with 64-dimensional states each (for a total of 768). Rather than simple stochastic gradient descent, the Adam optimization algorithm was used; the learning rate was increased linearly from zero over the first 2,000 updates to a maximum of 2.5×10−4, and annealed to 0 using a cosine schedule.[3] GPT-1 has 117 million parameters.[4]. While the fine-tuning was adapted to specific tasks, its pre-training was not; to perform the various tasks, minimal changes were performed to its underlying task-agnostic model architecture.[3] Despite this, GPT-1 still improved on previous benchmarks in several language processing tasks, outperforming discriminatively-trained models with task-oriented architectures on several diverse tasks.[3]."
+              ]
+            ]
+          },
+          "output": "Content: Generative Pre-trained Transformer 2 (GPT-2) is a large language model by OpenAI and the second in their foundational series of GPT models. GPT-2 was pre-trained on BookCorpus,[2] a dataset of over 7,000 self-published fiction books from various genres, and trained on a dataset of 8 million web pages.[3] It was partially released in February 2019, followed by full release of the 1.5-billion-parameter model on November 5, 2019.[4][5][6][7][8]. GPT-2 was created as a \"direct scale-up\" of GPT-1[9] with a ten-fold increase in both its parameter count and the size of its training dataset.[8] It is a general-purpose learner and its ability to perform the various tasks was a consequence of its general ability to accurately predict the next item in a sequence,[3][10] which enabled it to translate texts, answer questions about a topic from a text, summarize passages from a larger text,[10] and generate text output on a level sometimes indistinguishable from that of humans,[11] however it could become repetitive or nonsensical when generating long passages.[12] It was superseded by GPT-3 and GPT-4 models, which are not open source anymore.. GPT-2 has, like its predecessor GPT-1 and its successors GPT-3 and GPT-4, a generative pre-trained transformer architecture, implementing a deep neural network, specifically a transformer model,[9] which uses attention instead of older recurrence- and convolution-based architectures.[13][14] Attention mechanisms allow the model to selectively focus on segments of input text it predicts to be the most relevant.[15][16] This model allows for greatly increased parallelization, and outperforms previous benchmarks for RNN/CNN/LSTM-based models.[9]. Since the transformer architecture enabled massive parallelization, GPT models could be trained on larger corpora than previous NLP (natural language processing) models. While the GPT-1 model demonstrated that the approach was viable, GPT-2 would further explore the emergent properties of networks trained on extremely large corpora. CommonCrawl, a large corpus produced by web crawling and previously used in training NLP systems,[17] was considered due to its large size, but was rejected after further review revealed large amounts of unintelligible content.[3][17] Instead, OpenAI developed a new corpus, known as WebText; rather than scraping content indiscriminately from the World Wide Web, WebText was generated by scraping only pages linked to by Reddit posts that had received at least three upvotes prior to December 2017. The corpus was subsequently cleaned; HTML documents were parsed into plain text, duplicate pages were eliminated, and Wikipedia pages were removed (since their presence in many other datasets could have induced overfitting).[3]. While the cost of training GPT-2 is known to have been $256 per hour,[18][19] the amount of hours it took to complete training is unknown; therefore, the overall training cost cannot be estimated accurately.[20] However, comparable large language models using transformer architectures have had their costs documented in more detail; the training processes for BERT and XLNet consumed, respectively, $6,912 and $245,000 of resources.[19]. GPT-2 was first announced on 14 February 2019.\nSource: https://en.wikipedia.org/w/index.php?search=GPT-2\n\nContent: Generative Pre-trained Transformer 1 (GPT-1) was the first of OpenAI's large language models following Google's invention of the transformer architecture in 2017.[2] In June 2018, OpenAI released a paper entitled \"Improving Language Understanding by Generative Pre-Training\",[3] in which they introduced that initial model along with the general concept of a generative pre-trained transformer.[4]. Up to that point, the best-performing neural NLP models primarily employed supervised learning from large amounts of manually labeled data. This reliance on supervised learning limited their use of datasets that were not well-annotated, in addition to making it prohibitively expensive and time-consuming to train extremely large models;[3][5] many languages (such as Swahili or Haitian Creole) are difficult to translate and interpret using such models due to a lack of available text for corpus-building.[5] In contrast, a GPT's \"semi-supervised\" approach involved two stages: an unsupervised generative \"pre-training\" stage in which a language modeling objective was used to set initial parameters, and a supervised discriminative \"fine-tuning\" stage in which these parameters were adapted to a target task.[3]. The use of a transformer architecture, as opposed to previous techniques involving attention-augmented RNNs, provided GPT models with a more structured memory than could be achieved through recurrent mechanisms; this resulted in \"robust transfer performance across diverse tasks\".[3]. BookCorpus was chosen as a training dataset partly because the long passages of continuous text helped the model learn to handle long-range information.[6] It contained over 7,000 unpublished fiction books from various genres. The rest of the datasets available at the time, while being larger, lacked this long-range structure (being \"shuffled\" at a sentence level).[3]. The BookCorpus text was cleaned by the ftfy library to standardized punctuation and whitespace and then tokenized by spaCy.[3]. The GPT-1 architecture was a twelve-layer decoder-only transformer, using twelve masked self-attention heads, with 64-dimensional states each (for a total of 768). Rather than simple stochastic gradient descent, the Adam optimization algorithm was used; the learning rate was increased linearly from zero over the first 2,000 updates to a maximum of 2.5×10−4, and annealed to 0 using a cosine schedule.[3] GPT-1 has 117 million parameters.[4]. While the fine-tuning was adapted to specific tasks, its pre-training was not; to perform the various tasks, minimal changes were performed to its underlying task-agnostic model architecture.[3] Despite this, GPT-1 still improved on previous benchmarks in several language processing tasks, outperforming discriminatively-trained models with task-oriented architectures on several diverse tasks.[3].\nSource: https://en.wikipedia.org/w/index.php?search=GPT-1",
+          "start_time": 1708639578.337367,
+          "end_time": 1708639578.338394,
+          "error": null,
+          "children": [],
+          "node_name": "process_search_result",
+          "parent_id": "",
+          "id": "107b69e1-8b01-457e-b83a-638b4217a8b6",
+          "system_metrics": {}
+        }
+      ],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.002001
+      },
+      "result": "Content: Generative Pre-trained Transformer 2 (GPT-2) is a large language model by OpenAI and the second in their foundational series of GPT models. GPT-2 was pre-trained on BookCorpus,[2] a dataset of over 7,000 self-published fiction books from various genres, and trained on a dataset of 8 million web pages.[3] It was partially released in February 2019, followed by full release of the 1.5-billion-parameter model on November 5, 2019.[4][5][6][7][8]. GPT-2 was created as a \"direct scale-up\" of GPT-1[9] with a ten-fold increase in both its parameter count and the size of its training dataset.[8] It is a general-purpose learner and its ability to perform the various tasks was a consequence of its general ability to accurately predict the next item in a sequence,[3][10] which enabled it to translate texts, answer questions about a topic from a text, summarize passages from a larger text,[10] and generate text output on a level sometimes indistinguishable from that of humans,[11] however it could become repetitive or nonsensical when generating long passages.[12] It was superseded by GPT-3 and GPT-4 models, which are not open source anymore.. GPT-2 has, like its predecessor GPT-1 and its successors GPT-3 and GPT-4, a generative pre-trained transformer architecture, implementing a deep neural network, specifically a transformer model,[9] which uses attention instead of older recurrence- and convolution-based architectures.[13][14] Attention mechanisms allow the model to selectively focus on segments of input text it predicts to be the most relevant.[15][16] This model allows for greatly increased parallelization, and outperforms previous benchmarks for RNN/CNN/LSTM-based models.[9]. Since the transformer architecture enabled massive parallelization, GPT models could be trained on larger corpora than previous NLP (natural language processing) models. While the GPT-1 model demonstrated that the approach was viable, GPT-2 would further explore the emergent properties of networks trained on extremely large corpora. CommonCrawl, a large corpus produced by web crawling and previously used in training NLP systems,[17] was considered due to its large size, but was rejected after further review revealed large amounts of unintelligible content.[3][17] Instead, OpenAI developed a new corpus, known as WebText; rather than scraping content indiscriminately from the World Wide Web, WebText was generated by scraping only pages linked to by Reddit posts that had received at least three upvotes prior to December 2017. The corpus was subsequently cleaned; HTML documents were parsed into plain text, duplicate pages were eliminated, and Wikipedia pages were removed (since their presence in many other datasets could have induced overfitting).[3]. While the cost of training GPT-2 is known to have been $256 per hour,[18][19] the amount of hours it took to complete training is unknown; therefore, the overall training cost cannot be estimated accurately.[20] However, comparable large language models using transformer architectures have had their costs documented in more detail; the training processes for BERT and XLNet consumed, respectively, $6,912 and $245,000 of resources.[19]. GPT-2 was first announced on 14 February 2019.\nSource: https://en.wikipedia.org/w/index.php?search=GPT-2\n\nContent: Generative Pre-trained Transformer 1 (GPT-1) was the first of OpenAI's large language models following Google's invention of the transformer architecture in 2017.[2] In June 2018, OpenAI released a paper entitled \"Improving Language Understanding by Generative Pre-Training\",[3] in which they introduced that initial model along with the general concept of a generative pre-trained transformer.[4]. Up to that point, the best-performing neural NLP models primarily employed supervised learning from large amounts of manually labeled data. This reliance on supervised learning limited their use of datasets that were not well-annotated, in addition to making it prohibitively expensive and time-consuming to train extremely large models;[3][5] many languages (such as Swahili or Haitian Creole) are difficult to translate and interpret using such models due to a lack of available text for corpus-building.[5] In contrast, a GPT's \"semi-supervised\" approach involved two stages: an unsupervised generative \"pre-training\" stage in which a language modeling objective was used to set initial parameters, and a supervised discriminative \"fine-tuning\" stage in which these parameters were adapted to a target task.[3]. The use of a transformer architecture, as opposed to previous techniques involving attention-augmented RNNs, provided GPT models with a more structured memory than could be achieved through recurrent mechanisms; this resulted in \"robust transfer performance across diverse tasks\".[3]. BookCorpus was chosen as a training dataset partly because the long passages of continuous text helped the model learn to handle long-range information.[6] It contained over 7,000 unpublished fiction books from various genres. The rest of the datasets available at the time, while being larger, lacked this long-range structure (being \"shuffled\" at a sentence level).[3]. The BookCorpus text was cleaned by the ftfy library to standardized punctuation and whitespace and then tokenized by spaCy.[3]. The GPT-1 architecture was a twelve-layer decoder-only transformer, using twelve masked self-attention heads, with 64-dimensional states each (for a total of 768). Rather than simple stochastic gradient descent, the Adam optimization algorithm was used; the learning rate was increased linearly from zero over the first 2,000 updates to a maximum of 2.5×10−4, and annealed to 0 using a cosine schedule.[3] GPT-1 has 117 million parameters.[4]. While the fine-tuning was adapted to specific tasks, its pre-training was not; to perform the various tasks, minimal changes were performed to its underlying task-agnostic model architecture.[3] Despite this, GPT-1 still improved on previous benchmarks in several language processing tasks, outperforming discriminatively-trained models with task-oriented architectures on several diverse tasks.[3].\nSource: https://en.wikipedia.org/w/index.php?search=GPT-1"
+    },
+    {
+      "node": "augmented_chat",
+      "flow_run_id": "97617340-b45e-4ba9-accd-10251560bb8d",
+      "run_id": "97617340-b45e-4ba9-accd-10251560bb8d_augmented_chat_0",
+      "status": "Completed",
+      "inputs": {
+        "deployment_name": "gpt-35-turbo",
+        "temperature": 0.8,
+        "question": "What is the difference between this model and previous neural network?",
+        "chat_history": [
+          {
+            "inputs": {
+              "question": "What is ChatGPT?"
+            },
+            "outputs": {
+              "answer": "ChatGPT is a chatbot product developed by OpenAI. It is powered by the Generative Pre-trained Transformer (GPT) series of language models, with GPT-4 being the latest version. ChatGPT uses natural language processing to generate responses to user inputs in a conversational manner. It was released as ChatGPT Plus, a premium version, which provides enhanced features and access to the GPT-4 based version of OpenAI's API. ChatGPT allows users to interact and have conversations with the language model, utilizing both text and image inputs. It is designed to be more reliable, creative, and capable of handling nuanced instructions compared to previous versions. However, it is important to note that while GPT-4 improves upon its predecessors, it still retains some of the same limitations and challenges."
+            }
+          }
+        ],
+        "contexts": "Content: Generative Pre-trained Transformer 2 (GPT-2) is a large language model by OpenAI and the second in their foundational series of GPT models. GPT-2 was pre-trained on BookCorpus,[2] a dataset of over 7,000 self-published fiction books from various genres, and trained on a dataset of 8 million web pages.[3] It was partially released in February 2019, followed by full release of the 1.5-billion-parameter model on November 5, 2019.[4][5][6][7][8]. GPT-2 was created as a \"direct scale-up\" of GPT-1[9] with a ten-fold increase in both its parameter count and the size of its training dataset.[8] It is a general-purpose learner and its ability to perform the various tasks was a consequence of its general ability to accurately predict the next item in a sequence,[3][10] which enabled it to translate texts, answer questions about a topic from a text, summarize passages from a larger text,[10] and generate text output on a level sometimes indistinguishable from that of humans,[11] however it could become repetitive or nonsensical when generating long passages.[12] It was superseded by GPT-3 and GPT-4 models, which are not open source anymore.. GPT-2 has, like its predecessor GPT-1 and its successors GPT-3 and GPT-4, a generative pre-trained transformer architecture, implementing a deep neural network, specifically a transformer model,[9] which uses attention instead of older recurrence- and convolution-based architectures.[13][14] Attention mechanisms allow the model to selectively focus on segments of input text it predicts to be the most relevant.[15][16] This model allows for greatly increased parallelization, and outperforms previous benchmarks for RNN/CNN/LSTM-based models.[9]. Since the transformer architecture enabled massive parallelization, GPT models could be trained on larger corpora than previous NLP (natural language processing) models. While the GPT-1 model demonstrated that the approach was viable, GPT-2 would further explore the emergent properties of networks trained on extremely large corpora. CommonCrawl, a large corpus produced by web crawling and previously used in training NLP systems,[17] was considered due to its large size, but was rejected after further review revealed large amounts of unintelligible content.[3][17] Instead, OpenAI developed a new corpus, known as WebText; rather than scraping content indiscriminately from the World Wide Web, WebText was generated by scraping only pages linked to by Reddit posts that had received at least three upvotes prior to December 2017. The corpus was subsequently cleaned; HTML documents were parsed into plain text, duplicate pages were eliminated, and Wikipedia pages were removed (since their presence in many other datasets could have induced overfitting).[3]. While the cost of training GPT-2 is known to have been $256 per hour,[18][19] the amount of hours it took to complete training is unknown; therefore, the overall training cost cannot be estimated accurately.[20] However, comparable large language models using transformer architectures have had their costs documented in more detail; the training processes for BERT and XLNet consumed, respectively, $6,912 and $245,000 of resources.[19]. GPT-2 was first announced on 14 February 2019.\nSource: https://en.wikipedia.org/w/index.php?search=GPT-2\n\nContent: Generative Pre-trained Transformer 1 (GPT-1) was the first of OpenAI's large language models following Google's invention of the transformer architecture in 2017.[2] In June 2018, OpenAI released a paper entitled \"Improving Language Understanding by Generative Pre-Training\",[3] in which they introduced that initial model along with the general concept of a generative pre-trained transformer.[4]. Up to that point, the best-performing neural NLP models primarily employed supervised learning from large amounts of manually labeled data. This reliance on supervised learning limited their use of datasets that were not well-annotated, in addition to making it prohibitively expensive and time-consuming to train extremely large models;[3][5] many languages (such as Swahili or Haitian Creole) are difficult to translate and interpret using such models due to a lack of available text for corpus-building.[5] In contrast, a GPT's \"semi-supervised\" approach involved two stages: an unsupervised generative \"pre-training\" stage in which a language modeling objective was used to set initial parameters, and a supervised discriminative \"fine-tuning\" stage in which these parameters were adapted to a target task.[3]. The use of a transformer architecture, as opposed to previous techniques involving attention-augmented RNNs, provided GPT models with a more structured memory than could be achieved through recurrent mechanisms; this resulted in \"robust transfer performance across diverse tasks\".[3]. BookCorpus was chosen as a training dataset partly because the long passages of continuous text helped the model learn to handle long-range information.[6] It contained over 7,000 unpublished fiction books from various genres. The rest of the datasets available at the time, while being larger, lacked this long-range structure (being \"shuffled\" at a sentence level).[3]. The BookCorpus text was cleaned by the ftfy library to standardized punctuation and whitespace and then tokenized by spaCy.[3]. The GPT-1 architecture was a twelve-layer decoder-only transformer, using twelve masked self-attention heads, with 64-dimensional states each (for a total of 768). Rather than simple stochastic gradient descent, the Adam optimization algorithm was used; the learning rate was increased linearly from zero over the first 2,000 updates to a maximum of 2.5×10−4, and annealed to 0 using a cosine schedule.[3] GPT-1 has 117 million parameters.[4]. While the fine-tuning was adapted to specific tasks, its pre-training was not; to perform the various tasks, minimal changes were performed to its underlying task-agnostic model architecture.[3] Despite this, GPT-1 still improved on previous benchmarks in several language processing tasks, outperforming discriminatively-trained models with task-oriented architectures on several diverse tasks.[3].\nSource: https://en.wikipedia.org/w/index.php?search=GPT-1"
+      },
+      "output": "I don't know the exact difference between ChatGPT and previous neural network models. If you want, I can provide you with a summary of the differences between GPT-2 and GPT-1, which might give you an idea of the improvements made across different versions of the GPT series.\n\nSOURCES:\nhttps://en.wikipedia.org/w/index.php?search=GPT-2\nhttps://en.wikipedia.org/w/index.php?search=GPT-1",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "97617340-b45e-4ba9-accd-10251560bb8d_0",
+      "start_time": "2024-02-22T17:06:18.342110Z",
+      "end_time": "2024-02-22T17:06:19.324477Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "AzureOpenAI.chat",
+          "type": "Tool",
+          "inputs": {
+            "prompt": "system:\nYou are a chatbot having a conversation with a human.\nGiven the following extracted parts of a long document and a question, create a final answer with references (\"SOURCES\").\nIf you don't know the answer, just say that you don't know. Don't try to make up an answer.\nALWAYS return a \"SOURCES\" part in your answer.\n\n{{contexts}}\n\n{% for item in chat_history %}\nuser:\n{{item.inputs.question}}\nassistant:\n{{item.outputs.answer}}\n{% endfor %}\n\nuser:\n{{question}}\n",
+            "deployment_name": "gpt-35-turbo",
+            "temperature": 0.8,
+            "question": "What is the difference between this model and previous neural network?",
+            "chat_history": [
+              {
+                "inputs": {
+                  "question": "What is ChatGPT?"
+                },
+                "outputs": {
+                  "answer": "ChatGPT is a chatbot product developed by OpenAI. It is powered by the Generative Pre-trained Transformer (GPT) series of language models, with GPT-4 being the latest version. ChatGPT uses natural language processing to generate responses to user inputs in a conversational manner. It was released as ChatGPT Plus, a premium version, which provides enhanced features and access to the GPT-4 based version of OpenAI's API. ChatGPT allows users to interact and have conversations with the language model, utilizing both text and image inputs. It is designed to be more reliable, creative, and capable of handling nuanced instructions compared to previous versions. However, it is important to note that while GPT-4 improves upon its predecessors, it still retains some of the same limitations and challenges."
+                }
+              }
+            ],
+            "contexts": "Content: Generative Pre-trained Transformer 2 (GPT-2) is a large language model by OpenAI and the second in their foundational series of GPT models. GPT-2 was pre-trained on BookCorpus,[2] a dataset of over 7,000 self-published fiction books from various genres, and trained on a dataset of 8 million web pages.[3] It was partially released in February 2019, followed by full release of the 1.5-billion-parameter model on November 5, 2019.[4][5][6][7][8]. GPT-2 was created as a \"direct scale-up\" of GPT-1[9] with a ten-fold increase in both its parameter count and the size of its training dataset.[8] It is a general-purpose learner and its ability to perform the various tasks was a consequence of its general ability to accurately predict the next item in a sequence,[3][10] which enabled it to translate texts, answer questions about a topic from a text, summarize passages from a larger text,[10] and generate text output on a level sometimes indistinguishable from that of humans,[11] however it could become repetitive or nonsensical when generating long passages.[12] It was superseded by GPT-3 and GPT-4 models, which are not open source anymore.. GPT-2 has, like its predecessor GPT-1 and its successors GPT-3 and GPT-4, a generative pre-trained transformer architecture, implementing a deep neural network, specifically a transformer model,[9] which uses attention instead of older recurrence- and convolution-based architectures.[13][14] Attention mechanisms allow the model to selectively focus on segments of input text it predicts to be the most relevant.[15][16] This model allows for greatly increased parallelization, and outperforms previous benchmarks for RNN/CNN/LSTM-based models.[9]. Since the transformer architecture enabled massive parallelization, GPT models could be trained on larger corpora than previous NLP (natural language processing) models. While the GPT-1 model demonstrated that the approach was viable, GPT-2 would further explore the emergent properties of networks trained on extremely large corpora. CommonCrawl, a large corpus produced by web crawling and previously used in training NLP systems,[17] was considered due to its large size, but was rejected after further review revealed large amounts of unintelligible content.[3][17] Instead, OpenAI developed a new corpus, known as WebText; rather than scraping content indiscriminately from the World Wide Web, WebText was generated by scraping only pages linked to by Reddit posts that had received at least three upvotes prior to December 2017. The corpus was subsequently cleaned; HTML documents were parsed into plain text, duplicate pages were eliminated, and Wikipedia pages were removed (since their presence in many other datasets could have induced overfitting).[3]. While the cost of training GPT-2 is known to have been $256 per hour,[18][19] the amount of hours it took to complete training is unknown; therefore, the overall training cost cannot be estimated accurately.[20] However, comparable large language models using transformer architectures have had their costs documented in more detail; the training processes for BERT and XLNet consumed, respectively, $6,912 and $245,000 of resources.[19]. GPT-2 was first announced on 14 February 2019.\nSource: https://en.wikipedia.org/w/index.php?search=GPT-2\n\nContent: Generative Pre-trained Transformer 1 (GPT-1) was the first of OpenAI's large language models following Google's invention of the transformer architecture in 2017.[2] In June 2018, OpenAI released a paper entitled \"Improving Language Understanding by Generative Pre-Training\",[3] in which they introduced that initial model along with the general concept of a generative pre-trained transformer.[4]. Up to that point, the best-performing neural NLP models primarily employed supervised learning from large amounts of manually labeled data. This reliance on supervised learning limited their use of datasets that were not well-annotated, in addition to making it prohibitively expensive and time-consuming to train extremely large models;[3][5] many languages (such as Swahili or Haitian Creole) are difficult to translate and interpret using such models due to a lack of available text for corpus-building.[5] In contrast, a GPT's \"semi-supervised\" approach involved two stages: an unsupervised generative \"pre-training\" stage in which a language modeling objective was used to set initial parameters, and a supervised discriminative \"fine-tuning\" stage in which these parameters were adapted to a target task.[3]. The use of a transformer architecture, as opposed to previous techniques involving attention-augmented RNNs, provided GPT models with a more structured memory than could be achieved through recurrent mechanisms; this resulted in \"robust transfer performance across diverse tasks\".[3]. BookCorpus was chosen as a training dataset partly because the long passages of continuous text helped the model learn to handle long-range information.[6] It contained over 7,000 unpublished fiction books from various genres. The rest of the datasets available at the time, while being larger, lacked this long-range structure (being \"shuffled\" at a sentence level).[3]. The BookCorpus text was cleaned by the ftfy library to standardized punctuation and whitespace and then tokenized by spaCy.[3]. The GPT-1 architecture was a twelve-layer decoder-only transformer, using twelve masked self-attention heads, with 64-dimensional states each (for a total of 768). Rather than simple stochastic gradient descent, the Adam optimization algorithm was used; the learning rate was increased linearly from zero over the first 2,000 updates to a maximum of 2.5×10−4, and annealed to 0 using a cosine schedule.[3] GPT-1 has 117 million parameters.[4]. While the fine-tuning was adapted to specific tasks, its pre-training was not; to perform the various tasks, minimal changes were performed to its underlying task-agnostic model architecture.[3] Despite this, GPT-1 still improved on previous benchmarks in several language processing tasks, outperforming discriminatively-trained models with task-oriented architectures on several diverse tasks.[3].\nSource: https://en.wikipedia.org/w/index.php?search=GPT-1",
+            "stream": false
+          },
+          "output": "I don't know the exact difference between ChatGPT and previous neural network models. If you want, I can provide you with a summary of the differences between GPT-2 and GPT-1, which might give you an idea of the improvements made across different versions of the GPT series.\n\nSOURCES:\nhttps://en.wikipedia.org/w/index.php?search=GPT-2\nhttps://en.wikipedia.org/w/index.php?search=GPT-1",
+          "start_time": 1708639578.343665,
+          "end_time": 1708639579.323573,
+          "error": null,
+          "children": [
+            {
+              "name": "openai.resources.chat.completions.Completions.create",
+              "type": "LLM",
+              "inputs": {
+                "model": "gpt-35-turbo",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are a chatbot having a conversation with a human.\nGiven the following extracted parts of a long document and a question, create a final answer with references (\"SOURCES\").\nIf you don't know the answer, just say that you don't know. Don't try to make up an answer.\nALWAYS return a \"SOURCES\" part in your answer.\n\nContent: Generative Pre-trained Transformer 2 (GPT-2) is a large language model by OpenAI and the second in their foundational series of GPT models. GPT-2 was pre-trained on BookCorpus,[2] a dataset of over 7,000 self-published fiction books from various genres, and trained on a dataset of 8 million web pages.[3] It was partially released in February 2019, followed by full release of the 1.5-billion-parameter model on November 5, 2019.[4][5][6][7][8]. GPT-2 was created as a \"direct scale-up\" of GPT-1[9] with a ten-fold increase in both its parameter count and the size of its training dataset.[8] It is a general-purpose learner and its ability to perform the various tasks was a consequence of its general ability to accurately predict the next item in a sequence,[3][10] which enabled it to translate texts, answer questions about a topic from a text, summarize passages from a larger text,[10] and generate text output on a level sometimes indistinguishable from that of humans,[11] however it could become repetitive or nonsensical when generating long passages.[12] It was superseded by GPT-3 and GPT-4 models, which are not open source anymore.. GPT-2 has, like its predecessor GPT-1 and its successors GPT-3 and GPT-4, a generative pre-trained transformer architecture, implementing a deep neural network, specifically a transformer model,[9] which uses attention instead of older recurrence- and convolution-based architectures.[13][14] Attention mechanisms allow the model to selectively focus on segments of input text it predicts to be the most relevant.[15][16] This model allows for greatly increased parallelization, and outperforms previous benchmarks for RNN/CNN/LSTM-based models.[9]. Since the transformer architecture enabled massive parallelization, GPT models could be trained on larger corpora than previous NLP (natural language processing) models. While the GPT-1 model demonstrated that the approach was viable, GPT-2 would further explore the emergent properties of networks trained on extremely large corpora. CommonCrawl, a large corpus produced by web crawling and previously used in training NLP systems,[17] was considered due to its large size, but was rejected after further review revealed large amounts of unintelligible content.[3][17] Instead, OpenAI developed a new corpus, known as WebText; rather than scraping content indiscriminately from the World Wide Web, WebText was generated by scraping only pages linked to by Reddit posts that had received at least three upvotes prior to December 2017. The corpus was subsequently cleaned; HTML documents were parsed into plain text, duplicate pages were eliminated, and Wikipedia pages were removed (since their presence in many other datasets could have induced overfitting).[3]. While the cost of training GPT-2 is known to have been $256 per hour,[18][19] the amount of hours it took to complete training is unknown; therefore, the overall training cost cannot be estimated accurately.[20] However, comparable large language models using transformer architectures have had their costs documented in more detail; the training processes for BERT and XLNet consumed, respectively, $6,912 and $245,000 of resources.[19]. GPT-2 was first announced on 14 February 2019.\nSource: https://en.wikipedia.org/w/index.php?search=GPT-2\n\nContent: Generative Pre-trained Transformer 1 (GPT-1) was the first of OpenAI's large language models following Google's invention of the transformer architecture in 2017.[2] In June 2018, OpenAI released a paper entitled \"Improving Language Understanding by Generative Pre-Training\",[3] in which they introduced that initial model along with the general concept of a generative pre-trained transformer.[4]. Up to that point, the best-performing neural NLP models primarily employed supervised learning from large amounts of manually labeled data. This reliance on supervised learning limited their use of datasets that were not well-annotated, in addition to making it prohibitively expensive and time-consuming to train extremely large models;[3][5] many languages (such as Swahili or Haitian Creole) are difficult to translate and interpret using such models due to a lack of available text for corpus-building.[5] In contrast, a GPT's \"semi-supervised\" approach involved two stages: an unsupervised generative \"pre-training\" stage in which a language modeling objective was used to set initial parameters, and a supervised discriminative \"fine-tuning\" stage in which these parameters were adapted to a target task.[3]. The use of a transformer architecture, as opposed to previous techniques involving attention-augmented RNNs, provided GPT models with a more structured memory than could be achieved through recurrent mechanisms; this resulted in \"robust transfer performance across diverse tasks\".[3]. BookCorpus was chosen as a training dataset partly because the long passages of continuous text helped the model learn to handle long-range information.[6] It contained over 7,000 unpublished fiction books from various genres. The rest of the datasets available at the time, while being larger, lacked this long-range structure (being \"shuffled\" at a sentence level).[3]. The BookCorpus text was cleaned by the ftfy library to standardized punctuation and whitespace and then tokenized by spaCy.[3]. The GPT-1 architecture was a twelve-layer decoder-only transformer, using twelve masked self-attention heads, with 64-dimensional states each (for a total of 768). Rather than simple stochastic gradient descent, the Adam optimization algorithm was used; the learning rate was increased linearly from zero over the first 2,000 updates to a maximum of 2.5×10−4, and annealed to 0 using a cosine schedule.[3] GPT-1 has 117 million parameters.[4]. While the fine-tuning was adapted to specific tasks, its pre-training was not; to perform the various tasks, minimal changes were performed to its underlying task-agnostic model architecture.[3] Despite this, GPT-1 still improved on previous benchmarks in several language processing tasks, outperforming discriminatively-trained models with task-oriented architectures on several diverse tasks.[3].\nSource: https://en.wikipedia.org/w/index.php?search=GPT-1"
+                  },
+                  {
+                    "role": "user",
+                    "content": "What is ChatGPT?"
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "ChatGPT is a chatbot product developed by OpenAI. It is powered by the Generative Pre-trained Transformer (GPT) series of language models, with GPT-4 being the latest version. ChatGPT uses natural language processing to generate responses to user inputs in a conversational manner. It was released as ChatGPT Plus, a premium version, which provides enhanced features and access to the GPT-4 based version of OpenAI's API. ChatGPT allows users to interact and have conversations with the language model, utilizing both text and image inputs. It is designed to be more reliable, creative, and capable of handling nuanced instructions compared to previous versions. However, it is important to note that while GPT-4 improves upon its predecessors, it still retains some of the same limitations and challenges."
+                  },
+                  {
+                    "role": "user",
+                    "content": "What is the difference between this model and previous neural network?"
+                  }
+                ],
+                "temperature": 0.8,
+                "top_p": 1.0,
+                "n": 1,
+                "stream": false,
+                "stop": null,
+                "max_tokens": null,
+                "presence_penalty": 0.0,
+                "frequency_penalty": 0.0,
+                "logit_bias": {},
+                "user": "",
+                "response_format": null
+              },
+              "output": {
+                "id": "chatcmpl-8v6oV9N64wXMUkHP1hhUKhg3AHpkv",
+                "choices": [
+                  {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                      "content": "I don't know the exact difference between ChatGPT and previous neural network models. If you want, I can provide you with a summary of the differences between GPT-2 and GPT-1, which might give you an idea of the improvements made across different versions of the GPT series.\n\nSOURCES:\nhttps://en.wikipedia.org/w/index.php?search=GPT-2\nhttps://en.wikipedia.org/w/index.php?search=GPT-1",
+                      "role": "assistant",
+                      "function_call": null,
+                      "tool_calls": null
+                    }
+                  }
+                ],
+                "created": 1708621579,
+                "model": "gpt-35-turbo",
+                "object": "chat.completion",
+                "system_fingerprint": "fp_68a7d165bf",
+                "usage": {
+                  "completion_tokens": 93,
+                  "prompt_tokens": 1611,
+                  "total_tokens": 1704
+                }
+              },
+              "start_time": 1708639578.354686,
+              "end_time": 1708639579.323573,
+              "error": null,
+              "children": [],
+              "node_name": null,
+              "parent_id": "ff44af00-1fc2-48f7-97c1-b10159609c86",
+              "id": "c544e883-e864-4a01-8127-ea8f884e164e",
+              "system_metrics": {
+                "completion_tokens": 93,
+                "prompt_tokens": 1611,
+                "total_tokens": 1704
+              }
+            }
+          ],
+          "node_name": "augmented_chat",
+          "parent_id": "",
+          "id": "ff44af00-1fc2-48f7-97c1-b10159609c86",
+          "system_metrics": {
+            "completion_tokens": 93,
+            "prompt_tokens": 1611,
+            "total_tokens": 1704
+          }
+        }
+      ],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "completion_tokens": 93,
+        "prompt_tokens": 1611,
+        "total_tokens": 1704,
+        "duration": 0.982367
+      },
+      "result": "I don't know the exact difference between ChatGPT and previous neural network models. If you want, I can provide you with a summary of the differences between GPT-2 and GPT-1, which might give you an idea of the improvements made across different versions of the GPT series.\n\nSOURCES:\nhttps://en.wikipedia.org/w/index.php?search=GPT-2\nhttps://en.wikipedia.org/w/index.php?search=GPT-1"
+    }
+  ]
+}

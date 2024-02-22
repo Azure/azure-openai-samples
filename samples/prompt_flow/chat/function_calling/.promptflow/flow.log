@@ -1,0 +1,7 @@
+2024-02-22 14:48:28 -0500   41460 execution.flow     INFO     Start executing nodes in thread pool mode.
+2024-02-22 14:48:28 -0500   41460 execution.flow     INFO     Start to run 2 nodes with concurrency level 16.
+2024-02-22 14:48:28 -0500   41460 execution.flow     INFO     Executing node use_functions_with_chat_models. node run id: 86a7f8a7-8dd4-4266-af11-8f887f1271c2_use_functions_with_chat_models_0
+2024-02-22 14:48:32 -0500   41460 execution.flow     INFO     Node use_functions_with_chat_models completes.
+2024-02-22 14:48:32 -0500   41460 execution.flow     INFO     Executing node run_function. node run id: 86a7f8a7-8dd4-4266-af11-8f887f1271c2_run_function_0
+2024-02-22 14:48:32 -0500   41460 execution.flow     INFO     [run_function in line 0 (index starts from 0)] stdout> {'location': 'London', 'format': 'celsius', 'num_days': 7}
+2024-02-22 14:48:32 -0500   41460 execution.flow     INFO     Node run_function completes.

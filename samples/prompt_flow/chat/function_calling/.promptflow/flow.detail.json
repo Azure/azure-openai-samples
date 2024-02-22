@@ -1,0 +1,848 @@
+{
+  "flow_runs": [
+    {
+      "run_id": "86a7f8a7-8dd4-4266-af11-8f887f1271c2_0",
+      "status": "Completed",
+      "error": null,
+      "inputs": {
+        "chat_history": [
+          {
+            "inputs": {
+              "question": "What is the weather like in Boston?"
+            },
+            "outputs": {
+              "answer": "{\"forecast\":[\"sunny\",\"windy\"],\"location\":\"Boston\",\"temperature\":\"72\",\"unit\":\"fahrenheit\"}",
+              "llm_output": {
+                "content": null,
+                "function_call": {
+                  "name": "get_current_weather",
+                  "arguments": "{\n  \"location\": \"Boston\"\n}"
+                },
+                "role": "assistant"
+              }
+            }
+          }
+        ],
+        "question": "How about London next week?"
+      },
+      "output": {
+        "answer": {
+          "location": "London",
+          "temperature": "60",
+          "format": "celsius",
+          "forecast": [
+            "rainy"
+          ],
+          "num_days": 7
+        },
+        "llm_output": {
+          "content": null,
+          "role": "assistant",
+          "function_call": {
+            "arguments": "{\"location\":\"London\",\"format\":\"celsius\",\"num_days\":7}",
+            "name": "get_n_day_weather_forecast"
+          },
+          "tool_calls": null
+        }
+      },
+      "metrics": null,
+      "request": null,
+      "parent_run_id": "86a7f8a7-8dd4-4266-af11-8f887f1271c2",
+      "root_run_id": "86a7f8a7-8dd4-4266-af11-8f887f1271c2",
+      "source_run_id": null,
+      "flow_id": "use_functions_with_chat_models",
+      "start_time": "2024-02-22T19:48:28.903352Z",
+      "end_time": "2024-02-22T19:48:32.609138Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "flow",
+          "node_name": "flow",
+          "type": "Flow",
+          "start_time": 1708649308.903352,
+          "end_time": 1708649312.609138,
+          "children": [
+            {
+              "name": "AzureOpenAI.chat",
+              "type": "Tool",
+              "inputs": {
+                "prompt": "system:\nDon't make assumptions about what values to plug into functions. Ask for clarification if a user request is ambiguous.\n\n{% for item in chat_history %}\nuser:\n{{item.inputs.question}}\n\n{% if 'function_call' in item.outputs.llm_output %}\nassistant:\nFunction generation requested, function = {{item.outputs.llm_output.function_call.name}}, args = {{item.outputs.llm_output.function_call.arguments}}\n\nfunction:\nname:\n{{item.outputs.llm_output.function_call.name}}\ncontent:\n{{item.outputs.answer}}\n\n{% else %}\nassistant:\n{{item.outputs.llm_output}}}}\n\n{% endif %}}\n\n{% endfor %}\n\nuser:\n{{question}}",
+                "deployment_name": "gpt-4-turbo",
+                "temperature": 0.0,
+                "top_p": 1.0,
+                "max_tokens": 256,
+                "presence_penalty": 0.0,
+                "frequency_penalty": 0.0,
+                "functions": [
+                  {
+                    "name": "get_current_weather",
+                    "description": "Get the current weather in a given location",
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "location": {
+                          "type": "string",
+                          "description": "The city and state, e.g. San Francisco, CA"
+                        },
+                        "unit": {
+                          "type": "string",
+                          "enum": [
+                            "celsius",
+                            "fahrenheit"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "location"
+                      ]
+                    }
+                  },
+                  {
+                    "name": "get_n_day_weather_forecast",
+                    "description": "Get an N-day weather forecast",
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "location": {
+                          "type": "string",
+                          "description": "The city and state, e.g. San Francisco, CA"
+                        },
+                        "format": {
+                          "type": "string",
+                          "enum": [
+                            "celsius",
+                            "fahrenheit"
+                          ],
+                          "description": "The temperature unit to use. Infer this from the users location."
+                        },
+                        "num_days": {
+                          "type": "integer",
+                          "description": "The number of days to forecast"
+                        }
+                      },
+                      "required": [
+                        "location",
+                        "format",
+                        "num_days"
+                      ]
+                    }
+                  }
+                ],
+                "function_call": "auto",
+                "question": "How about London next week?",
+                "chat_history": [
+                  {
+                    "inputs": {
+                      "question": "What is the weather like in Boston?"
+                    },
+                    "outputs": {
+                      "answer": "{\"forecast\":[\"sunny\",\"windy\"],\"location\":\"Boston\",\"temperature\":\"72\",\"unit\":\"fahrenheit\"}",
+                      "llm_output": {
+                        "content": null,
+                        "function_call": {
+                          "name": "get_current_weather",
+                          "arguments": "{\n  \"location\": \"Boston\"\n}"
+                        },
+                        "role": "assistant"
+                      }
+                    }
+                  }
+                ]
+              },
+              "output": {
+                "content": null,
+                "role": "assistant",
+                "function_call": {
+                  "arguments": "{\"location\":\"London\",\"format\":\"celsius\",\"num_days\":7}",
+                  "name": "get_n_day_weather_forecast"
+                },
+                "tool_calls": null
+              },
+              "start_time": 1708649308.90637,
+              "end_time": 1708649312.601156,
+              "error": null,
+              "children": [
+                {
+                  "name": "openai.resources.chat.completions.Completions.create",
+                  "type": "LLM",
+                  "inputs": {
+                    "model": "gpt-4-turbo",
+                    "messages": [
+                      {
+                        "role": "system",
+                        "content": "Don't make assumptions about what values to plug into functions. Ask for clarification if a user request is ambiguous."
+                      },
+                      {
+                        "role": "user",
+                        "content": "What is the weather like in Boston?"
+                      },
+                      {
+                        "role": "assistant",
+                        "content": "Function generation requested, function = get_current_weather, args = {\n  \"location\": \"Boston\"\n}"
+                      },
+                      {
+                        "role": "function",
+                        "name": "get_current_weather",
+                        "content": "{\"forecast\":[\"sunny\",\"windy\"],\"location\":\"Boston\",\"temperature\":\"72\",\"unit\":\"fahrenheit\"}\n\n}"
+                      },
+                      {
+                        "role": "user",
+                        "content": "How about London next week?"
+                      }
+                    ],
+                    "temperature": 0.0,
+                    "top_p": 1.0,
+                    "n": 1,
+                    "stream": false,
+                    "stop": null,
+                    "max_tokens": 256,
+                    "presence_penalty": 0.0,
+                    "frequency_penalty": 0.0,
+                    "logit_bias": {},
+                    "user": "",
+                    "response_format": null,
+                    "functions": [
+                      {
+                        "name": "get_current_weather",
+                        "description": "Get the current weather in a given location",
+                        "parameters": {
+                          "type": "object",
+                          "properties": {
+                            "location": {
+                              "type": "string",
+                              "description": "The city and state, e.g. San Francisco, CA"
+                            },
+                            "unit": {
+                              "type": "string",
+                              "enum": [
+                                "celsius",
+                                "fahrenheit"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "location"
+                          ]
+                        }
+                      },
+                      {
+                        "name": "get_n_day_weather_forecast",
+                        "description": "Get an N-day weather forecast",
+                        "parameters": {
+                          "type": "object",
+                          "properties": {
+                            "location": {
+                              "type": "string",
+                              "description": "The city and state, e.g. San Francisco, CA"
+                            },
+                            "format": {
+                              "type": "string",
+                              "enum": [
+                                "celsius",
+                                "fahrenheit"
+                              ],
+                              "description": "The temperature unit to use. Infer this from the users location."
+                            },
+                            "num_days": {
+                              "type": "integer",
+                              "description": "The number of days to forecast"
+                            }
+                          },
+                          "required": [
+                            "location",
+                            "format",
+                            "num_days"
+                          ]
+                        }
+                      }
+                    ],
+                    "function_call": "auto"
+                  },
+                  "output": {
+                    "id": "chatcmpl-8v9LRbVLT5hPKxkIvFVR7jnP6GV7g",
+                    "choices": [
+                      {
+                        "finish_reason": "function_call",
+                        "index": 0,
+                        "logprobs": null,
+                        "message": {
+                          "content": null,
+                          "role": "assistant",
+                          "function_call": {
+                            "arguments": "{\"location\":\"London\",\"format\":\"celsius\",\"num_days\":7}",
+                            "name": "get_n_day_weather_forecast"
+                          },
+                          "tool_calls": null
+                        }
+                      }
+                    ],
+                    "created": 1708631309,
+                    "model": "gpt-4",
+                    "object": "chat.completion",
+                    "system_fingerprint": "fp_8abb16fa4e",
+                    "usage": {
+                      "completion_tokens": 28,
+                      "prompt_tokens": 247,
+                      "total_tokens": 275
+                    }
+                  },
+                  "start_time": 1708649308.914437,
+                  "end_time": 1708649312.601156,
+                  "error": null,
+                  "children": [],
+                  "node_name": null,
+                  "parent_id": "8e0f2014-1f14-4309-9a98-6f7152e4a7dd",
+                  "id": "74368440-1bb1-4676-9177-d46aa984c808",
+                  "system_metrics": {
+                    "completion_tokens": 28,
+                    "prompt_tokens": 247,
+                    "total_tokens": 275
+                  }
+                }
+              ],
+              "node_name": "use_functions_with_chat_models",
+              "parent_id": "",
+              "id": "8e0f2014-1f14-4309-9a98-6f7152e4a7dd",
+              "system_metrics": {
+                "completion_tokens": 28,
+                "prompt_tokens": 247,
+                "total_tokens": 275
+              }
+            },
+            {
+              "name": "run_function",
+              "type": "Tool",
+              "inputs": {
+                "response_message": {
+                  "content": null,
+                  "role": "assistant",
+                  "function_call": {
+                    "arguments": "{\"location\":\"London\",\"format\":\"celsius\",\"num_days\":7}",
+                    "name": "get_n_day_weather_forecast"
+                  },
+                  "tool_calls": null
+                }
+              },
+              "output": {
+                "location": "London",
+                "temperature": "60",
+                "format": "celsius",
+                "forecast": [
+                  "rainy"
+                ],
+                "num_days": 7
+              },
+              "start_time": 1708649312.606149,
+              "end_time": 1708649312.608136,
+              "error": null,
+              "children": [],
+              "node_name": "run_function",
+              "parent_id": "",
+              "id": "923b936c-2b8c-4ab2-a94c-5c9a4c51c798",
+              "system_metrics": {}
+            }
+          ],
+          "system_metrics": {
+            "duration": 3.705786,
+            "prompt_tokens": 247,
+            "completion_tokens": 28,
+            "total_tokens": 275
+          }
+        }
+      ],
+      "variant_id": "",
+      "name": "",
+      "description": "",
+      "tags": null,
+      "system_metrics": {
+        "duration": 3.705786,
+        "prompt_tokens": 247,
+        "completion_tokens": 28,
+        "total_tokens": 275
+      },
+      "result": {
+        "answer": {
+          "location": "London",
+          "temperature": "60",
+          "format": "celsius",
+          "forecast": [
+            "rainy"
+          ],
+          "num_days": 7
+        },
+        "llm_output": {
+          "content": null,
+          "role": "assistant",
+          "function_call": {
+            "arguments": "{\"location\":\"London\",\"format\":\"celsius\",\"num_days\":7}",
+            "name": "get_n_day_weather_forecast"
+          },
+          "tool_calls": null
+        }
+      },
+      "upload_metrics": false
+    }
+  ],
+  "node_runs": [
+    {
+      "node": "use_functions_with_chat_models",
+      "flow_run_id": "86a7f8a7-8dd4-4266-af11-8f887f1271c2",
+      "run_id": "86a7f8a7-8dd4-4266-af11-8f887f1271c2_use_functions_with_chat_models_0",
+      "status": "Completed",
+      "inputs": {
+        "deployment_name": "gpt-4-turbo",
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "max_tokens": 256,
+        "presence_penalty": 0.0,
+        "frequency_penalty": 0.0,
+        "functions": [
+          {
+            "name": "get_current_weather",
+            "description": "Get the current weather in a given location",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "location": {
+                  "type": "string",
+                  "description": "The city and state, e.g. San Francisco, CA"
+                },
+                "unit": {
+                  "type": "string",
+                  "enum": [
+                    "celsius",
+                    "fahrenheit"
+                  ]
+                }
+              },
+              "required": [
+                "location"
+              ]
+            }
+          },
+          {
+            "name": "get_n_day_weather_forecast",
+            "description": "Get an N-day weather forecast",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "location": {
+                  "type": "string",
+                  "description": "The city and state, e.g. San Francisco, CA"
+                },
+                "format": {
+                  "type": "string",
+                  "enum": [
+                    "celsius",
+                    "fahrenheit"
+                  ],
+                  "description": "The temperature unit to use. Infer this from the users location."
+                },
+                "num_days": {
+                  "type": "integer",
+                  "description": "The number of days to forecast"
+                }
+              },
+              "required": [
+                "location",
+                "format",
+                "num_days"
+              ]
+            }
+          }
+        ],
+        "function_call": "auto",
+        "question": "How about London next week?",
+        "chat_history": [
+          {
+            "inputs": {
+              "question": "What is the weather like in Boston?"
+            },
+            "outputs": {
+              "answer": "{\"forecast\":[\"sunny\",\"windy\"],\"location\":\"Boston\",\"temperature\":\"72\",\"unit\":\"fahrenheit\"}",
+              "llm_output": {
+                "content": null,
+                "function_call": {
+                  "name": "get_current_weather",
+                  "arguments": "{\n  \"location\": \"Boston\"\n}"
+                },
+                "role": "assistant"
+              }
+            }
+          }
+        ]
+      },
+      "output": {
+        "content": null,
+        "role": "assistant",
+        "function_call": {
+          "arguments": "{\"location\":\"London\",\"format\":\"celsius\",\"num_days\":7}",
+          "name": "get_n_day_weather_forecast"
+        },
+        "tool_calls": null
+      },
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "86a7f8a7-8dd4-4266-af11-8f887f1271c2_0",
+      "start_time": "2024-02-22T19:48:28.905982Z",
+      "end_time": "2024-02-22T19:48:32.603157Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "AzureOpenAI.chat",
+          "type": "Tool",
+          "inputs": {
+            "prompt": "system:\nDon't make assumptions about what values to plug into functions. Ask for clarification if a user request is ambiguous.\n\n{% for item in chat_history %}\nuser:\n{{item.inputs.question}}\n\n{% if 'function_call' in item.outputs.llm_output %}\nassistant:\nFunction generation requested, function = {{item.outputs.llm_output.function_call.name}}, args = {{item.outputs.llm_output.function_call.arguments}}\n\nfunction:\nname:\n{{item.outputs.llm_output.function_call.name}}\ncontent:\n{{item.outputs.answer}}\n\n{% else %}\nassistant:\n{{item.outputs.llm_output}}}}\n\n{% endif %}}\n\n{% endfor %}\n\nuser:\n{{question}}",
+            "deployment_name": "gpt-4-turbo",
+            "temperature": 0.0,
+            "top_p": 1.0,
+            "max_tokens": 256,
+            "presence_penalty": 0.0,
+            "frequency_penalty": 0.0,
+            "functions": [
+              {
+                "name": "get_current_weather",
+                "description": "Get the current weather in a given location",
+                "parameters": {
+                  "type": "object",
+                  "properties": {
+                    "location": {
+                      "type": "string",
+                      "description": "The city and state, e.g. San Francisco, CA"
+                    },
+                    "unit": {
+                      "type": "string",
+                      "enum": [
+                        "celsius",
+                        "fahrenheit"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "location"
+                  ]
+                }
+              },
+              {
+                "name": "get_n_day_weather_forecast",
+                "description": "Get an N-day weather forecast",
+                "parameters": {
+                  "type": "object",
+                  "properties": {
+                    "location": {
+                      "type": "string",
+                      "description": "The city and state, e.g. San Francisco, CA"
+                    },
+                    "format": {
+                      "type": "string",
+                      "enum": [
+                        "celsius",
+                        "fahrenheit"
+                      ],
+                      "description": "The temperature unit to use. Infer this from the users location."
+                    },
+                    "num_days": {
+                      "type": "integer",
+                      "description": "The number of days to forecast"
+                    }
+                  },
+                  "required": [
+                    "location",
+                    "format",
+                    "num_days"
+                  ]
+                }
+              }
+            ],
+            "function_call": "auto",
+            "question": "How about London next week?",
+            "chat_history": [
+              {
+                "inputs": {
+                  "question": "What is the weather like in Boston?"
+                },
+                "outputs": {
+                  "answer": "{\"forecast\":[\"sunny\",\"windy\"],\"location\":\"Boston\",\"temperature\":\"72\",\"unit\":\"fahrenheit\"}",
+                  "llm_output": {
+                    "content": null,
+                    "function_call": {
+                      "name": "get_current_weather",
+                      "arguments": "{\n  \"location\": \"Boston\"\n}"
+                    },
+                    "role": "assistant"
+                  }
+                }
+              }
+            ]
+          },
+          "output": {
+            "content": null,
+            "role": "assistant",
+            "function_call": {
+              "arguments": "{\"location\":\"London\",\"format\":\"celsius\",\"num_days\":7}",
+              "name": "get_n_day_weather_forecast"
+            },
+            "tool_calls": null
+          },
+          "start_time": 1708649308.90637,
+          "end_time": 1708649312.601156,
+          "error": null,
+          "children": [
+            {
+              "name": "openai.resources.chat.completions.Completions.create",
+              "type": "LLM",
+              "inputs": {
+                "model": "gpt-4-turbo",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Don't make assumptions about what values to plug into functions. Ask for clarification if a user request is ambiguous."
+                  },
+                  {
+                    "role": "user",
+                    "content": "What is the weather like in Boston?"
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "Function generation requested, function = get_current_weather, args = {\n  \"location\": \"Boston\"\n}"
+                  },
+                  {
+                    "role": "function",
+                    "name": "get_current_weather",
+                    "content": "{\"forecast\":[\"sunny\",\"windy\"],\"location\":\"Boston\",\"temperature\":\"72\",\"unit\":\"fahrenheit\"}\n\n}"
+                  },
+                  {
+                    "role": "user",
+                    "content": "How about London next week?"
+                  }
+                ],
+                "temperature": 0.0,
+                "top_p": 1.0,
+                "n": 1,
+                "stream": false,
+                "stop": null,
+                "max_tokens": 256,
+                "presence_penalty": 0.0,
+                "frequency_penalty": 0.0,
+                "logit_bias": {},
+                "user": "",
+                "response_format": null,
+                "functions": [
+                  {
+                    "name": "get_current_weather",
+                    "description": "Get the current weather in a given location",
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "location": {
+                          "type": "string",
+                          "description": "The city and state, e.g. San Francisco, CA"
+                        },
+                        "unit": {
+                          "type": "string",
+                          "enum": [
+                            "celsius",
+                            "fahrenheit"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "location"
+                      ]
+                    }
+                  },
+                  {
+                    "name": "get_n_day_weather_forecast",
+                    "description": "Get an N-day weather forecast",
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "location": {
+                          "type": "string",
+                          "description": "The city and state, e.g. San Francisco, CA"
+                        },
+                        "format": {
+                          "type": "string",
+                          "enum": [
+                            "celsius",
+                            "fahrenheit"
+                          ],
+                          "description": "The temperature unit to use. Infer this from the users location."
+                        },
+                        "num_days": {
+                          "type": "integer",
+                          "description": "The number of days to forecast"
+                        }
+                      },
+                      "required": [
+                        "location",
+                        "format",
+                        "num_days"
+                      ]
+                    }
+                  }
+                ],
+                "function_call": "auto"
+              },
+              "output": {
+                "id": "chatcmpl-8v9LRbVLT5hPKxkIvFVR7jnP6GV7g",
+                "choices": [
+                  {
+                    "finish_reason": "function_call",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                      "content": null,
+                      "role": "assistant",
+                      "function_call": {
+                        "arguments": "{\"location\":\"London\",\"format\":\"celsius\",\"num_days\":7}",
+                        "name": "get_n_day_weather_forecast"
+                      },
+                      "tool_calls": null
+                    }
+                  }
+                ],
+                "created": 1708631309,
+                "model": "gpt-4",
+                "object": "chat.completion",
+                "system_fingerprint": "fp_8abb16fa4e",
+                "usage": {
+                  "completion_tokens": 28,
+                  "prompt_tokens": 247,
+                  "total_tokens": 275
+                }
+              },
+              "start_time": 1708649308.914437,
+              "end_time": 1708649312.601156,
+              "error": null,
+              "children": [],
+              "node_name": null,
+              "parent_id": "8e0f2014-1f14-4309-9a98-6f7152e4a7dd",
+              "id": "74368440-1bb1-4676-9177-d46aa984c808",
+              "system_metrics": {
+                "completion_tokens": 28,
+                "prompt_tokens": 247,
+                "total_tokens": 275
+              }
+            }
+          ],
+          "node_name": "use_functions_with_chat_models",
+          "parent_id": "",
+          "id": "8e0f2014-1f14-4309-9a98-6f7152e4a7dd",
+          "system_metrics": {
+            "completion_tokens": 28,
+            "prompt_tokens": 247,
+            "total_tokens": 275
+          }
+        }
+      ],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "completion_tokens": 28,
+        "prompt_tokens": 247,
+        "total_tokens": 275,
+        "duration": 3.697175
+      },
+      "result": {
+        "content": null,
+        "role": "assistant",
+        "function_call": {
+          "arguments": "{\"location\":\"London\",\"format\":\"celsius\",\"num_days\":7}",
+          "name": "get_n_day_weather_forecast"
+        },
+        "tool_calls": null
+      }
+    },
+    {
+      "node": "run_function",
+      "flow_run_id": "86a7f8a7-8dd4-4266-af11-8f887f1271c2",
+      "run_id": "86a7f8a7-8dd4-4266-af11-8f887f1271c2_run_function_0",
+      "status": "Completed",
+      "inputs": {
+        "response_message": {
+          "content": null,
+          "role": "assistant",
+          "function_call": {
+            "arguments": "{\"location\":\"London\",\"format\":\"celsius\",\"num_days\":7}",
+            "name": "get_n_day_weather_forecast"
+          },
+          "tool_calls": null
+        }
+      },
+      "output": {
+        "location": "London",
+        "temperature": "60",
+        "format": "celsius",
+        "forecast": [
+          "rainy"
+        ],
+        "num_days": 7
+      },
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "86a7f8a7-8dd4-4266-af11-8f887f1271c2_0",
+      "start_time": "2024-02-22T19:48:32.605141Z",
+      "end_time": "2024-02-22T19:48:32.608136Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "run_function",
+          "type": "Tool",
+          "inputs": {
+            "response_message": {
+              "content": null,
+              "role": "assistant",
+              "function_call": {
+                "arguments": "{\"location\":\"London\",\"format\":\"celsius\",\"num_days\":7}",
+                "name": "get_n_day_weather_forecast"
+              },
+              "tool_calls": null
+            }
+          },
+          "output": {
+            "location": "London",
+            "temperature": "60",
+            "format": "celsius",
+            "forecast": [
+              "rainy"
+            ],
+            "num_days": 7
+          },
+          "start_time": 1708649312.606149,
+          "end_time": 1708649312.608136,
+          "error": null,
+          "children": [],
+          "node_name": "run_function",
+          "parent_id": "",
+          "id": "923b936c-2b8c-4ab2-a94c-5c9a4c51c798",
+          "system_metrics": {}
+        }
+      ],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "[2024-02-22T19:48:32+0000] {'location': 'London', 'format': 'celsius', 'num_days': 7}\n",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.002995
+      },
+      "result": {
+        "location": "London",
+        "temperature": "60",
+        "format": "celsius",
+        "forecast": [
+          "rainy"
+        ],
+        "num_days": 7
+      }
+    }
+  ]
+}

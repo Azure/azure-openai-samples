@@ -1,0 +1,50 @@
+{
+  "package": {},
+  "code": {
+    "relevance_score.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "answer": {
+          "type": [
+            "string"
+          ]
+        },
+        "question": {
+          "type": [
+            "string"
+          ]
+        },
+        "context": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "relevance_score.jinja2"
+    },
+    "concat_scores.py": {
+      "type": "python",
+      "inputs": {
+        "relevance_score": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "concat_scores.py",
+      "function": "concat_results"
+    },
+    "aggregate_variants_results.py": {
+      "type": "python",
+      "inputs": {
+        "results": {
+          "type": [
+            "object"
+          ]
+        }
+      },
+      "source": "aggregate_variants_results.py",
+      "function": "aggregate_variants_results"
+    }
+  }
+}

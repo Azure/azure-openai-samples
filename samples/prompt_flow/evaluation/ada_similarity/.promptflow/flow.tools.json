@@ -1,0 +1,103 @@
+{
+  "package": {
+    "promptflow.tools.embedding.embedding": {
+      "name": "Embedding",
+      "description": "Use Open AI's embedding model to create an embedding vector representing the input text.",
+      "type": "python",
+      "module": "promptflow.tools.embedding",
+      "function": "embedding",
+      "inputs": {
+        "connection": {
+          "type": [
+            "AzureOpenAIConnection",
+            "OpenAIConnection"
+          ]
+        },
+        "deployment_name": {
+          "type": [
+            "string"
+          ],
+          "enabled_by": "connection",
+          "enabled_by_type": [
+            "AzureOpenAIConnection"
+          ],
+          "capabilities": {
+            "completion": false,
+            "chat_completion": false,
+            "embeddings": true
+          },
+          "model_list": [
+            "text-embedding-ada-002",
+            "text-search-ada-doc-001",
+            "text-search-ada-query-001"
+          ]
+        },
+        "model": {
+          "type": [
+            "string"
+          ],
+          "enabled_by": "connection",
+          "enabled_by_type": [
+            "OpenAIConnection"
+          ],
+          "enum": [
+            "text-embedding-ada-002",
+            "text-search-ada-doc-001",
+            "text-search-ada-query-001"
+          ],
+          "allow_manual_entry": true
+        },
+        "input": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "package": "promptflow-tools",
+      "package_version": "1.2.0"
+    }
+  },
+  "code": {
+    "ada_cosine_similarity_score.py": {
+      "type": "python",
+      "inputs": {
+        "a": {
+          "type": [
+            "object"
+          ]
+        },
+        "b": {
+          "type": [
+            "object"
+          ]
+        }
+      },
+      "source": "ada_cosine_similarity_score.py",
+      "function": "compute_ada_cosine_similarity"
+    },
+    "concat_scores.py": {
+      "type": "python",
+      "inputs": {
+        "ada_cosine_similarity": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "concat_scores.py",
+      "function": "concat_results"
+    },
+    "aggregate_variants_results.py": {
+      "type": "python",
+      "inputs": {
+        "results": {
+          "type": [
+            "object"
+          ]
+        }
+      },
+      "source": "aggregate_variants_results.py",
+      "function": "aggregate_variants_results"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+2024-02-22 12:06:13 -0500   20188 execution.flow     INFO     Start executing nodes in thread pool mode.
+2024-02-22 12:06:13 -0500   20188 execution.flow     INFO     Start to run 5 nodes with concurrency level 16.
+2024-02-22 12:06:13 -0500   20188 execution.flow     INFO     Executing node extract_query_from_question. node run id: 97617340-b45e-4ba9-accd-10251560bb8d_extract_query_from_question_0
+2024-02-22 12:06:15 -0500   20188 execution.flow     INFO     Node extract_query_from_question completes.
+2024-02-22 12:06:15 -0500   20188 execution.flow     INFO     Executing node get_wiki_url. node run id: 97617340-b45e-4ba9-accd-10251560bb8d_get_wiki_url_0
+2024-02-22 12:06:16 -0500   20188 execution.flow     INFO     [get_wiki_url in line 0 (index starts from 0)] stdout> Could not find difference between GPT-4 and previous neural network models. Similar ententity: ['GPT-2', 'GPT-1'].
+2024-02-22 12:06:16 -0500   20188 execution.flow     INFO     Node get_wiki_url completes.
+2024-02-22 12:06:16 -0500   20188 execution.flow     INFO     Executing node search_result_from_url. node run id: 97617340-b45e-4ba9-accd-10251560bb8d_search_result_from_url_0
+2024-02-22 12:06:18 -0500   20188 execution.flow     INFO     Node search_result_from_url completes.
+2024-02-22 12:06:18 -0500   20188 execution.flow     INFO     Executing node process_search_result. node run id: 97617340-b45e-4ba9-accd-10251560bb8d_process_search_result_0
+2024-02-22 12:06:18 -0500   20188 execution.flow     INFO     Node process_search_result completes.
+2024-02-22 12:06:18 -0500   20188 execution.flow     INFO     Executing node augmented_chat. node run id: 97617340-b45e-4ba9-accd-10251560bb8d_augmented_chat_0
+2024-02-22 12:06:19 -0500   20188 execution.flow     INFO     Node augmented_chat completes.
