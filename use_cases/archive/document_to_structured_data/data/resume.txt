@@ -1,0 +1,232 @@
+Contact
+chew.yean.yam@gmail.com
+www.linkedin.com/in/cyyam
+(LinkedIn)
+Top Skills
+Research
+Microarray Analysis
+OpenCV
+Languages
+English (Native or Bilingual)
+Malay (Professional Working)
+Mandarin (Native or Bilingual)
+Cantonese (Native or Bilingual)
+Certifications
+Uncovering Your Authentic Self at
+Work
+Worldwide Communities -
+Community SME 2018
+Fred Kofman on Managing Conflict
+Chew-Yean Yam
+AI Leader & Practitioner | Data Science | Machine Learning | AI
+Strategy
+United Kingdom
+Summary
+Over 20 years of industrial and applied research experience with
+global advanced technology companies and internationally renowned
+research institutions: Microsoft, Intel, HP Labs, Agency for Science
+Technology & Research, British Aerospace Engineering, National
+Physical Laboratory (UK).
+I build and lead Data Science and Machine Learning specialist teams
+to design and develop AI applications with start-ups and established
+enterprises. I advise on their AI strategies, identify commercial
+opportunities and code with them to deployment. Experienced in
+incubation of new AI capabilities for products.
+Experience in:
+Hands-on data driven and machine learning algorithms: classical
+and deep learning, applied to computer vision, text analytics,
+time-series, predictive models, from conception, architecting to
+deployment. Applied in wide range of domains and industries:
+biometrics, unmanned air vehicles, ecommerce, advertising, areal
+sensing, conservation, security, finance, insurance, transport, media
+entertainment, gaming.
+Giving back:
+I actively help and advice women who wants to get into STEM
+career through active involvements via Women Tech Hub (https://
+www.wthub.org/), run Data Science and Machine Learning
+Workshop on a regular basis and has been on Advisory Board for
+Data Science and Machine Learning, University of Bristol.
+Experience
+Microsoft
+8 years 2 months
+Page 1 of 7
+Principal Data and Applied Scientist
+December 2021 - Present (1 year 6 months)
+Design and build AI applications with enterprises in Latin America Region
+across industries. Advise on their AI strategies, identify commercial
+opportunities and code with them to deployment. Translate business
+requirements into machine learning solution.
+Enhance skills of team of Cloud Solution Architect specialised in Machine
+Learning through collaboration and education.
+Principal Data and Applied Scientist
+December 2019 - December 2021 (2 years 1 month)
+Design and build AI Capabilities with enterprises :
+• Recommender engine for media streaming company
+• Information extraction from images and texts for oil and gas company
+AI Incubator | Design, build and incubate AI and Data Analytics capabilities :
+• Media Industry aligned with the MovieLabs Ontology for Media Creation, with
+direct engagement with major Hollywood’s studios, such as Disney’s, Warner
+Brothers and Universal. Extract entities specific for media creation from written
+(movie) scripts, and represented as a knowledge graph for subsequent usage
+in the media production process, e.g. entities linking, information retrieval,
+knowledge graph.
+• Gaming Industry Customer Churn and Data Analytics capabilities for Gaming
+Platform Playfab.
+Principal Data and Applied Science Manager
+May 2018 - November 2019 (1 year 7 months)
+Lead a Data Science team.
+Design and build many AI applications with enterprises in the EMEA
+region across industries. Advise on their AI strategies, identify commercial
+opportunities and code with them to deployment. Translate business
+requirements into machine learning solution. Hands-on with enterprises
+engineering team and build custom machine learning models.
+Principal Data and Applied Scientist
+April 2015 - April 2018 (3 years 1 month)
+Page 2 of 7
+London, United Kingdom
+Design and build many AI applications with enterprises world-wide across
+industries. Advise on their AI strategies, identify commercial opportunities
+and code with them to deployment. Translate business requirements into
+machine learning solution. Hands-on with enterprises engineering team and
+build custom machine learning models.
+Data Science and Machine Learning Study Group (MeetUp)
+Co-Founder/Organizer
+November 2019 - Present (3 years 7 months)
+Bristol, United Kingdom
+The vision of this community group is to empower every single person in
+Bristol and surrounding areas to achieve quality Machine Learning and Data
+Science knowledge, so that they can go on and do great things that benefit the
+quality of life of fellow earth citizens.
+https://www.meetup.com/Bristol-Data-Science-and-Machine-Learning-StudyGroup/
+University of Bristol
+External Advisory Board Member
+January 2019 - Present (4 years 5 months)
+Voluntary.
+Advice on Data Science and Machine Learning related courses, bringing
+academia and industry closer, diversity and inclusion.
+BAE Systems
+Principal Research Scientist
+April 2013 - March 2015 (2 years)
+Application domains:
+- Text Document Analysis - Event Detection and Extraction
+- Health Impact Assessment
+- Unmanned Aerial Vehicle (UAV) - ASTREA. http://astraea.aero/
+Hewlett-Packard Laboratories
+Research Scientist
+November 2010 - October 2012 (2 years)
+Application domains:
+- Cloud Computing Stewardship and Economics.
+Page 3 of 7
+- Discrete event model and simulation of interaction within cloud computing
+ecosystem to predict consequences of information stewardship issues and
+economics implications in cloud computing adoption.
+Publications:
+C.-Y. Yam, A. Baldwin, C. Ioannidis, S. Shiu, Migration to Cloud as Real
+Option: Investment decision under uncertainty, IEEE TrustCom Symposiums &
+Workshops, Nov 2011.
+A. Baldwin, Y. Beres, L. Carrotte, T. Koulouris, B. Monahan, D. Pym, S. Shiu,
+and C.Y. Yam, Exploring Information Stewardship with the Cloud Ecosystem
+Model, 9th International Conference on Modeling, Simulation and Visualization
+Methods, July 2012
+National Physical Laboratory
+Senior Scientist
+October 2007 - March 2010 (2 years 6 months)
+National Measurement Institute, world-leader in measurement standards,
+science and technology.
+Application domains:
+- Biometrics, Anti-Counterfeit(Bank notes, Barcode, Printing on packaging)
+- Error Analysis in 3-D Face Reconstruction, Image Correlation, Uncertainty
+propagation through an imaging system.
+- Design, develop, implement complex experiments, gather and process
+large data set, perform statistical data analysis, draw conclusions and provide
+recommendations backed by scientific facts to improve product.
+Business Development:
+- Negotiate and liaise with international customers to win contracts.
+- Translate business requirement into technical specification.
+Publication:
+R. Dudley, T. Esward, T. Goodman, A. Horgan, T. Koukoulas, R. Montgomery,
+A. Shard, F. Tuffy and C.-Y. Yam, Measurements to support anti-counterfeiting
+and authentication: a new project at the UKs National Physical Laboratory, 3rd
+Authentication Connections Forum, Prague, Reconnaissance International,
+2008.
+University of Southampton, Electronics and Computer Science
+Page 4 of 7
+Research Scientist
+January 2007 - September 2007 (9 months)
+Largest in UK, 5* in Research Assessment Exercises, 'Best 5*' in Higher
+Education Funding Council.
+Application domains:
+- Human Motion, Biometrics.
+- Course delivery and project formulation.
+Publications:
+C.-Y. Yam and M. S. Nixon, Model-based Gait Recognition, Chapter in
+Encyclopedia of Biometrics, Springer 2009
+Intel
+Senior Technical Marketing Engineer
+August 2004 - November 2006 (2 years 4 months)
+The world's largest and leader for semiconductors and microprocessors.
+- Digital Security Surveillance
+- Business Development and Partnership
+- Market Awareness for Emerging Market
+- Authored technical articles
+- Developed demonstration kit.
+Invention Disclosure:
+- IP.COM, “Method for human-to-computer interaction by LIDAR-based gesture
+recognition and interpretation.” IPCOM000143795D, 2006.
+A*STAR - Agency for Science, Technology and Research
+Research Fellow
+April 2003 - July 2004 (1 year 4 months)
+Signal processing, statistics.
+Application domains:
+- Micro-array Analysis, Bioinformatics.
+- Requirement Analysis and Software Design.
+Publication:
+Page 5 of 7
+S-W Chua, P. Vijayakumar, P. M. Nissom, C.-Y. Yam, V. V. T. Wong and
+H. Yang. A novel normalization method for effective removal of systematic
+variation in microarray data. Nucleic Acids Research, Vol.34, No. 5, 2006.
+University of Southampton - Electronics and Computer Science
+Research Consultant
+January 2002 - December 2002 (1 year)
+Computer vision, time-series analytic, pattern recognition, laboratory design,
+large data collection and processing.
+Application domains:
+- Invented first model-based walking and running gait biometrics system for
+person, gender and age-group identification.
+- Human gait as Biometrics Lab (first and largest)
+- US Defence Advanced Research Projects Agency (DARPA): Gait as
+Biometric– Automatic Gait Recognition for Human ID at a Distance.
+- Designed and set up first of its kind Biometrics Gait Laboratory in the world.
+- Model-based motion modelling and spatial-temporal feature extraction.
+- Statistical-based and model-based moving feature extraction.
+- Empirical and analytical modelling.
+- Authored and presented technical papers.
+- Contributed to Image Processing and Biometrics books.
+Tools: Matlab, C, Java, Java Advanced Imaging (JAI).
+Publications:
+C.-Y. Yam, M. S. Nixon and J. N. Carter, Extended Model-based Automatic
+Gait Recognition of Walking and Running, 3rd Proc. Audio- and Video-Based
+Biometric Person Authentication, pp 284-294, 2001.
+C.-Y. Yam, M. S. Nixon and J. N. Carter, Performance Analysis on New
+Biometric Gait Motion Model, 5th IEEE Southwest Symposium on Image
+Analysis and Interpretation, pp 31-34, 2002.
+C.-Y. Yam, M. S. Nixon and J. N. Carter, On the Relationship of Human
+Walking and Running: Automatic Person Identification by Gait, 16th
+International Conference on Pattern Recognition, 2002.
+Page 6 of 7
+C.-Y. Yam, M. S. Nixon and J. N. Carter, Automated Markerless Analysis
+of Human Walking and Running by Computer Vision, IV World Congress
+Biomechanics, 2002.
+C.-Y. Yam and M. S. Nixon, Automated Non-Invasive Human Locomotion
+Extraction Invariant to Camera Sagittal View, Proc. 11th International
+Conference on Biomedical Engineering, 2002.
+C.-Y. Yam, M. S. Nixon and J. N. Carter, Automated Person Recognition by
+Walking and Running via Model-based Approach. Pattern Recognition, 37(5),
+2004.
+Education
+University of Southampton
+Ph.D., Computer Vision, Image Processing, Human Motion Modelling,
+Biometrics · (1999 - 2002)
+University of Southampton
+B. Eng., Computer Engineering · (1997 - 1999)
+Page 7 of 7
