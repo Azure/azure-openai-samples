@@ -1,0 +1,20 @@
+{
+  "answer": {
+    "location": "London",
+    "temperature": "60",
+    "format": "celsius",
+    "forecast": [
+      "rainy"
+    ],
+    "num_days": 7
+  },
+  "llm_output": {
+    "content": null,
+    "role": "assistant",
+    "function_call": {
+      "arguments": "{\"location\":\"London\",\"format\":\"celsius\",\"num_days\":7}",
+      "name": "get_n_day_weather_forecast"
+    },
+    "tool_calls": null
+  }
+}

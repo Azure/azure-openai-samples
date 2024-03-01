@@ -1,0 +1,90 @@
+{
+  "package": {},
+  "code": {
+    "extract_query_from_question.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "question": {
+          "type": [
+            "string"
+          ]
+        },
+        "chat_history": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "extract_query_from_question.jinja2"
+    },
+    "get_wiki_url.py": {
+      "type": "python",
+      "inputs": {
+        "entity": {
+          "type": [
+            "string"
+          ]
+        },
+        "count": {
+          "type": [
+            "int"
+          ],
+          "default": "2"
+        }
+      },
+      "source": "get_wiki_url.py",
+      "function": "get_wiki_url"
+    },
+    "search_result_from_url.py": {
+      "type": "python",
+      "inputs": {
+        "url_list": {
+          "type": [
+            "list"
+          ]
+        },
+        "count": {
+          "type": [
+            "int"
+          ],
+          "default": "10"
+        }
+      },
+      "source": "search_result_from_url.py",
+      "function": "search_result_from_url"
+    },
+    "process_search_result.py": {
+      "type": "python",
+      "inputs": {
+        "search_result": {
+          "type": [
+            "object"
+          ]
+        }
+      },
+      "source": "process_search_result.py",
+      "function": "process_search_result"
+    },
+    "augmented_chat.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "question": {
+          "type": [
+            "string"
+          ]
+        },
+        "contexts": {
+          "type": [
+            "string"
+          ]
+        },
+        "chat_history": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "augmented_chat.jinja2"
+    }
+  }
+}

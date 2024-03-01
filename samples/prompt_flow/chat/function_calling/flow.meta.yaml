@@ -1,0 +1,11 @@
+$schema: https://azuremlschemas.azureedge.net/latest/flow.schema.json
+name: use_functions_with_chat_models
+display_name: Use GPT Function Calling
+type: chat
+path: ./flow.dag.yaml
+description: Learn how to use GPT function calling to extend the capabilities of GPT models with external data sources.
+properties:
+  promptflow.stage: prod
+  promptflow.details.type: markdown
+  promptflow.details.source: README.md
+  promptflow.batch_inputs: samples.json

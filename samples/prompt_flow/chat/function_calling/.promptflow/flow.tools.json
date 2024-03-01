@@ -1,0 +1,33 @@
+{
+  "package": {},
+  "code": {
+    "run_function.py": {
+      "type": "python",
+      "inputs": {
+        "response_message": {
+          "type": [
+            "object"
+          ]
+        }
+      },
+      "source": "run_function.py",
+      "function": "run_function"
+    },
+    "use_functions_with_chat_models.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "chat_history": {
+          "type": [
+            "string"
+          ]
+        },
+        "question": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "use_functions_with_chat_models.jinja2"
+    }
+  }
+}

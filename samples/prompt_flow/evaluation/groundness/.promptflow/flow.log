@@ -1,0 +1,9 @@
+2024-02-22 11:08:05 -0500   35064 execution.flow     INFO     Start executing nodes in thread pool mode.
+2024-02-22 11:08:05 -0500   35064 execution.flow     INFO     Start to run 2 nodes with concurrency level 16.
+2024-02-22 11:08:05 -0500   35064 execution.flow     INFO     Executing node groundedness_score. node run id: ac1b083a-28f2-465f-9210-18bdc8d75b18_groundedness_score_0
+2024-02-22 11:08:05 -0500   35064 execution.flow     INFO     Node groundedness_score completes.
+2024-02-22 11:08:05 -0500   35064 execution.flow     INFO     Executing node concat_scores. node run id: ac1b083a-28f2-465f-9210-18bdc8d75b18_concat_scores_0
+2024-02-22 11:08:05 -0500   35064 execution.flow     INFO     Node concat_scores completes.
+2024-02-22 11:08:05 -0500   35064 execution.flow     INFO     Start to run 1 nodes with concurrency level 16.
+2024-02-22 11:08:05 -0500   35064 execution.flow     INFO     Executing node aggregate_variants_results. node run id: ac1b083a-28f2-465f-9210-18bdc8d75b18_aggregate_variants_results_reduce
+2024-02-22 11:08:05 -0500   35064 execution.flow     INFO     Node aggregate_variants_results completes.

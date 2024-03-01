@@ -1,0 +1,11 @@
+$schema: https://azuremlschemas.azureedge.net/latest/flow.schema.json
+name: qna_ada_similarity_eval
+display_name: QnA Ada Similarity Evaluation
+type: evaluate
+path: ./flow.dag.yaml
+description: Compute the cosine similarity between the answer and the ground truth embedded with ada embedding
+properties:
+  promptflow.stage: prod
+  promptflow.details.type: markdown
+  promptflow.details.source: README.md
+  promptflow.batch_inputs: samples.json

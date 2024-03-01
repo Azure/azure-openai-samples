@@ -1,0 +1,65 @@
+id: QnA_ada_similarity_eval
+name: QnA Ada Similarity Evaluation
+environment:
+  python_requirements_txt: requirements.txt
+inputs:
+  ground_truth:
+    type: string
+    default: Master transformer.
+    is_chat_input: false
+  answer:
+    type: string
+    default: The main transformer is the object that feeds all the fixtures in low
+      voltage tracks.
+    is_chat_input: false
+outputs:
+  ada_similarity:
+    type: object
+    reference: ${concat_scores.output.ada_similarity}
+nodes:
+- name: embedd_ground_truth
+  type: python
+  source:
+    type: package
+    tool: promptflow.tools.embedding.embedding
+  inputs:
+    connection: Default_AzureOpenAI
+    deployment_name: text-embedding-ada-002
+    input: ${inputs.ground_truth}
+  use_variants: false
+- name: embedd_answer
+  type: python
+  source:
+    type: package
+    tool: promptflow.tools.embedding.embedding
+  inputs:
+    connection: Default_AzureOpenAI
+    deployment_name: text-embedding-ada-002
+    input: ${inputs.answer}
+  use_variants: false
+- name: ada_cosine_similarity_score
+  type: python
+  source:
+    type: code
+    path: ada_cosine_similarity_score.py
+  inputs:
+    a: ${embedd_ground_truth.output}
+    b: ${embedd_answer.output}
+  use_variants: false
+- name: concat_scores
+  type: python
+  source:
+    type: code
+    path: concat_scores.py
+  inputs:
+    ada_cosine_similarity: ${ada_cosine_similarity_score.output}
+  use_variants: false
+- name: aggregate_variants_results
+  type: python
+  source:
+    type: code
+    path: aggregate_variants_results.py
+  inputs:
+    results: ${concat_scores.output}
+  aggregation: true
+  use_variants: false

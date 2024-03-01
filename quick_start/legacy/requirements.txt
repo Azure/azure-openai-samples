@@ -1,0 +1,13 @@
+langchain==0.0.337
+matplotlib==3.8.2
+matplotlib-inline @ file:///home/conda/feedstock_root/build_artifacts/matplotlib-inline_1660814786464/work
+numpy==1.26.3
+openai==0.28.1
+pandas==2.2.0
+plotly==5.18.0
+python-dotenv==1.0.1
+scikit-learn==1.4.0
+scipy==1.12.0
+tenacity==8.2.3
+threadpoolctl==3.2.0
+tiktoken==0.5.2

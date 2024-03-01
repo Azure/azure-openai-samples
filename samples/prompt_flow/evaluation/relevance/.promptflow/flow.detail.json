@@ -1,0 +1,420 @@
+{
+  "flow_runs": [
+    {
+      "run_id": "2af0371c-5b6f-4606-a7a6-162221a4f802_0",
+      "status": "Completed",
+      "error": null,
+      "inputs": {
+        "question": "What feeds all the fixtures in low voltage tracks instead of each light having a line-to-low voltage transformer?",
+        "context": "Track lighting, invented by Lightolier, was popular at one period of time because it was much easier to install than recessed lighting, and individual fixtures are decorative and can be easily aimed at a wall. It has regained some popularity recently in low-voltage tracks, which often look nothing like their predecessors because they do not have the safety issues that line-voltage systems have, and are therefore less bulky and more ornamental in themselves. A master transformer feeds all of the fixtures on the track or rod with 12 or 24 volts, instead of each light fixture having its own line-to-low voltage transformer. There are traditional spots and floods, as well as other small hanging fixtures. A modified version of this is cable lighting, where lights are hung from or clipped to bare metal cables under tension",
+        "answer": "The main transformer is the object that feeds all the fixtures in low voltage tracks."
+      },
+      "output": {
+        "gpt_relevance": 5.0
+      },
+      "metrics": {
+        "gpt_relevance": 5.0,
+        "gpt_relevance_pass_rate(%)": 100.0
+      },
+      "request": null,
+      "parent_run_id": "2af0371c-5b6f-4606-a7a6-162221a4f802",
+      "root_run_id": "2af0371c-5b6f-4606-a7a6-162221a4f802",
+      "source_run_id": null,
+      "flow_id": "QnA_Relevance_llm_based_dev_test",
+      "start_time": "2024-02-22T16:28:56.442543Z",
+      "end_time": "2024-02-22T16:28:56.682656Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "flow",
+          "node_name": "flow",
+          "type": "Flow",
+          "start_time": 1708637336.442543,
+          "end_time": 1708637336.682656,
+          "children": [
+            {
+              "name": "AzureOpenAI.chat",
+              "type": "Tool",
+              "inputs": {
+                "prompt": "System:\nYou are an AI assistant. You will be given the definition of an evaluation metric for assessing the quality of an answer in a question-answering task. Your job is to compute an accurate evaluation score using the provided evaluation metric.\n\nUser:\nRelevance measures how well the answer addresses the main aspects of the question, based on the context. Consider whether all and only the important aspects are contained in the answer when evaluating relevance. Given the context and question, score the relevance of the answer between one to five stars using the following rating scale:\nOne star: the answer completely lacks relevance\nTwo stars: the answer mostly lacks relevance\nThree stars: the answer is partially relevant\nFour stars: the answer is mostly relevant\nFive stars: the answer has perfect relevance\n\nThis rating value should always be an integer between 1 and 5. So the rating produced should be 1 or 2 or 3 or 4 or 5.\n\ncontext: Marie Curie was a Polish-born physicist and chemist who pioneered research on radioactivity and was the first woman to win a Nobel Prize.\nquestion: What field did Marie Curie excel in?\nanswer: Marie Curie was a renowned painter who focused mainly on impressionist styles and techniques.\nstars: 1\n\ncontext: The Beatles were an English rock band formed in Liverpool in 1960, and they are widely regarded as the most influential music band in history.\nquestion: Where were The Beatles formed?\nanswer: The band The Beatles began their journey in London, England, and they changed the history of music.\nstars: 2\n\ncontext: The recent Mars rover, Perseverance, was launched in 2020 with the main goal of searching for signs of ancient life on Mars. The rover also carries an experiment called MOXIE, which aims to generate oxygen from the Martian atmosphere.\nquestion: What are the main goals of Perseverance Mars rover mission?\nanswer: The Perseverance Mars rover mission focuses on searching for signs of ancient life on Mars.\nstars: 3\n\ncontext: The Mediterranean diet is a commonly recommended dietary plan that emphasizes fruits, vegetables, whole grains, legumes, lean proteins, and healthy fats. Studies have shown that it offers numerous health benefits, including a reduced risk of heart disease and improved cognitive health.\nquestion: What are the main components of the Mediterranean diet?\nanswer: The Mediterranean diet primarily consists of fruits, vegetables, whole grains, and legumes.\nstars: 4\n\ncontext: The Queen's Royal Castle is a well-known tourist attraction in the United Kingdom. It spans over 500 acres and contains extensive gardens and parks. The castle was built in the 15th century and has been home to generations of royalty.\nquestion: What are the main attractions of the Queen's Royal Castle?\nanswer: The main attractions of the Queen's Royal Castle are its expansive 500-acre grounds, extensive gardens, parks, and the historical castle itself, which dates back to the 15th century and has housed generations of royalty.\nstars: 5\n\ncontext: {{context}}\nquestion: {{question}}\nanswer: {{answer}}\nstars:",
+                "question": "What feeds all the fixtures in low voltage tracks instead of each light having a line-to-low voltage transformer?",
+                "context": "Track lighting, invented by Lightolier, was popular at one period of time because it was much easier to install than recessed lighting, and individual fixtures are decorative and can be easily aimed at a wall. It has regained some popularity recently in low-voltage tracks, which often look nothing like their predecessors because they do not have the safety issues that line-voltage systems have, and are therefore less bulky and more ornamental in themselves. A master transformer feeds all of the fixtures on the track or rod with 12 or 24 volts, instead of each light fixture having its own line-to-low voltage transformer. There are traditional spots and floods, as well as other small hanging fixtures. A modified version of this is cable lighting, where lights are hung from or clipped to bare metal cables under tension",
+                "answer": "The main transformer is the object that feeds all the fixtures in low voltage tracks.",
+                "max_tokens": 256,
+                "deployment_name": "gpt-35-turbo",
+                "temperature": 0.0
+              },
+              "output": "5",
+              "start_time": 1708637336.450773,
+              "end_time": 1708637336.675654,
+              "error": null,
+              "children": [
+                {
+                  "name": "openai.resources.chat.completions.Completions.create",
+                  "type": "LLM",
+                  "inputs": {
+                    "model": "gpt-35-turbo",
+                    "messages": [
+                      {
+                        "role": "system",
+                        "content": "You are an AI assistant. You will be given the definition of an evaluation metric for assessing the quality of an answer in a question-answering task. Your job is to compute an accurate evaluation score using the provided evaluation metric."
+                      },
+                      {
+                        "role": "user",
+                        "content": "Relevance measures how well the answer addresses the main aspects of the question, based on the context. Consider whether all and only the important aspects are contained in the answer when evaluating relevance. Given the context and question, score the relevance of the answer between one to five stars using the following rating scale:\nOne star: the answer completely lacks relevance\nTwo stars: the answer mostly lacks relevance\nThree stars: the answer is partially relevant\nFour stars: the answer is mostly relevant\nFive stars: the answer has perfect relevance\n\nThis rating value should always be an integer between 1 and 5. So the rating produced should be 1 or 2 or 3 or 4 or 5.\n\ncontext: Marie Curie was a Polish-born physicist and chemist who pioneered research on radioactivity and was the first woman to win a Nobel Prize.\nquestion: What field did Marie Curie excel in?\nanswer: Marie Curie was a renowned painter who focused mainly on impressionist styles and techniques.\nstars: 1\n\ncontext: The Beatles were an English rock band formed in Liverpool in 1960, and they are widely regarded as the most influential music band in history.\nquestion: Where were The Beatles formed?\nanswer: The band The Beatles began their journey in London, England, and they changed the history of music.\nstars: 2\n\ncontext: The recent Mars rover, Perseverance, was launched in 2020 with the main goal of searching for signs of ancient life on Mars. The rover also carries an experiment called MOXIE, which aims to generate oxygen from the Martian atmosphere.\nquestion: What are the main goals of Perseverance Mars rover mission?\nanswer: The Perseverance Mars rover mission focuses on searching for signs of ancient life on Mars.\nstars: 3\n\ncontext: The Mediterranean diet is a commonly recommended dietary plan that emphasizes fruits, vegetables, whole grains, legumes, lean proteins, and healthy fats. Studies have shown that it offers numerous health benefits, including a reduced risk of heart disease and improved cognitive health.\nquestion: What are the main components of the Mediterranean diet?\nanswer: The Mediterranean diet primarily consists of fruits, vegetables, whole grains, and legumes.\nstars: 4\n\ncontext: The Queen's Royal Castle is a well-known tourist attraction in the United Kingdom. It spans over 500 acres and contains extensive gardens and parks. The castle was built in the 15th century and has been home to generations of royalty.\nquestion: What are the main attractions of the Queen's Royal Castle?\nanswer: The main attractions of the Queen's Royal Castle are its expansive 500-acre grounds, extensive gardens, parks, and the historical castle itself, which dates back to the 15th century and has housed generations of royalty.\nstars: 5\n\ncontext: Track lighting, invented by Lightolier, was popular at one period of time because it was much easier to install than recessed lighting, and individual fixtures are decorative and can be easily aimed at a wall. It has regained some popularity recently in low-voltage tracks, which often look nothing like their predecessors because they do not have the safety issues that line-voltage systems have, and are therefore less bulky and more ornamental in themselves. A master transformer feeds all of the fixtures on the track or rod with 12 or 24 volts, instead of each light fixture having its own line-to-low voltage transformer. There are traditional spots and floods, as well as other small hanging fixtures. A modified version of this is cable lighting, where lights are hung from or clipped to bare metal cables under tension\nquestion: What feeds all the fixtures in low voltage tracks instead of each light having a line-to-low voltage transformer?\nanswer: The main transformer is the object that feeds all the fixtures in low voltage tracks.\nstars:"
+                      }
+                    ],
+                    "temperature": 0.0,
+                    "top_p": 1.0,
+                    "n": 1,
+                    "stream": false,
+                    "stop": null,
+                    "max_tokens": 256,
+                    "presence_penalty": 0.0,
+                    "frequency_penalty": 0.0,
+                    "logit_bias": {},
+                    "user": "",
+                    "response_format": null
+                  },
+                  "output": {
+                    "id": "chatcmpl-8v6EL2anTvPuSNgpcO8xrvo4i8J5a",
+                    "choices": [
+                      {
+                        "finish_reason": "stop",
+                        "index": 0,
+                        "logprobs": null,
+                        "message": {
+                          "content": "5",
+                          "role": "assistant",
+                          "function_call": null,
+                          "tool_calls": null
+                        }
+                      }
+                    ],
+                    "created": 1708619337,
+                    "model": "gpt-35-turbo",
+                    "object": "chat.completion",
+                    "system_fingerprint": "fp_68a7d165bf",
+                    "usage": {
+                      "completion_tokens": 1,
+                      "prompt_tokens": 834,
+                      "total_tokens": 835
+                    }
+                  },
+                  "start_time": 1708637336.457018,
+                  "end_time": 1708637336.675654,
+                  "error": null,
+                  "children": [],
+                  "node_name": null,
+                  "parent_id": "219caa8c-844b-46d9-bd75-e1492974fb81",
+                  "id": "58d07d10-dd42-4626-af89-e49a849b4ff4",
+                  "system_metrics": {
+                    "completion_tokens": 1,
+                    "prompt_tokens": 834,
+                    "total_tokens": 835
+                  }
+                }
+              ],
+              "node_name": "relevance_score",
+              "parent_id": "",
+              "id": "219caa8c-844b-46d9-bd75-e1492974fb81",
+              "system_metrics": {
+                "completion_tokens": 1,
+                "prompt_tokens": 834,
+                "total_tokens": 835
+              }
+            },
+            {
+              "name": "concat_results",
+              "type": "Tool",
+              "inputs": {
+                "relevance_score": "5"
+              },
+              "output": {
+                "gpt_relevance": 5.0,
+                "gpt_relevance_pass_rate": 1
+              },
+              "start_time": 1708637336.68066,
+              "end_time": 1708637336.681657,
+              "error": null,
+              "children": [],
+              "node_name": "concat_scores",
+              "parent_id": "",
+              "id": "6661e9a1-0c31-42b7-bf93-20d7fb2aa2ff",
+              "system_metrics": {}
+            }
+          ],
+          "system_metrics": {
+            "duration": 0.240113,
+            "prompt_tokens": 834,
+            "completion_tokens": 1,
+            "total_tokens": 835
+          }
+        }
+      ],
+      "variant_id": "",
+      "name": "",
+      "description": "",
+      "tags": null,
+      "system_metrics": {
+        "duration": 0.240113,
+        "prompt_tokens": 834,
+        "completion_tokens": 1,
+        "total_tokens": 835
+      },
+      "result": {
+        "gpt_relevance": 5.0
+      },
+      "upload_metrics": false
+    }
+  ],
+  "node_runs": [
+    {
+      "node": "relevance_score",
+      "flow_run_id": "2af0371c-5b6f-4606-a7a6-162221a4f802",
+      "run_id": "2af0371c-5b6f-4606-a7a6-162221a4f802_relevance_score_0",
+      "status": "Completed",
+      "inputs": {
+        "question": "What feeds all the fixtures in low voltage tracks instead of each light having a line-to-low voltage transformer?",
+        "context": "Track lighting, invented by Lightolier, was popular at one period of time because it was much easier to install than recessed lighting, and individual fixtures are decorative and can be easily aimed at a wall. It has regained some popularity recently in low-voltage tracks, which often look nothing like their predecessors because they do not have the safety issues that line-voltage systems have, and are therefore less bulky and more ornamental in themselves. A master transformer feeds all of the fixtures on the track or rod with 12 or 24 volts, instead of each light fixture having its own line-to-low voltage transformer. There are traditional spots and floods, as well as other small hanging fixtures. A modified version of this is cable lighting, where lights are hung from or clipped to bare metal cables under tension",
+        "answer": "The main transformer is the object that feeds all the fixtures in low voltage tracks.",
+        "max_tokens": 256,
+        "deployment_name": "gpt-35-turbo",
+        "temperature": 0.0
+      },
+      "output": "5",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "2af0371c-5b6f-4606-a7a6-162221a4f802_0",
+      "start_time": "2024-02-22T16:28:56.449755Z",
+      "end_time": "2024-02-22T16:28:56.676656Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "AzureOpenAI.chat",
+          "type": "Tool",
+          "inputs": {
+            "prompt": "System:\nYou are an AI assistant. You will be given the definition of an evaluation metric for assessing the quality of an answer in a question-answering task. Your job is to compute an accurate evaluation score using the provided evaluation metric.\n\nUser:\nRelevance measures how well the answer addresses the main aspects of the question, based on the context. Consider whether all and only the important aspects are contained in the answer when evaluating relevance. Given the context and question, score the relevance of the answer between one to five stars using the following rating scale:\nOne star: the answer completely lacks relevance\nTwo stars: the answer mostly lacks relevance\nThree stars: the answer is partially relevant\nFour stars: the answer is mostly relevant\nFive stars: the answer has perfect relevance\n\nThis rating value should always be an integer between 1 and 5. So the rating produced should be 1 or 2 or 3 or 4 or 5.\n\ncontext: Marie Curie was a Polish-born physicist and chemist who pioneered research on radioactivity and was the first woman to win a Nobel Prize.\nquestion: What field did Marie Curie excel in?\nanswer: Marie Curie was a renowned painter who focused mainly on impressionist styles and techniques.\nstars: 1\n\ncontext: The Beatles were an English rock band formed in Liverpool in 1960, and they are widely regarded as the most influential music band in history.\nquestion: Where were The Beatles formed?\nanswer: The band The Beatles began their journey in London, England, and they changed the history of music.\nstars: 2\n\ncontext: The recent Mars rover, Perseverance, was launched in 2020 with the main goal of searching for signs of ancient life on Mars. The rover also carries an experiment called MOXIE, which aims to generate oxygen from the Martian atmosphere.\nquestion: What are the main goals of Perseverance Mars rover mission?\nanswer: The Perseverance Mars rover mission focuses on searching for signs of ancient life on Mars.\nstars: 3\n\ncontext: The Mediterranean diet is a commonly recommended dietary plan that emphasizes fruits, vegetables, whole grains, legumes, lean proteins, and healthy fats. Studies have shown that it offers numerous health benefits, including a reduced risk of heart disease and improved cognitive health.\nquestion: What are the main components of the Mediterranean diet?\nanswer: The Mediterranean diet primarily consists of fruits, vegetables, whole grains, and legumes.\nstars: 4\n\ncontext: The Queen's Royal Castle is a well-known tourist attraction in the United Kingdom. It spans over 500 acres and contains extensive gardens and parks. The castle was built in the 15th century and has been home to generations of royalty.\nquestion: What are the main attractions of the Queen's Royal Castle?\nanswer: The main attractions of the Queen's Royal Castle are its expansive 500-acre grounds, extensive gardens, parks, and the historical castle itself, which dates back to the 15th century and has housed generations of royalty.\nstars: 5\n\ncontext: {{context}}\nquestion: {{question}}\nanswer: {{answer}}\nstars:",
+            "question": "What feeds all the fixtures in low voltage tracks instead of each light having a line-to-low voltage transformer?",
+            "context": "Track lighting, invented by Lightolier, was popular at one period of time because it was much easier to install than recessed lighting, and individual fixtures are decorative and can be easily aimed at a wall. It has regained some popularity recently in low-voltage tracks, which often look nothing like their predecessors because they do not have the safety issues that line-voltage systems have, and are therefore less bulky and more ornamental in themselves. A master transformer feeds all of the fixtures on the track or rod with 12 or 24 volts, instead of each light fixture having its own line-to-low voltage transformer. There are traditional spots and floods, as well as other small hanging fixtures. A modified version of this is cable lighting, where lights are hung from or clipped to bare metal cables under tension",
+            "answer": "The main transformer is the object that feeds all the fixtures in low voltage tracks.",
+            "max_tokens": 256,
+            "deployment_name": "gpt-35-turbo",
+            "temperature": 0.0
+          },
+          "output": "5",
+          "start_time": 1708637336.450773,
+          "end_time": 1708637336.675654,
+          "error": null,
+          "children": [
+            {
+              "name": "openai.resources.chat.completions.Completions.create",
+              "type": "LLM",
+              "inputs": {
+                "model": "gpt-35-turbo",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are an AI assistant. You will be given the definition of an evaluation metric for assessing the quality of an answer in a question-answering task. Your job is to compute an accurate evaluation score using the provided evaluation metric."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Relevance measures how well the answer addresses the main aspects of the question, based on the context. Consider whether all and only the important aspects are contained in the answer when evaluating relevance. Given the context and question, score the relevance of the answer between one to five stars using the following rating scale:\nOne star: the answer completely lacks relevance\nTwo stars: the answer mostly lacks relevance\nThree stars: the answer is partially relevant\nFour stars: the answer is mostly relevant\nFive stars: the answer has perfect relevance\n\nThis rating value should always be an integer between 1 and 5. So the rating produced should be 1 or 2 or 3 or 4 or 5.\n\ncontext: Marie Curie was a Polish-born physicist and chemist who pioneered research on radioactivity and was the first woman to win a Nobel Prize.\nquestion: What field did Marie Curie excel in?\nanswer: Marie Curie was a renowned painter who focused mainly on impressionist styles and techniques.\nstars: 1\n\ncontext: The Beatles were an English rock band formed in Liverpool in 1960, and they are widely regarded as the most influential music band in history.\nquestion: Where were The Beatles formed?\nanswer: The band The Beatles began their journey in London, England, and they changed the history of music.\nstars: 2\n\ncontext: The recent Mars rover, Perseverance, was launched in 2020 with the main goal of searching for signs of ancient life on Mars. The rover also carries an experiment called MOXIE, which aims to generate oxygen from the Martian atmosphere.\nquestion: What are the main goals of Perseverance Mars rover mission?\nanswer: The Perseverance Mars rover mission focuses on searching for signs of ancient life on Mars.\nstars: 3\n\ncontext: The Mediterranean diet is a commonly recommended dietary plan that emphasizes fruits, vegetables, whole grains, legumes, lean proteins, and healthy fats. Studies have shown that it offers numerous health benefits, including a reduced risk of heart disease and improved cognitive health.\nquestion: What are the main components of the Mediterranean diet?\nanswer: The Mediterranean diet primarily consists of fruits, vegetables, whole grains, and legumes.\nstars: 4\n\ncontext: The Queen's Royal Castle is a well-known tourist attraction in the United Kingdom. It spans over 500 acres and contains extensive gardens and parks. The castle was built in the 15th century and has been home to generations of royalty.\nquestion: What are the main attractions of the Queen's Royal Castle?\nanswer: The main attractions of the Queen's Royal Castle are its expansive 500-acre grounds, extensive gardens, parks, and the historical castle itself, which dates back to the 15th century and has housed generations of royalty.\nstars: 5\n\ncontext: Track lighting, invented by Lightolier, was popular at one period of time because it was much easier to install than recessed lighting, and individual fixtures are decorative and can be easily aimed at a wall. It has regained some popularity recently in low-voltage tracks, which often look nothing like their predecessors because they do not have the safety issues that line-voltage systems have, and are therefore less bulky and more ornamental in themselves. A master transformer feeds all of the fixtures on the track or rod with 12 or 24 volts, instead of each light fixture having its own line-to-low voltage transformer. There are traditional spots and floods, as well as other small hanging fixtures. A modified version of this is cable lighting, where lights are hung from or clipped to bare metal cables under tension\nquestion: What feeds all the fixtures in low voltage tracks instead of each light having a line-to-low voltage transformer?\nanswer: The main transformer is the object that feeds all the fixtures in low voltage tracks.\nstars:"
+                  }
+                ],
+                "temperature": 0.0,
+                "top_p": 1.0,
+                "n": 1,
+                "stream": false,
+                "stop": null,
+                "max_tokens": 256,
+                "presence_penalty": 0.0,
+                "frequency_penalty": 0.0,
+                "logit_bias": {},
+                "user": "",
+                "response_format": null
+              },
+              "output": {
+                "id": "chatcmpl-8v6EL2anTvPuSNgpcO8xrvo4i8J5a",
+                "choices": [
+                  {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                      "content": "5",
+                      "role": "assistant",
+                      "function_call": null,
+                      "tool_calls": null
+                    }
+                  }
+                ],
+                "created": 1708619337,
+                "model": "gpt-35-turbo",
+                "object": "chat.completion",
+                "system_fingerprint": "fp_68a7d165bf",
+                "usage": {
+                  "completion_tokens": 1,
+                  "prompt_tokens": 834,
+                  "total_tokens": 835
+                }
+              },
+              "start_time": 1708637336.457018,
+              "end_time": 1708637336.675654,
+              "error": null,
+              "children": [],
+              "node_name": null,
+              "parent_id": "219caa8c-844b-46d9-bd75-e1492974fb81",
+              "id": "58d07d10-dd42-4626-af89-e49a849b4ff4",
+              "system_metrics": {
+                "completion_tokens": 1,
+                "prompt_tokens": 834,
+                "total_tokens": 835
+              }
+            }
+          ],
+          "node_name": "relevance_score",
+          "parent_id": "",
+          "id": "219caa8c-844b-46d9-bd75-e1492974fb81",
+          "system_metrics": {
+            "completion_tokens": 1,
+            "prompt_tokens": 834,
+            "total_tokens": 835
+          }
+        }
+      ],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "completion_tokens": 1,
+        "prompt_tokens": 834,
+        "total_tokens": 835,
+        "duration": 0.226901
+      },
+      "result": "5"
+    },
+    {
+      "node": "concat_scores",
+      "flow_run_id": "2af0371c-5b6f-4606-a7a6-162221a4f802",
+      "run_id": "2af0371c-5b6f-4606-a7a6-162221a4f802_concat_scores_0",
+      "status": "Completed",
+      "inputs": {
+        "relevance_score": "5"
+      },
+      "output": {
+        "gpt_relevance": 5.0,
+        "gpt_relevance_pass_rate": 1
+      },
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "2af0371c-5b6f-4606-a7a6-162221a4f802_0",
+      "start_time": "2024-02-22T16:28:56.680660Z",
+      "end_time": "2024-02-22T16:28:56.681657Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "concat_results",
+          "type": "Tool",
+          "inputs": {
+            "relevance_score": "5"
+          },
+          "output": {
+            "gpt_relevance": 5.0,
+            "gpt_relevance_pass_rate": 1
+          },
+          "start_time": 1708637336.68066,
+          "end_time": 1708637336.681657,
+          "error": null,
+          "children": [],
+          "node_name": "concat_scores",
+          "parent_id": "",
+          "id": "6661e9a1-0c31-42b7-bf93-20d7fb2aa2ff",
+          "system_metrics": {}
+        }
+      ],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.000997
+      },
+      "result": {
+        "gpt_relevance": 5.0,
+        "gpt_relevance_pass_rate": 1
+      }
+    },
+    {
+      "node": "aggregate_variants_results",
+      "flow_run_id": "2af0371c-5b6f-4606-a7a6-162221a4f802",
+      "run_id": "2af0371c-5b6f-4606-a7a6-162221a4f802_aggregate_variants_results_reduce",
+      "status": "Completed",
+      "inputs": {
+        "results": [
+          {
+            "gpt_relevance": 5.0,
+            "gpt_relevance_pass_rate": 1
+          }
+        ]
+      },
+      "output": {
+        "gpt_relevance": 5.0,
+        "gpt_relevance_pass_rate": 100.0
+      },
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "2af0371c-5b6f-4606-a7a6-162221a4f802",
+      "start_time": "2024-02-22T16:28:56.689658Z",
+      "end_time": "2024-02-22T16:28:56.691657Z",
+      "index": null,
+      "api_calls": [
+        {
+          "name": "aggregate_variants_results",
+          "type": "Tool",
+          "inputs": {
+            "results": [
+              {
+                "gpt_relevance": 5.0,
+                "gpt_relevance_pass_rate": 1
+              }
+            ]
+          },
+          "output": {
+            "gpt_relevance": 5.0,
+            "gpt_relevance_pass_rate": 100.0
+          },
+          "start_time": 1708637336.690656,
+          "end_time": 1708637336.691657,
+          "error": null,
+          "children": [],
+          "node_name": "aggregate_variants_results",
+          "parent_id": "",
+          "id": "5f172b51-f9c9-43f7-80b2-7feca4eabff6",
+          "system_metrics": {}
+        }
+      ],
+      "variant_id": null,
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.001999
+      },
+      "result": {
+        "gpt_relevance": 5.0,
+        "gpt_relevance_pass_rate": 100.0
+      }
+    }
+  ]
+}

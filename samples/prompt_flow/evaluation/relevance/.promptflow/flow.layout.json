@@ -1,0 +1,41 @@
+{
+  "orientation": "Vertical",
+  "nodeLayouts": {
+    "inputs": {
+      "x": 455,
+      "y": 42,
+      "index": -1
+    },
+    "outputs": {
+      "x": 550,
+      "y": 444,
+      "index": -1
+    },
+    "relevance_score": {
+      "x": 305,
+      "y": 176,
+      "index": 0
+    },
+    "concat_scores": {
+      "x": 305,
+      "y": 310,
+      "index": 1
+    },
+    "aggregate_variants_results": {
+      "x": 140,
+      "y": 444,
+      "height": 70,
+      "index": 2
+    }
+  },
+  "viewport": {
+    "transformMatrix": [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0
+    ]
+  }
+}

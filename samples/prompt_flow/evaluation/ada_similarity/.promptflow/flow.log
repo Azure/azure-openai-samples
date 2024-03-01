@@ -1,0 +1,13 @@
+2024-02-22 11:07:18 -0500    2632 execution.flow     INFO     Start executing nodes in thread pool mode.
+2024-02-22 11:07:18 -0500    2632 execution.flow     INFO     Start to run 4 nodes with concurrency level 16.
+2024-02-22 11:07:18 -0500    2632 execution.flow     INFO     Executing node embedd_ground_truth. node run id: e0f2ca7d-3a41-4e04-ae4e-1d39754547de_embedd_ground_truth_0
+2024-02-22 11:07:18 -0500    2632 execution.flow     INFO     Executing node embedd_answer. node run id: e0f2ca7d-3a41-4e04-ae4e-1d39754547de_embedd_answer_0
+2024-02-22 11:07:19 -0500    2632 execution.flow     INFO     Node embedd_answer completes.
+2024-02-22 11:07:19 -0500    2632 execution.flow     INFO     Node embedd_ground_truth completes.
+2024-02-22 11:07:19 -0500    2632 execution.flow     INFO     Executing node ada_cosine_similarity_score. node run id: e0f2ca7d-3a41-4e04-ae4e-1d39754547de_ada_cosine_similarity_score_0
+2024-02-22 11:07:19 -0500    2632 execution.flow     INFO     Node ada_cosine_similarity_score completes.
+2024-02-22 11:07:19 -0500    2632 execution.flow     INFO     Executing node concat_scores. node run id: e0f2ca7d-3a41-4e04-ae4e-1d39754547de_concat_scores_0
+2024-02-22 11:07:19 -0500    2632 execution.flow     INFO     Node concat_scores completes.
+2024-02-22 11:07:19 -0500    2632 execution.flow     INFO     Start to run 1 nodes with concurrency level 16.
+2024-02-22 11:07:19 -0500    2632 execution.flow     INFO     Executing node aggregate_variants_results. node run id: e0f2ca7d-3a41-4e04-ae4e-1d39754547de_aggregate_variants_results_reduce
+2024-02-22 11:07:19 -0500    2632 execution.flow     INFO     Node aggregate_variants_results completes.

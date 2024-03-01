@@ -1,0 +1,55 @@
+{
+  "orientation": "Vertical",
+  "nodeLayouts": {
+    "inputs": {
+      "x": 455,
+      "y": 42,
+      "index": -1
+    },
+    "outputs": {
+      "x": 550,
+      "y": 578,
+      "index": -1
+    },
+    "embedd_ground_truth": {
+      "x": 140,
+      "y": 176,
+      "height": 75,
+      "index": 0
+    },
+    "embedd_answer": {
+      "x": 470,
+      "y": 176,
+      "height": 75,
+      "index": 1
+    },
+    "ada_cosine_similarity_score": {
+      "x": 305,
+      "y": 310,
+      "height": 75,
+      "index": 2
+    },
+    "concat_scores": {
+      "x": 305,
+      "y": 444,
+      "height": 75,
+      "index": 3
+    },
+    "aggregate_variants_results": {
+      "x": 140,
+      "y": 578,
+      "height": 95,
+      "index": 4
+    }
+  },
+  "viewport": {
+    "transformMatrix": [
+      1,
+      0,
+      0,
+      1,
+      -91.53125,
+      -120
+    ]
+  }
+}
