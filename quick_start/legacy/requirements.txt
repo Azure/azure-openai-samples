@@ -1,4 +1,4 @@
-langchain==0.0.337
+langchain==0.1.0
 matplotlib==3.8.2
 matplotlib-inline @ file:///home/conda/feedstock_root/build_artifacts/matplotlib-inline_1660814786464/work
 numpy==1.26.3
