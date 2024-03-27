@@ -26,3 +26,10 @@ To contributors: please kindly add your name here when you submit a pull request
 In alphabetical order by last name:
 - **[your name | your github name](https://github.com/your_github_name)**
    - e.g. fundamentals | e.g. document_analysis
+
+- **[Andreas Hopfgartner | anderl80](https://github.com/anderl80)**
+   - OpenAI in a day workshop material
+- **[Clemens Siebler | csiebler](https://github.com/csiebler)**
+   - OpenAI in a day workshop material
+- **[Philipp Hinderberger | Philipp-hinderberger](https://github.com/Philipp-hinderberger)**
+   - OpenAI in a day workshop material
