@@ -1,0 +1,8 @@
+$schema: https://azuremlschemas.azureedge.net/promptflow/latest/AzureOpenAIConnection.schema.json
+type: azure_open_ai
+name: Default_AzureOpenAI
+module: promptflow.connections
+api_base: https://canadaeasttest.openai.azure.com/
+api_key: ${env:DEFAULT_AZUREOPENAI_API_KEY}
+api_type: azure
+api_version: 2024-02-15-preview

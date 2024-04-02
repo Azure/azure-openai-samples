@@ -1,0 +1,416 @@
+{
+    "code": {
+        "extract_query_from_question.jinja2": {
+            "type": "llm",
+            "inputs": {
+                "question": {
+                    "type": [
+                        "string"
+                    ]
+                },
+                "chat_history": {
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "source": "extract_query_from_question.jinja2"
+        },
+        "get_wiki_url.py": {
+            "type": "python",
+            "inputs": {
+                "entity": {
+                    "type": [
+                        "string"
+                    ]
+                },
+                "count": {
+                    "type": [
+                        "int"
+                    ],
+                    "default": "2"
+                }
+            },
+            "source": "get_wiki_url.py",
+            "function": "get_wiki_url"
+        },
+        "search_result_from_url.py": {
+            "type": "python",
+            "inputs": {
+                "url_list": {
+                    "type": [
+                        "list"
+                    ]
+                },
+                "count": {
+                    "type": [
+                        "int"
+                    ],
+                    "default": "10"
+                }
+            },
+            "source": "search_result_from_url.py",
+            "function": "search_result_from_url"
+        },
+        "process_search_result.py": {
+            "type": "python",
+            "inputs": {
+                "search_result": {
+                    "type": [
+                        "object"
+                    ]
+                }
+            },
+            "source": "process_search_result.py",
+            "function": "process_search_result"
+        },
+        "augmented_chat.jinja2": {
+            "type": "llm",
+            "inputs": {
+                "question": {
+                    "type": [
+                        "string"
+                    ]
+                },
+                "contexts": {
+                    "type": [
+                        "string"
+                    ]
+                },
+                "chat_history": {
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "source": "augmented_chat.jinja2"
+        }
+    },
+    "package": {
+        "promptflow.tools.azure_content_safety.analyze_text": {
+            "module": "promptflow.tools.azure_content_safety",
+            "function": "analyze_text",
+            "inputs": {
+                "connection": {
+                    "type": [
+                        "AzureContentSafetyConnection"
+                    ]
+                },
+                "hate_category": {
+                    "default": "medium_sensitivity",
+                    "enum": [
+                        "disable",
+                        "low_sensitivity",
+                        "medium_sensitivity",
+                        "high_sensitivity"
+                    ],
+                    "type": [
+                        "string"
+                    ]
+                },
+                "self_harm_category": {
+                    "default": "medium_sensitivity",
+                    "enum": [
+                        "disable",
+                        "low_sensitivity",
+                        "medium_sensitivity",
+                        "high_sensitivity"
+                    ],
+                    "type": [
+                        "string"
+                    ]
+                },
+                "sexual_category": {
+                    "default": "medium_sensitivity",
+                    "enum": [
+                        "disable",
+                        "low_sensitivity",
+                        "medium_sensitivity",
+                        "high_sensitivity"
+                    ],
+                    "type": [
+                        "string"
+                    ]
+                },
+                "text": {
+                    "type": [
+                        "string"
+                    ]
+                },
+                "violence_category": {
+                    "default": "medium_sensitivity",
+                    "enum": [
+                        "disable",
+                        "low_sensitivity",
+                        "medium_sensitivity",
+                        "high_sensitivity"
+                    ],
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "name": "Content Safety (Text Analyze)",
+            "description": "Use Azure Content Safety to detect harmful content.",
+            "type": "python",
+            "deprecated_tools": [
+                "content_safety_text.tools.content_safety_text_tool.analyze_text"
+            ],
+            "package": "promptflow-tools",
+            "package_version": "0.1.0b15"
+        },
+        "promptflow.tools.embedding.embedding": {
+            "name": "Embedding",
+            "description": "Use Open AI's embedding model to create an embedding vector representing the input text.",
+            "type": "python",
+            "module": "promptflow.tools.embedding",
+            "function": "embedding",
+            "inputs": {
+                "connection": {
+                    "type": [
+                        "AzureOpenAIConnection",
+                        "OpenAIConnection"
+                    ]
+                },
+                "deployment_name": {
+                    "type": [
+                        "string"
+                    ],
+                    "enabled_by": "connection",
+                    "enabled_by_type": [
+                        "AzureOpenAIConnection"
+                    ],
+                    "capabilities": {
+                        "completion": false,
+                        "chat_completion": false,
+                        "embeddings": true
+                    },
+                    "model_list": [
+                        "text-embedding-ada-002",
+                        "text-search-ada-doc-001",
+                        "text-search-ada-query-001"
+                    ]
+                },
+                "model": {
+                    "type": [
+                        "string"
+                    ],
+                    "enabled_by": "connection",
+                    "enabled_by_type": [
+                        "OpenAIConnection"
+                    ],
+                    "enum": [
+                        "text-embedding-ada-002",
+                        "text-search-ada-doc-001",
+                        "text-search-ada-query-001"
+                    ]
+                },
+                "input": {
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "package": "promptflow-tools",
+            "package_version": "0.1.0b15"
+        },
+        "promptflow.tools.openai_gpt4v.OpenAI.chat": {
+            "name": "OpenAI GPT-4V",
+            "description": "Use OpenAI GPT-4V to leverage vision ability.",
+            "type": "custom_llm",
+            "module": "promptflow.tools.openai_gpt4v",
+            "class_name": "OpenAI",
+            "function": "chat",
+            "default_prompt": "# system:\nAs an AI assistant, your task involves interpreting images and responding to questions about the image.\nRemember to provide accurate answers based on the information present in the image.\n\n# user:\nCan you tell me what the image depicts?\n![image]({{image_input}})\n",
+            "inputs": {
+                "connection": {
+                    "type": [
+                        "OpenAIConnection"
+                    ]
+                },
+                "model": {
+                    "enum": [
+                        "gpt-4-vision-preview",
+                        "gpt-4-1106-preview",
+                        "gpt-4",
+                        "gpt-4-0314",
+                        "gpt-4-32k",
+                        "gpt-4-32k-0314",
+                        "gpt-3.5-turbo-1106",
+                        "gpt-3.5-turbo",
+                        "gpt-3.5-turbo-0301",
+                        "gpt-3.5-turbo-16k"
+                    ],
+                    "allow_manual_entry": true,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "temperature": {
+                    "default": 1,
+                    "type": [
+                        "double"
+                    ]
+                },
+                "top_p": {
+                    "default": 1,
+                    "type": [
+                        "double"
+                    ]
+                },
+                "n": {
+                    "default": 1,
+                    "type": [
+                        "int"
+                    ]
+                },
+                "max_tokens": {
+                    "default": "",
+                    "type": [
+                        "int"
+                    ]
+                },
+                "stop": {
+                    "default": "",
+                    "type": [
+                        "list"
+                    ]
+                },
+                "presence_penalty": {
+                    "default": 0,
+                    "type": [
+                        "double"
+                    ]
+                },
+                "frequency_penalty": {
+                    "default": 0,
+                    "type": [
+                        "double"
+                    ]
+                }
+            },
+            "package": "promptflow-tools",
+            "package_version": "0.1.0b15"
+        },
+        "promptflow.tools.open_source_llm.OpenSourceLLM.call": {
+            "name": "Open Source LLM",
+            "description": "Use an Open Source model from the Azure Model catalog, deployed to an AzureML Online Endpoint for LLM Chat or Completion API calls.",
+            "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACgElEQVR4nGWSz2vcVRTFP/e9NzOZ1KDGohASslLEH6VLV0ak4l/QpeDCrfQPcNGliODKnVm4EBdBsIjQIlhciKW0ycKFVCSNbYnjdDLtmPnmO/nO9917XcxMkjYX3uLx7nnn3HOuMK2Nix4fP78ZdrYXVkLVWjf3l3B1B+HpcjzGFtmqa6cePz7/x0dnn1n5qhj3iBJPYREIURAJuCtpY8PjReDbrf9WG7H1fuefwQU9qKztTcMJT+PNnEFvjGVDBDlSsH6p/9MLzy6+NxwVqI8RAg4IPmWedMckdLYP6O6UpIaQfvyyXG012+e79/ZfHukoS1ISMT2hGTB1RkUmNgQ5QZ0w+a2VWDq73MbdEWmfnnv6UWe7oNzPaLapl5CwuLTXK9WUGBuCjqekzhP+z52ZXOrKMD3OJg0Hh778aiOuvpnYvp05d6GJO4iAO4QAe/eV36/X5LFRV4Zmn+AdkqlL8Vjp3oVioOz+WTPzzYEgsN+fgPLYyJVheSbPPVl2ikeGZRjtG52/8rHuaV9VOlpP2OtKyVndcRVCSqOhsvxa4vW359i6OuKdD+aP8Q4SYPdOzS/flGjt1JUSaMqZ5nwa1Y8qWb/Ud/eZZkHisYezEM0m+fcelDr8F1SqW2LNK6r1jXQwyLzy1hxvrLXZulry7ocL+FS6G4QIu3fG/Px1gdYeW7LIgXU2P/115TOA5G7e3Rmj2aS/m7l5pThiZzrCcE/d1XHzbln373nw7y6veeoUm5KCNKT/IPPwbiY1hYd/l5MIT65BMFt87sU4v9D7/JMflr44uV6hGh1+L4RCkg6z5iK2tAhNLeLsNGwYA4fDYnC/drvuuFxe86NV/x+Ut27g0FvykgAAAABJRU5ErkJggg==",
+            "type": "custom_llm",
+            "module": "promptflow.tools.open_source_llm",
+            "class_name": "OpenSourceLLM",
+            "function": "call",
+            "inputs": {
+                "endpoint_name": {
+                    "default": "-- please enter an endpoint name --",
+                    "type": [
+                        "string"
+                    ]
+                },
+                "connection": {
+                    "default": null,
+                    "type": [
+                        "CustomConnection"
+                    ]
+                },
+                "deployment_name": {
+                    "default": null,
+                    "type": [
+                        "string"
+                    ]
+                },
+                "api": {
+                    "enum": [
+                        "chat",
+                        "completion"
+                    ],
+                    "type": [
+                        "string"
+                    ]
+                },
+                "temperature": {
+                    "default": 1.0,
+                    "type": [
+                        "double"
+                    ]
+                },
+                "max_new_tokens": {
+                    "default": 500,
+                    "type": [
+                        "int"
+                    ]
+                },
+                "top_p": {
+                    "default": 1.0,
+                    "advanced": true,
+                    "type": [
+                        "double"
+                    ]
+                },
+                "model_kwargs": {
+                    "default": "{}",
+                    "advanced": true,
+                    "type": [
+                        "object"
+                    ]
+                }
+            },
+            "package": "promptflow-tools",
+            "package_version": "0.1.0b15"
+        },
+        "promptflow.tools.serpapi.SerpAPI.search": {
+            "name": "Serp API",
+            "description": "Use Serp API to obtain search results from a specific search engine.",
+            "inputs": {
+                "connection": {
+                    "type": [
+                        "SerpConnection"
+                    ]
+                },
+                "engine": {
+                    "default": "google",
+                    "enum": [
+                        "google",
+                        "bing"
+                    ],
+                    "type": [
+                        "string"
+                    ]
+                },
+                "location": {
+                    "default": "",
+                    "type": [
+                        "string"
+                    ]
+                },
+                "num": {
+                    "default": "10",
+                    "type": [
+                        "int"
+                    ]
+                },
+                "query": {
+                    "type": [
+                        "string"
+                    ]
+                },
+                "safe": {
+                    "default": "off",
+                    "enum": [
+                        "active",
+                        "off"
+                    ],
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "type": "python",
+            "module": "promptflow.tools.serpapi",
+            "class_name": "SerpAPI",
+            "function": "search",
+            "package": "promptflow-tools",
+            "package_version": "0.1.0b15"
+        }
+    }
+}
