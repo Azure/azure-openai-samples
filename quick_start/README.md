@@ -19,9 +19,11 @@
 
 
 ## Prepare Environment
-- [ ] Have python installed
+- [ ] Install [Python](https://www.python.org/downloads/)
+- [ ] Install [Visual Studio Code](https://code.visualstudio.com/download)
+- [ ] Install [VSC - Python Extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+- [ ] Install [Jupyter Notebook for python](https://python.land/data-science/jupyter-notebook)
 - [ ] Install necessary packages: `pip install -r requirements.txt`
-- [ ] Install [Jupyter Notebook](https://python.land/data-science/jupyter-notebook)
 
 ## Setup Environmental Variables in `.env'`
 After creating an Azure OpenAI service, setup the following environmental variables for 
@@ -33,3 +35,5 @@ After creating an Azure OpenAI service, setup the following environmental variab
 - AZURE_OPENAI_API_KEY_GPT4V  _(Required for 10_GPT-4V)_
 - AZURE_OPENAI_API_BASE_GPT4V _(Required for 10_GPT-4V)_
 - AZURE_OPENAI_DEPLOYMENT_NAME_GPT4V _(Required for 10_GPT-4V)_
+---
+Feel free to use and copy `.env.sample` and rename to `.env`.
