@@ -1,0 +1,1 @@
+pyinstaller --name Copilot --onefile --noconsole -i icon.ico --add-data "./icon.ico;." --hidden-import=tiktoken_ext.openai_public --hidden-import=tiktoken_ext --additional-hooks-dir=. Copilot.py

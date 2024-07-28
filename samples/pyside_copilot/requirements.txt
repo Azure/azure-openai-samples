@@ -1,0 +1,15 @@
+chardet==5.2.0
+docx2txt==0.8
+en_core_web_md==3.7.1
+Markdown==3.6
+pyinstaller==6.9.0
+PySide6==6.7.2
+PySide6_Addons==6.7.2
+PySide6_Essentials==6.7.2
+python_docx==1.1.2
+tiktoken==0.7.0
+xx_ent_wiki_sm==3.7.0
+openai==1.37.1
+pandas==2.2.2
+pillow==10.4.0
+PyPDF2==3.0.1
