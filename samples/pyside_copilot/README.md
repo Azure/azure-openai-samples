@@ -21,7 +21,8 @@ This is a Chatbot Client implemented using PySide6, providing a reference for ca
 **Directory Structure:** 
 - Copilot.py: Program entry point, where the main function is located. (This is actually a habit from my days as a C++ developer...emmmmm) 
 - Core.py: Code for calling the Azure OpenAI API, completely separated from the GUI. 
-- GUI: Directory for PySide6 GUI related code. - template: Directory for Prompt configuration files. 
+- GUI: Directory for PySide6 GUI related code. 
+- template: Directory for Prompt configuration files. 
 - TextPreprocessor.py: Code for processing text.
 - config.ini: Configuration file, all configurable parameters are in this file.
 

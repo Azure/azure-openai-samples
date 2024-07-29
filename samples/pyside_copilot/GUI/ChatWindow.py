@@ -341,7 +341,7 @@ class ChatWindow(QMainWindow):
         file_name, _ = file_dialog.getSaveFileName(self, "Export PDF", f"chat_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}", "PDF Files (*.pdf)")
         if file_name:
             pdf_writer = QPdfWriter(file_name)
-            document.print(pdf_writer)
+            document.print_(pdf_writer)
         return
     
 

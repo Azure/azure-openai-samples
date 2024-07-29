@@ -151,7 +151,7 @@ class CompletionsDialog(QDialog):
         if file_name:
             if file_name.endswith('.pdf'):
                 pdf_writer = QPdfWriter(file_name)
-                document.print(pdf_writer)
+                document.print_(pdf_writer)
             elif file_name.endswith('.txt'):
                 with open(file_name, 'w', encoding='utf-8') as file:
                     file.write(document.toPlainText())
