@@ -1,6 +1,6 @@
 # PySide Copilot
 
-This is a Chatbot Client implemented using PySide6, providing a reference for calling the Azure OpenAI API.
+This is a Chatbot Client implemented using PySide6(LGPL), providing a reference for calling the Azure OpenAI API.
 
 **Features:**
 - Basic ChatCompletion functionality. 
@@ -29,6 +29,6 @@ This is a Chatbot Client implemented using PySide6, providing a reference for ca
 **Runtime Environment:** 
 - Windows 11 Pro 23H2 x64 
 - Python 3.12.4 64bit 
-- Pyip OpenAI 1.17.1 
+- Pyip OpenAI 1.37.1 
 - Pyip PySide 6.7.2 
 - Other dependencies in requirements.txt
