@@ -1,0 +1,6 @@
+python-dotenv
+openai
+opendatasets
+tenacity
+tiktoken
+azure-identity
