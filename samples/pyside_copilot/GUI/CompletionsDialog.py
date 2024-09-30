@@ -3,7 +3,7 @@ from PyPDF2 import PdfReader
 from docx import Document
 import pandas as pd
 import re
-import markdown
+import mistune
 import datetime
 import chardet
 
@@ -133,7 +133,7 @@ class CompletionsDialog(QDialog):
         flag, req = response
         if flag:
             message = re.sub(r'```(\w*\n)?(.*?)```', comm.replace_code_block, req, flags=re.DOTALL)
-            message = markdown.markdown(message)
+            message = mistune.html(message)
             self.completions_text.insertHtml(message)
         else:
             self.completions_text.append(req)
