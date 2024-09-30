@@ -1,0 +1,7 @@
+python-dotenv==1.0.1
+openai==1.50.2
+opendatasets==0.1.22
+tenacity==9.0.0
+tiktoken==0.7.0
+azure-identity==1.18.0
+

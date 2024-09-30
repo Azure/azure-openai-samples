@@ -1,2 +1,6 @@
-AZURE_OPENAI_API_KEY=XXX
-AZURE_OPENAI_ENDPOINT=https://XXX.openai.azure.com/
+AZURE_OPENAI_API_KEY=<api key of your AOAI resource>
+AZURE_OPENAI_ENDPOINT=<endpoint of your AOAI resource>
+
+SUBSCRIPTION_ID=<Your Azure subscription ID>
+RESOURCE_GROUP_NAME=<name of the resource group>
+ACCOUNT_NAME=<name of your AOAI resource>
