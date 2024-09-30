@@ -9,12 +9,9 @@ The following resources are available in this repository:
 
 - [Quick Start](./quick_start/): A collection of notebooks where you can quickly start with using GPT. 
 
-- [Fundamentals](./fundamentals/): A collection of notebooks illustrating fundamental usage of GPT.
-
 - [Use Cases](./use_cases/): A collection of notebooks illustrating examples on how to use GPT in various applications, such as chatbots, customer service, and content generation etc.
 
-- [Sample Solutions](./solution_accelerators/): End-to-end solutions for various NLP tasks, such as question answering, text summarization, and sentiment analysis etc, in context of business applications specific to various industries, where GPT is part of the solution. *Require contributions!*
-
+- [Langchain, Semantic Kernel and Prompt Flow Samples](./samples/)
 - [Serverless SQL GPT](https://github.com/balakreshnan/Samples2023/blob/main/AzureML/serverlesssqlgpt.md) - Natural language processing (NLP) with GPT in Azure Synapse Analytics Serverless SQL using Azure Machine Learning.
 
 ## GPT Version
