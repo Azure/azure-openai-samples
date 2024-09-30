@@ -28,7 +28,7 @@ This is a Chatbot Client implemented using PySide6(LGPL), providing a reference 
 
 **Runtime Environment:** 
 - Windows 11 Pro 23H2 x64 
-- Python 3.12.4 64bit 
-- Pyip OpenAI 1.37.1 
-- Pyip PySide 6.7.2 
+- Python 3.11.10 64bit 
+- Pyip OpenAI 1.50.0 
+- Pyip PySide 6.7.3 
 - Other dependencies in requirements.txt

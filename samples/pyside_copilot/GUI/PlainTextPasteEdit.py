@@ -8,6 +8,10 @@ import GUI.Common as comm
 
 class PlainTextPasteEdit(QTextEdit):
 
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        return
+
     def insertFromMimeData(self, source):
         self.insertPlainText(source.text())
         return
@@ -23,11 +27,13 @@ class PlainTextPasteEdit(QTextEdit):
         return img_tags
     
     def dragEnterEvent(self, event: QDragEnterEvent):
+        super().dragEnterEvent(event)
         if event.mimeData().hasUrls():
             event.acceptProposedAction()
         return
 
     def dropEvent(self, event: QDropEvent):
+        super().dropEvent(event)
         mime = event.mimeData()
         if mime.hasUrls():
             urls = mime.urls()
@@ -37,6 +43,7 @@ class PlainTextPasteEdit(QTextEdit):
                     file_extension = os.path.splitext(file_path)[1].lower()
                     if comm.vision_flag and file_extension in \
                         ['.jfif', '.gif', '.jpeg', '.jpg', '.png', '.bmp', '.pjp', '.apng', '.pjpeg', '.avif']:
+                        self.undo()
                         self.insertImage(file_path)
                     elif file_extension == '.txt':
                         with open(file_path, 'rb') as file:

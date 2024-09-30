@@ -3,13 +3,14 @@ import os
 import sys
 import re
 import datetime
-import markdown
+import mistune
 import configparser
 import chardet
 
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QApplication, QMenu, QLineEdit, QDialog, QInputDialog, QMainWindow, QVBoxLayout, QHBoxLayout, QWidget, QTextBrowser, QPushButton, QMessageBox, QFileDialog, QSystemTrayIcon, QSplitter
 from PySide6.QtGui import QTextCursor, QGuiApplication, QAction, QTextDocument, QPdfWriter, QIcon
+from functools import partial
 
 from Core import ApiManager
 
@@ -187,7 +188,7 @@ class ChatWindow(QMainWindow):
                     action.setCheckable(True)
                     action.setChecked(False)
                     self.cfgPromptTemplateMenu.addAction(action)
-                    action.triggered.connect(lambda checked, file=file: self.on_cfg_load_prompt_template(file))
+                    action.triggered.connect(partial(lambda file: self.on_cfg_load_prompt_template(file), file=file))
 
         self.imgMenu = self.menuBar.addMenu("Vision")
         self.imgMenu.setEnabled(comm.vision_flag)
@@ -500,7 +501,7 @@ class ChatWindow(QMainWindow):
         
         message = re.sub(r'```(\w*\n)?(.*?)```', comm.replace_code_block, message, flags=re.DOTALL)
         if msgType == 1:
-            message = markdown.markdown(message)
+            message = mistune.html(message)
 
         self.chat_history.moveCursor(QTextCursor.MoveOperation.End)
         self.chat_history.insertHtml(headerText)
