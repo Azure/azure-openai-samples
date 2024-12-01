@@ -23,7 +23,8 @@
 - [ ] Install [Visual Studio Code](https://code.visualstudio.com/download)
 - [ ] Install [VSC - Python Extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 - [ ] Install [Jupyter Notebook for python](https://python.land/data-science/jupyter-notebook)
-- [ ] Install necessary packages: `pip install -r requirements.txt`
+- [ ] Install necessary packages: `pip install -r requirements.txt` or Install it via the Visual Studio Code UI
+![Install necessary packages](img/vscode-setup.png)
 
 ## Setup Environmental Variables in `.env'`
 After creating an Azure OpenAI service, setup the following environmental variables for 
