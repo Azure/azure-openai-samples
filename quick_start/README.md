@@ -29,11 +29,8 @@
 After creating an Azure OpenAI service, setup the following environmental variables for 
 - AZURE_OPENAI_ENDPOINT
 - AZURE_OPENAI_KEY
-- CHAT_COMPLETION_NAME
+- AZURE_OPENAI_DEPLOYMENT_NAME
 - EMBEDDING_MODEL_NAME _(Required for 01_OpenAI_getting-started)_
 - BING_SUBSCRIPTION_KEY _(Required for 08_LLM_RAG_demo)_
-- AZURE_OPENAI_API_KEY_GPT4V  _(Required for 10_GPT-4V)_
-- AZURE_OPENAI_API_BASE_GPT4V _(Required for 10_GPT-4V)_
-- AZURE_OPENAI_DEPLOYMENT_NAME_GPT4V _(Required for 10_GPT-4V)_
 ---
 Feel free to use and copy `.env.sample` and rename to `.env`.
