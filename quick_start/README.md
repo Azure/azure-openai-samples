@@ -26,6 +26,9 @@
 - [ ] Install necessary packages: `pip install -r requirements.txt` or Install it via the Visual Studio Code UI
 ![Install necessary packages](img/vscode-setup.png)
 
+If prompted with a message to install `ipykernel` choose **install**
+![Install necessary packages](img/install-ipykernel.png)
+
 ## Setup Environmental Variables in `.env'`
 After creating an Azure OpenAI service, setup the following environmental variables for 
 - AZURE_OPENAI_ENDPOINT

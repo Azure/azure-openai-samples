@@ -11,3 +11,5 @@ samples/prompt_flow/chat/chat_with_wiki/__pycache__/search_result_from_url.cpyth
 samples/prompt_flow/chat/chat_with_wiki/__pycache__/process_search_result.cpython-310.pyc
 samples/prompt_flow/chat/chat_with_wiki/__pycache__/get_wiki_url.cpython-310.pyc
 samples/prompt_flow/chat/chat_with_wiki/build/flow/.promptflow/*.log
+.DS_Store
+quick_start/.DS_Store
