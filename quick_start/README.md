@@ -31,10 +31,10 @@ If prompted with a message to install `ipykernel` choose **install**
 
 ## Setup Environmental Variables in `.env'`
 After creating an Azure OpenAI service, setup the following environmental variables for 
-- AZURE_OPENAI_ENDPOINT
-- AZURE_OPENAI_KEY
-- AZURE_OPENAI_DEPLOYMENT_NAME
-- EMBEDDING_MODEL_NAME _(Required for 01_OpenAI_getting-started)_
-- BING_SUBSCRIPTION_KEY _(Required for 08_LLM_RAG_demo)_
+- `AZURE_OPENAI_ENDPOINT`
+- `AZURE_OPENAI_KEY`
+- `AZURE_OPENAI_DEPLOYMENT_NAME`
+- `EMBEDDING_MODEL_NAME` _(Required for 01_OpenAI_getting-started)_
+- `BING_SUBSCRIPTION_KEY` _(Required for 08_LLM_RAG_demo)_
 ---
 Feel free to use and copy `.env.sample` and rename to `.env`.
