@@ -14,7 +14,7 @@
 | [07_Prompt_Engineering](v1/07_prompt_engineering.ipynb)     | Shows further best practices for optimizing prompting. | Best Practices overall for prompt engineering |
 | [08_LLM_RAG](v1/08_LLM_RAG_demo.ipynb)           | Demonstrates how to do RAG using Bing Search results as provided context. | Knowledge Management, Business intelligence & analytics, Legal and compliance |
 | [09_Function_Calling](v1/09_Function_Calling.ipynb)       | Shows how to integrate a custom function and have OpenAI call it to retrieve weather information. | Dynamic Calculations, Data fetching, Interactive Applications, Custom integrations  |
-| [10_GPT-4V](v1/10_GPT-4V.ipynb)                 | Great to show what can be done with image analysis. Generates text description for provided image. | Content Creation, Accessibility, Image Classification, E-commerce |
+| [10_Vision](v1/10_Vision.ipynb)                 | Great to show what can be done with image analysis. Generates text description for provided image. | Content Creation, Accessibility, Image Classification, E-commerce |
 | [11_Assistant](v1/11_Assistant.ipynb)                 | Create AI assistant for Data Visualization using advanced tools like code interpreter. | Personalized Customer Service, Employee Onboarding and Training, Sales and Marketing Support |
 
 
