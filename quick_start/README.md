@@ -19,14 +19,49 @@
 
 
 ## Prepare Environment
-- [ ] Install [Python](https://www.python.org/downloads/)
-- [ ] Install [Visual Studio Code](https://code.visualstudio.com/download)
-- [ ] Install [VSC - Python Extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-- [ ] Install [Jupyter Notebook for python](https://python.land/data-science/jupyter-notebook)
-- [ ] Install necessary packages: `pip install -r requirements.txt` or Install it via the Visual Studio Code UI
-![Install necessary packages](img/vscode-setup.png)
+- Install [Python](https://www.python.org/downloads/)
+- Install [Visual Studio Code](https://code.visualstudio.com/download)
+- Install [Python Extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+- Install [Jupyter Extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
-If prompted with a message to install `ipykernel` choose **install**
+### Install required Python packages
+
+You can install the required Python packages manually or using Visual Studio Code UI.
+
+#### To install the required Python packages manually:
+- In Visual Studio Code -> **Terminal** -> **New Terminal**
+    ![New Terminal](img/vscode-new-terminal.png)
+
+- In the new **Terminal** window -> Run the following commands:
+    ```
+    python -m venv .venv
+    source .venv/bin/activate
+    pip install -r quick_start/v1/requirements.txt
+    ```
+- After running the commands, you should see something like this:
+    ![Run commands](img/run-commands.png)
+
+- Open `quick_start/v1/01_OpenAI_getting_started.ipynb` notebook.
+
+
+#### To install the required Python packages using Visual Studio Code UI
+
+- Open `quick_start/v1/01_OpenAI_getting_started.ipynb` notebook.
+    ![Open Notebook](img/open-notebook.png)
+
+- Choose **Select Kernel** or **Detecting Kernels** on the upper right. Then, on the search box that opened , choose **Python Environments...**  
+    ![Create Python Env](img/create-python-env1.png)
+- Choose **+ Create Python Environment**  
+    ![Create Python Env](img/create-python-env2.png)
+- Choose **Venv** to create a new Python virtual environment  
+    ![Choose Venv](img/env-venv.png)
+
+
+<!-- ![Install necessary packages](img/vscode-setup.png) -->
+
+- In Visual Studio Code -> Open Folder -> `azure-openai-samples`.
+
+In `quick_start/v1/01_OpenAI_getting_started.ipynb` notebook. If prompted with a message to install `ipykernel` choose **install**
 ![Install necessary packages](img/install-ipykernel.png)
 
 ## Setup Environmental Variables in `.env'`
