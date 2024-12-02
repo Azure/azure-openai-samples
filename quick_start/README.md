@@ -70,7 +70,7 @@ You can install the required Python packages in two ways:
     ![Installing requirements.txt](img/installing-requirments.png)
 
 
-## Setup Environmental Variables in `.env'`
+## Setup Environmental Variables in `.env` file in `v1` folder
 After creating an Azure OpenAI service, setup the following environmental variables for 
 - `AZURE_OPENAI_ENDPOINT`
 - `AZURE_OPENAI_KEY`
@@ -78,7 +78,7 @@ After creating an Azure OpenAI service, setup the following environmental variab
 - `EMBEDDING_MODEL_NAME` _(Required for 01_OpenAI_getting-started)_
 - `BING_SUBSCRIPTION_KEY` _(Required for 08_LLM_RAG_demo)_
 ---
-Feel free to use and copy `.env.sample` and rename to `.env`.
+Feel free to use and copy [`.env.sample`](v1/.env.sample) and rename to `/.env` inside of the `v1` folder.
 
 ## Start running the workshop
 
