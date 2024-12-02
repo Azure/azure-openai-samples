@@ -26,7 +26,9 @@
 
 ### Install required Python packages
 
-You can install the required Python packages manually or using Visual Studio Code UI.
+You can install the required Python packages in two ways:
+- Manual Installation using CLI.
+- Installation using Visual Studio Code UI.
 
 #### To install the required Python packages manually:
 - In Visual Studio Code -> **Terminal** -> **New Terminal**
