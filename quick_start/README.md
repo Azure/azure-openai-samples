@@ -51,18 +51,22 @@ You can install the required Python packages manually or using Visual Studio Cod
 
 - Choose **Select Kernel** or **Detecting Kernels** on the upper right. Then, on the search box that opened , choose **Python Environments...**  
     ![Create Python Env](img/create-python-env1.png)
+
 - Choose **+ Create Python Environment**  
     ![Create Python Env](img/create-python-env2.png)
+
 - Choose **Venv** to create a new Python virtual environment  
     ![Choose Venv](img/env-venv.png)
 
+- Choose the Python runtime installed on your machine
+    ![Choose Python runtime](img/choose-python-runtime.png)
 
-<!-- ![Install necessary packages](img/vscode-setup.png) -->
+- Check the `quick_start/v1/requirements.txt` option to install the required `requirements.txt`, and click **OK**
+    ![Install requirements.txt](img/choose-requirments-txt.png)
 
-- In Visual Studio Code -> Open Folder -> `azure-openai-samples`.
+- A status bar with Creating environment will be opened in the rightmost lower corner of Visual Studio Code, with the status and logs    
+    ![Installing requirements.txt](img/installing-requirments.png)
 
-In `quick_start/v1/01_OpenAI_getting_started.ipynb` notebook. If prompted with a message to install `ipykernel` choose **install**
-![Install necessary packages](img/install-ipykernel.png)
 
 ## Setup Environmental Variables in `.env'`
 After creating an Azure OpenAI service, setup the following environmental variables for 
@@ -73,3 +77,13 @@ After creating an Azure OpenAI service, setup the following environmental variab
 - `BING_SUBSCRIPTION_KEY` _(Required for 08_LLM_RAG_demo)_
 ---
 Feel free to use and copy `.env.sample` and rename to `.env`.
+
+## Start running the workshop
+
+Open `quick_start/v1/01_OpenAI_getting_started.ipynb` notebook. Click the **Execute Cell** (Play button) to execute each cell. 
+
+**Please read the markdown to learn about each section, and not just run all the cells one after the other**.
+![Execute cell](img/execute-cell.png)
+
+If prompted with a message to install `ipykernel` choose **install**
+![Install necessary packages](img/install-ipykernel.png)
