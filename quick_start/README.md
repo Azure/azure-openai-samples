@@ -78,7 +78,7 @@ After creating an Azure OpenAI service, setup the following environmental variab
 - `EMBEDDING_MODEL_NAME` _(Required for 01_OpenAI_getting-started)_
 - `BING_SUBSCRIPTION_KEY` _(Required for 08_LLM_RAG_demo)_
 ---
-Feel free to use and copy [`.env.sample`](v1/.env.sample) and rename to `/.env` inside of the `v1` folder.
+Feel free to use and copy [`.env.sample`](v1/.env.sample) and rename to `.env` inside of the `v1` folder.
 
 ## Start running the workshop
 
