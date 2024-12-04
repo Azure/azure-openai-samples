@@ -27,24 +27,8 @@
 ### Install required Python packages
 
 You can install the required Python packages in two ways:
-- Manual Installation using CLI - [Link](#to-install-the-required-python-packages-manually).
 - Installation using Visual Studio Code UI - [Link](#to-install-the-required-python-packages-using-visual-studio-code-ui).
-
-#### To install the required Python packages manually:
-- In Visual Studio Code -> **Terminal** -> **New Terminal**
-    ![New Terminal](img/vscode-new-terminal.png)
-
-- In the new **Terminal** window -> Run the following commands:
-    ```
-    python -m venv .venv
-    source .venv/bin/activate
-    pip install -r quick_start/v1/requirements.txt
-    ```
-- After running the commands, you should see something like this:
-    ![Run commands](img/run-commands.png)
-
-- Open `quick_start/v1/01_OpenAI_getting_started.ipynb` notebook.
-
+- Manual Installation using CLI - [Link](#to-install-the-required-python-packages-manually).
 
 #### To install the required Python packages using Visual Studio Code UI
 
@@ -69,6 +53,30 @@ You can install the required Python packages in two ways:
 - A status bar with Creating environment will be opened in the rightmost lower corner of Visual Studio Code, with the status and logs    
     ![Installing requirements.txt](img/installing-requirments.png)
 
+#### To install the required Python packages manually:
+- In Visual Studio Code -> **Terminal** -> **New Terminal**
+    ![New Terminal](img/vscode-new-terminal.png)
+
+- In the new **Terminal** window -> Run the following commands:
+    
+    **Unix/macOS**
+    ```
+    pip install virtualenv
+    python -m venv .venv
+    source .venv/bin/activate
+    pip install -r quick_start/v1/requirements.txt
+    ```
+
+    **Windows**
+    ```
+    pip install virtualenv
+    python -m venv .venv
+    .venv\Scripts\activate
+    pip install -r quick_start/v1/requirements.txt
+    ```
+
+- After running the commands, you should see something like this:
+    ![Run commands](img/run-commands.png)
 
 ## Setup Environmental Variables in `.env` file in `v1` folder
 After creating an Azure OpenAI service, setup the following environmental variables for 
