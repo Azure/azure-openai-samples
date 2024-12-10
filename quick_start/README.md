@@ -14,26 +14,86 @@
 | [07_Prompt_Engineering](v1/07_prompt_engineering.ipynb)     | Shows further best practices for optimizing prompting. | Best Practices overall for prompt engineering |
 | [08_LLM_RAG](v1/08_LLM_RAG_demo.ipynb)           | Demonstrates how to do RAG using Bing Search results as provided context. | Knowledge Management, Business intelligence & analytics, Legal and compliance |
 | [09_Function_Calling](v1/09_Function_Calling.ipynb)       | Shows how to integrate a custom function and have OpenAI call it to retrieve weather information. | Dynamic Calculations, Data fetching, Interactive Applications, Custom integrations  |
-| [10_GPT-4V](v1/10_GPT-4V.ipynb)                 | Great to show what can be done with image analysis. Generates text description for provided image. | Content Creation, Accessibility, Image Classification, E-commerce |
+| [10_Vision](v1/10_Vision.ipynb)                 | Great to show what can be done with image analysis. Generates text description for provided image. | Content Creation, Accessibility, Image Classification, E-commerce |
 | [11_Assistant](v1/11_Assistant.ipynb)                 | Create AI assistant for Data Visualization using advanced tools like code interpreter. | Personalized Customer Service, Employee Onboarding and Training, Sales and Marketing Support |
 
 
 ## Prepare Environment
-- [ ] Install [Python](https://www.python.org/downloads/)
-- [ ] Install [Visual Studio Code](https://code.visualstudio.com/download)
-- [ ] Install [VSC - Python Extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-- [ ] Install [Jupyter Notebook for python](https://python.land/data-science/jupyter-notebook)
-- [ ] Install necessary packages: `pip install -r requirements.txt`
+- Install [Python](https://www.python.org/downloads/)
+- Install [Visual Studio Code](https://code.visualstudio.com/download)
+- Install [Python Extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+- Install [Jupyter Extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
-## Setup Environmental Variables in `.env'`
+### Install required Python packages
+
+You can install the required Python packages in two ways:
+- Installation using Visual Studio Code UI - [Link](#to-install-the-required-python-packages-using-visual-studio-code-ui).
+- Manual Installation using CLI - [Link](#to-install-the-required-python-packages-manually).
+
+#### To install the required Python packages using Visual Studio Code UI
+
+- Open `quick_start/v1/01_OpenAI_getting_started.ipynb` notebook.
+    ![Open Notebook](img/open-notebook.png)
+
+- Choose **Select Kernel** or **Detecting Kernels** on the upper right. Then, on the search box that opened , choose **Python Environments...**  
+    ![Create Python Env](img/create-python-env1.png)
+
+- Choose **+ Create Python Environment**  
+    ![Create Python Env](img/create-python-env2.png)
+
+- Choose **Venv** to create a new Python virtual environment  
+    ![Choose Venv](img/env-venv.png)
+
+- Choose the Python runtime installed on your machine
+    ![Choose Python runtime](img/choose-python-runtime.png)
+
+- Check the `quick_start/v1/requirements.txt` option to install the required `requirements.txt`, and click **OK**
+    ![Install requirements.txt](img/choose-requirments-txt.png)
+
+- A status bar with Creating environment will be opened in the rightmost lower corner of Visual Studio Code, with the status and logs    
+    ![Installing requirements.txt](img/installing-requirments.png)
+
+#### To install the required Python packages manually:
+- In Visual Studio Code -> **Terminal** -> **New Terminal**
+    ![New Terminal](img/vscode-new-terminal.png)
+
+- In the new **Terminal** window -> Run the following commands:
+    
+    **Unix/macOS**
+    ```
+    pip install virtualenv
+    python -m venv .venv
+    source .venv/bin/activate
+    pip install -r quick_start/v1/requirements.txt
+    ```
+
+    **Windows**
+    ```
+    pip install virtualenv
+    python -m venv .venv
+    .venv\Scripts\activate
+    pip install -r quick_start/v1/requirements.txt
+    ```
+
+- After running the commands, you should see something like this:
+    ![Run commands](img/run-commands.png)
+
+## Setup Environmental Variables in `.env` file in `v1` folder
 After creating an Azure OpenAI service, setup the following environmental variables for 
-- AZURE_OPENAI_ENDPOINT
-- AZURE_OPENAI_KEY
-- CHAT_COMPLETION_NAME
-- EMBEDDING_MODEL_NAME _(Required for 01_OpenAI_getting-started)_
-- BING_SUBSCRIPTION_KEY _(Required for 08_LLM_RAG_demo)_
-- AZURE_OPENAI_API_KEY_GPT4V  _(Required for 10_GPT-4V)_
-- AZURE_OPENAI_API_BASE_GPT4V _(Required for 10_GPT-4V)_
-- AZURE_OPENAI_DEPLOYMENT_NAME_GPT4V _(Required for 10_GPT-4V)_
+- `AZURE_OPENAI_ENDPOINT`
+- `AZURE_OPENAI_KEY`
+- `AZURE_OPENAI_DEPLOYMENT_NAME`
+- `EMBEDDING_MODEL_NAME` _(Required for 01_OpenAI_getting-started)_
+- `BING_SUBSCRIPTION_KEY` _(Required for 08_LLM_RAG_demo)_
 ---
-Feel free to use and copy `.env.sample` and rename to `.env`.
+Feel free to use and copy [`.env.sample`](v1/.env.sample) and rename to `.env` inside of the `v1` folder.
+
+## Start running the workshop
+
+Open `quick_start/v1/01_OpenAI_getting_started.ipynb` notebook. Click the **Execute Cell** (Play button) to execute each cell. 
+
+**Please read the markdown to learn about each section, and not just run all the cells one after the other**.
+![Execute cell](img/execute-cell.png)
+
+If prompted with a message to install `ipykernel` choose **install**
+![Install necessary packages](img/install-ipykernel.png)
